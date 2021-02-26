@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->boolean('is_codigo_minga')->default(0);
             $table->string('rut');
             $table->string('phone');
+            $table->boolean('enabled')->default(1);
             $table->rememberToken();
             $table->timestamps();
         });

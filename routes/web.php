@@ -18,3 +18,10 @@ Route::get('/', function () {
 });
 
 Route::get('/app/login','MainController@login');
+Route::post('/app/checklogin','MainController@checkLogin');
+
+Route::group(['middleware' => ['auth']], function() {
+
+    Route::get('/app/home','HomeController@index');
+
+});
