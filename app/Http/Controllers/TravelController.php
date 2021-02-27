@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Student;
 use App\Travel;
+use App\Travelstudent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class TravelController extends Controller
 {
@@ -114,6 +117,48 @@ class TravelController extends Controller
 
 
         return view('travel.details',compact('travel'));
+
+    }
+
+
+    public function assistance($travel_id){
+
+        $user_id = Auth::user()->id;
+        $students = Db::select('
+                    select students.*,travelstudents.temperature from students
+                    left join travelstudents
+                    on travelstudents.student_id = students.id
+                    and travelstudents.travel_id = 1
+                    ');
+
+
+
+
+        $travel = Travel::findOrFail($travel_id);
+        return view('travel.assistance',compact('students','travel'));
+    }
+
+    public function setAssistance($travel_id,$student_id){
+
+        return view('travel.addassistance',compact('travel_id','student_id'));
+    }
+
+    public function setAssistanceProcess($travel_id,$student_id,Request $request){
+        //obtiene todo lo del formulario
+        $input = $request->all();
+
+        //registra temperatura en la tabla de paso
+        $travelstudent = new Travelstudent();
+        $travelstudent->temperature = $input['temperature'];
+        $travelstudent->student_id = $student_id;
+        $travelstudent->travel_id = $travel_id;
+        $travelstudent->save();
+
+
+        $sucess  = true;
+        $returnUrl = url('/')."/app/travel/".$travel_id."/assistance";
+        $message =  "Se añadió temperatura y asistencia correctamente";
+        return view('template.genericprocess',compact('message','sucess','returnUrl'));
 
     }
 }

@@ -12,7 +12,7 @@
 
             <b>Aqui va el contenido</b>
 
-            <a href="" class="btn btn-primary">Marcar Asistencia</a>
+            <a href="{{url('/app/travel/'.$travel->id.'/assistance')}}" class="btn btn-primary">Marcar Asistencia</a>
 
             <a href="" class="btn btn-primary">Finalizar Viaje</a>
         </div>
