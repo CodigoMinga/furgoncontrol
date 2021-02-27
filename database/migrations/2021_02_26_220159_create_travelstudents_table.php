@@ -16,6 +16,13 @@ class CreateTravelstudentsTable extends Migration
         Schema::create('travelstudents', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+
+            $table->bigInteger('student_id')->unsigned();
+            $table->foreign('student_id')->references('id')->on('students')->onUpdate('RESTRICT')->onDelete('RESTRICT');
+
+            $table->bigInteger('travel_id')->unsigned();
+            $table->foreign('travel_id')->references('id')->on('travels')->onUpdate('RESTRICT')->onDelete('RESTRICT');
+
         });
     }
 

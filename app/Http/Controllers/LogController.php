@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Travel;
+use App\Log;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
 
-class TravelController extends Controller
+class LogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -43,10 +41,10 @@ class TravelController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Travel  $travel
+     * @param  \App\Log  $log
      * @return \Illuminate\Http\Response
      */
-    public function show(Travel $travel)
+    public function show(Log $log)
     {
         //
     }
@@ -54,10 +52,10 @@ class TravelController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Travel  $travel
+     * @param  \App\Log  $log
      * @return \Illuminate\Http\Response
      */
-    public function edit(Travel $travel)
+    public function edit(Log $log)
     {
         //
     }
@@ -66,10 +64,10 @@ class TravelController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Travel  $travel
+     * @param  \App\Log  $log
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Travel $travel)
+    public function update(Request $request, Log $log)
     {
         //
     }
@@ -77,43 +75,11 @@ class TravelController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Travel  $travel
+     * @param  \App\Log  $log
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Travel $travel)
+    public function destroy(Log $log)
     {
         //
-    }
-
-    public function add(){
-
-        return view('travel.add');
-    }
-
-    public function addProcess(Request $request){
-        $fecha_actual = Carbon::now();
-
-
-        $input = $request->all();
-        $travel = new Travel();
-        $travel->type = $input['type'];
-        $travel->user_id = Auth::user()->id;
-        $travel->start = $fecha_actual;
-        $travel->save();
-
-
-        $sucess  = true;
-        $returnUrl = url('/')."/app/home";
-        $message =  "Se creo el viaje correctamente";
-        return view('template.genericprocess',compact('message','sucess','returnUrl'));
-    }
-
-    public function details($travel_id){
-
-        $travel = Travel::findOrFail($travel_id);
-
-
-        return view('travel.details',compact('travel'));
-
     }
 }
