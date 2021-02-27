@@ -66,7 +66,7 @@
                 </ul>
             </div>
         @endif
-        <form method="post" action="{{url('/main/checklogin')}}">
+        <form method="post" action="{{url('/app/checklogin')}}">
             {{csrf_field()}}
             <div class="form-group has-feedback">
                 <input type="email" class="form-control" placeholder="Email" name="email">
