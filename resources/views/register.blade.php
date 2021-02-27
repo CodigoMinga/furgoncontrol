@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,7 +50,7 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body" style="border-radius: 10px">
-        <p class="login-box-msg">Inicie sesion</p>
+        <p class="login-box-msg">Registrarse</p>
         @if ($message = Session::get('error'))
             <div class="alert alert-danger alert-block">
                 <button type="button" class="close" data-dismiss="alert">×</button>
@@ -65,8 +66,24 @@
                 </ul>
             </div>
         @endif
-        <form method="post" action="{{url('/main/checklogin')}}">
+        <form method="post" action="{{url('/app/register/process')}}">
             {{csrf_field()}}
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" placeholder="Nombre" name="name">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" placeholder="Apellido" name="last_name">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" placeholder="RUT" name="rut">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" placeholder="Telefono" name="phone">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
             <div class="form-group has-feedback">
                 <input type="email" class="form-control" placeholder="Email" name="email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -81,7 +98,7 @@
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Iniciar</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Registrarse</button>
                 </div>
                 <!-- /.col -->
             </div>

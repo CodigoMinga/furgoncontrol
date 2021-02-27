@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class MainController extends Controller
 {
@@ -42,14 +43,17 @@ class MainController extends Controller
     public function register(){
 
 
-        return view('register.add',compact('users'));
+        return view('register');
     }
 
 
-    public function registerProcess(Request $request){
-       
+    public function registerProcess( Request $request){
+
         User::create($request->all());
 
-        return redirect()->route('welcome');
+        $sucess  = true;
+        $returnUrl = url('/')."/app/home";
+        $message =  "Usuario Creado Correctamente";
+        return view('template.genericprocess',compact('message','sucess','returnUrl'));
     }
 }
