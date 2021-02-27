@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
 {
@@ -81,5 +82,34 @@ class StudentController extends Controller
     public function destroy(Student $student)
     {
         //
+    }
+
+    public function add(){
+
+        return view('student.add');
+    }
+
+
+    public function addProcess(Request $request){
+
+        //le añade en el request el campo user_id
+        $request->request->add(['user_id' => Auth::user()->id]);
+
+        Student::create($request->all());
+        $sucess  = true;
+        $returnUrl = url('/')."/app/home";
+        $message =  "Se guardo el alumno con exito";
+        return view('template.genericprocess',compact('message','sucess','returnUrl'));
+    }
+
+    public function list(){
+
+        $user_id = Auth::user()->id;
+
+
+        $students = Student::where('user_id','=',$user_id)->get();
+
+
+        return view('student.list',compact('students'));
     }
 }

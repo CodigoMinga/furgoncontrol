@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Travel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class TravelController extends Controller
 {
@@ -81,5 +83,37 @@ class TravelController extends Controller
     public function destroy(Travel $travel)
     {
         //
+    }
+
+    public function add(){
+
+        return view('travel.add');
+    }
+
+    public function addProcess(Request $request){
+        $fecha_actual = Carbon::now();
+
+
+        $input = $request->all();
+        $travel = new Travel();
+        $travel->type = $input['type'];
+        $travel->user_id = Auth::user()->id;
+        $travel->start = $fecha_actual;
+        $travel->save();
+
+
+        $sucess  = true;
+        $returnUrl = url('/')."/app/home";
+        $message =  "Se creo el viaje correctamente";
+        return view('template.genericprocess',compact('message','sucess','returnUrl'));
+    }
+
+    public function details($travel_id){
+
+        $travel = Travel::findOrFail($travel_id);
+
+
+        return view('travel.details',compact('travel'));
+
     }
 }
