@@ -42,13 +42,14 @@ class MainController extends Controller
     public function register(){
 
 
-        return view('register');
+        return view('register.add',compact('users'));
     }
 
 
-    public function registerProcess(){
+    public function registerProcess(Request $request){
+       
+        User::create($request->all());
 
-
-        return view('');
+        return redirect()->route('welcome');
     }
 }
