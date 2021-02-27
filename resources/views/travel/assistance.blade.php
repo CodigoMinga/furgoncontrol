@@ -20,7 +20,7 @@
                     <div class="info-box bg-red">
                 @endif
 
-                    <span class="info-box-icon"><i class="ion ion-ios-cloud-download-outline"></i></span>
+                    <span class="info-box-icon"><i class="ion ion-person"></i></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">{{$student->name}} {{$student->last_name}} {{$student->id}}</span>
@@ -30,7 +30,12 @@
                             <div class="progress-bar" style="width: 70%"></div>
                         </div>
                         <span class="progress-description">
-                        <a href="{{url('/app/travel/'.$travel->id.'/assistance/'.$student->id.'/mark')}}">Registrar Ingreso</a>
+                            @if(isset($student->temperature))
+                                <b>Temperatura: {{$student->temperature}}</b>
+                            @else
+                                <a href="{{url('/app/travel/'.$travel->id.'/assistance/'.$student->id.'/mark')}}">Registrar Ingreso</a>
+                            @endif
+
                   </span>
                     </div>
                 </div>
