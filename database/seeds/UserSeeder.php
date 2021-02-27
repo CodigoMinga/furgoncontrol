@@ -21,5 +21,14 @@ class UserSeeder extends Seeder
         $user->rut = '17999388-0';
         $user->password = bcrypt('password');
         $user->save();
+
+        $user = new User;
+        $user->name = 'programador';
+        $user->last_name = 'furgoncontrolado';
+        $user->email = 'programador@microbesolutions.cl';
+        $user->phone = '+56973155545';
+        $user->rut = '17999388-0';
+        $user->password = bcrypt('000000');
+        $user->save();
     }
 }
