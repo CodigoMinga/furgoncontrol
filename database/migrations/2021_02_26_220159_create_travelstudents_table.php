@@ -23,6 +23,8 @@ class CreateTravelstudentsTable extends Migration
             $table->bigInteger('travel_id')->unsigned();
             $table->foreign('travel_id')->references('id')->on('travels')->onUpdate('RESTRICT')->onDelete('RESTRICT');
 
+            $table->decimal('temperature')->nullable();
+
         });
     }
 
