@@ -16,6 +16,20 @@ class CreateStudentsTable extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('rut')->nullable();
+
+            $table->string('parent_email')->nullable();
+            $table->string('parent_name')->nullable();
+            $table->string('parent_last_name')->nullable();
+            $table->string('parent_rut')->nullable();
+            $table->string('parent_phone')->nullable();
+
+            $table->boolean('enabled')->default(1);
+
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('RESTRICT')->onDelete('RESTRICT');
         });
     }
 
