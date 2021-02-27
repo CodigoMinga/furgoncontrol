@@ -125,13 +125,10 @@ class TravelController extends Controller
 
         $user_id = Auth::user()->id;
         $students = Db::select('
-                    select * from students
-
+                    select students.*,travelstudents.temperature from students
                     left join travelstudents
-
                     on travelstudents.student_id = students.id
                     and travelstudents.travel_id = 1
-
                     ');
 
 
