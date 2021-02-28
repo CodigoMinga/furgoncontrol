@@ -171,9 +171,31 @@ class TravelController extends Controller
     
 
     public function report($desde,$hasta){
-        $document_title = 'reporte semana';
+
+        $document_title = 'Reporte Semanal';
         $usuario = Auth::user();
-        $pdf = PDF::loadView('travel.report', compact('document_title','desde','hasta','usuario'))->setOptions(['isRemoteEnabled' => true,'name'=>$document_title]);
+
+        $lunes = date('Y-m-d', strtotime($desde));
+        $martes = date('Y-m-d', strtotime($desde.' +1 day'));
+        $miercoles = date('Y-m-d', strtotime($desde.' +2 day'));
+        $jueves = date('Y-m-d', strtotime($desde.' +3 day'));
+        $viernes = date('Y-m-d', strtotime($desde.' +4 day'));
+
+        $query ="select s.name,s.last_name,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$lunes') as lunes1,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$lunes') as lunes2,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$martes') martes1,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$martes') martes2,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$miercoles') miercoles1,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$miercoles') miercoles2,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$jueves') jueves1,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$jueves') jueves2,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$viernes') viernes1,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$viernes') viernes2
+        from students s where s.user_id = $usuario->id order by s.last_name";
+
+        $datos = DB::select($query);
+        $pdf = PDF::loadView('travel.report', compact('document_title','desde','hasta','usuario','datos'))->setOptions(['isRemoteEnabled' => true,'name'=>$document_title]);
         $pdf->setPaper('A4', 'landscape');
         return $pdf->stream($document_title);
 

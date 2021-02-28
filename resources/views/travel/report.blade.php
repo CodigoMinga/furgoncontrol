@@ -30,6 +30,13 @@
         font-size: 0.85rem;
         width: 75px;
     }
+    .fila td{
+        padding:8px;
+    }
+    .red{
+        color:red;
+        border-color: black;
+    }
 </style>
 <title>{{$document_title}}</title>
 </head>
@@ -72,7 +79,7 @@
                 <table border="1" class="tabla1">
                     <tr>
                         <th style="white-space: nowrap">
-                            NOMBRE JARDIN O COLEGIO
+                            NOMBRE ESTABLECIMIENTO
                         </th>
                     </tr>
                     <tr>
@@ -145,41 +152,43 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td style="height:35px;">
-                    
-                </td>
+            @foreach($datos as $estudiante)   
+            <tr class="fila">
                 <td>
-                    
+                    {{$estudiante->name}} {{$estudiante->last_name}} 
                 </td>
-                <td>
-                    
+                <td {{$estudiante->lunes1>37 ? 'class=red': ''}}>
+                    {{$estudiante->lunes1}}
                 </td>
-                <td>
-                    
+                <td {{$estudiante->lunes2>37 ? 'class=red': ''}}>
+                    {{$estudiante->lunes2}}
                 </td>
-                <td>
-                    
+                <td {{$estudiante->martes1>37 ? 'class=red': ''}}>
+                    {{$estudiante->martes1}}
                 </td>
-                <td>
-                    
+                <td {{$estudiante->martes2>37 ? 'class=red': ''}}>
+                    {{$estudiante->martes2}}
                 </td>
-                <td>
-                    
+                <td {{$estudiante->miercoles1>37 ? 'class=red': ''}}>
+                    {{$estudiante->miercoles1}}
                 </td>
-                <td>
-                    
+                <td {{$estudiante->miercoles2>37 ? 'class=red': ''}}>
+                    {{$estudiante->miercoles2}}
                 </td>
-                <td>
-                    
+                <td {{$estudiante->jueves1>37 ? 'class=red': ''}}>
+                    {{$estudiante->jueves1}}
                 </td>
-                <td>
-                    
+                <td {{$estudiante->jueves2>37 ? 'class=red': ''}}>
+                    {{$estudiante->jueves2}}
                 </td>
-                <td>
-                    
+                <td {{$estudiante->viernes1>37 ? 'class=red': ''}}>
+                    {{$estudiante->viernes1}}
+                </td>
+                <td {{$estudiante->viernes2>37 ? 'class=red': ''}}>
+                    {{$estudiante->viernes2}}
                 </td>
             </tr>
+            @endforeach   
         </tbody>
     </table>
 
