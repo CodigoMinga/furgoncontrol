@@ -45,7 +45,7 @@
                         </div>
 
                         <div class="my-formgroup">
-                            <label for="exampleInputEmail1">Nombre de la Escuela</label>
+                            <label for="exampleInputEmail1">Nombre del Establecimiento</label>
                             <input required type="text"  name="school_name" placeholder="">
                         </div>
                     </div>

@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SigmaApp | Log in</title>
+    <title>Furgoncontrolado.cl</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <meta property="og:site_name" content="Sigma-App">
+    <meta property="og:site_name" content="www.furgoncontrolado.cl">
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="{{ url('/') }}/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
