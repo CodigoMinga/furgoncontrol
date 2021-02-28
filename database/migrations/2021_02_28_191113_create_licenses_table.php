@@ -17,11 +17,13 @@ class CreateLicensesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->dateTime('pay_date');
-            $table->dateTime('from');
+            $table->date('from');
             $table->date('to');
 
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('RESTRICT')->onDelete('RESTRICT');
+
+            $table->decimal('ammount')->default(0);
         });
     }
 

@@ -39,9 +39,22 @@ class UserController extends Controller
 
     public function getLicences($user_id){
         if(Auth::user()->is_codigo_minga){
+            $user = User::findOrFail($user_id);
+            $licenses = $user->licenses;
 
+            return DataTables::of($licenses)->make(true);
 
         }
 
     }
+
+
+    public function addLicence($user_id){
+
+        
+        return view('users.addlicense');
+    }
+
+
+
 }
