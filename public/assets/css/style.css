@@ -41,7 +41,7 @@ PRE LOADER
     position: absolute;
     left: 50%;
     top: 50%;
-    background-image: url(../images/loading.gif);
+    background-image: url(../images/gifbus.gif);
     background-repeat: no-repeat;
     background-position: center;
     -moz-background-size: cover;
@@ -54,7 +54,7 @@ img {
     -ms-user-select: none;
     user-select: none;
     -webkit-user-drag: none;
-    user-drag: none;
+    -user-drag: none;
 }
 a,
 a:hover,
@@ -185,7 +185,7 @@ p:last-child {
     font-family: 'roboto', sans-serif;
 }
 .text {
-    color: #333333;
+    color: black;
 }
 .colorstext {
     color: #f56363;
@@ -224,7 +224,13 @@ Section
     overflow: hidden;
 }
 .footer {
-    padding:50px 0 35px 0;;
+    
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    
+    
 }
 section .subtitle h5 {
     margin-top: 10px;
@@ -409,7 +415,7 @@ btn-group-md > .btn {
     background-color: #ffffff;
 }
 .btn-primary {
-    background-color: #464646;
+    background-color: black;
     color: #ffffff;
     border:0;
     padding:10px 20px;
