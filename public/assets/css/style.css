@@ -584,22 +584,22 @@ input:-ms-input-placeholder {
 }
 .navbar-default .navbar-nav>.active a:hover{
     background-color:transparent;
-    color:#fff;
+    color:white;
 }
 .navbar-default .navbar-nav>li>a {
-    color:#464646;
+    color:black;
     font-size:14px;
     text-transform:uppercase;
     font-weight:600;
 }
 .navbar-default .navbar-nav>li>a:hover {
-    color:#fff;
+    color:white;
 }
 
 .contact-number{
     font-size:12px;
     font-weight:600;
-    color:#464646;
+    color:black;
     margin-right:14px;
 }
 
@@ -653,7 +653,7 @@ input:-ms-input-placeholder {
     -o-box-shadow:2px 2px 2px 0 rgba(0,0,0, .5);
 }
 .unique-apps .home-btn button:hover{
-    background:#465465;
+    background:black;
     color:#fff;
 }
 .unique-apps .home-btn span i{
@@ -1004,7 +1004,7 @@ input:-ms-input-placeholder {
 /*Footer Area*/
 
 #footer{
-    background:#363636;
+    background:black;
     color:#FFF;
 }
 .main-footer .footer-item h2{
@@ -1015,10 +1015,10 @@ input:-ms-input-placeholder {
 .main-footer .footer-item ul li a{
     font-size:16px;
     line-height:32px;
-    color:#aab2bd;
+    color:white;
 }
 .main-footer .footer-item ul li a:hover{
-    color:#fff;
+    color:white;
 }
 .socio-copyright .social{
     width:100%;
@@ -1039,7 +1039,7 @@ input:-ms-input-placeholder {
     color:#333;
 }
 .socio-copyright p{
-    color:#aab2bd;
+    color:black;
     font-size:15px;
     width:100%;
     text-align:center;
