@@ -155,6 +155,7 @@
 
     .my-formgroup label{
         font-size: 2rem!important;
+        color:white!important;
         width: 100%;
     }
 
