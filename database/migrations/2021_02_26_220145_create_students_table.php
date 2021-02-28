@@ -30,6 +30,9 @@ class CreateStudentsTable extends Migration
 
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('RESTRICT')->onDelete('RESTRICT');
+
+            $table->string('school_name')->nullable();
+
         });
     }
 
