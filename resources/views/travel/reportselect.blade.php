@@ -1,25 +1,27 @@
 
-@extends('template.maincontainer')
+@extends('template.phonecontainer')
 
-@section('content')
-    <div class="box">
-
-
-        <div class="box-body">
-            <div class="box-header with-border">
-                <h3 class="box-title">Seleccione Fecha</h3>
+@section('content')                
+    <div class="my-form-box">
+        <div class="my-form-title"><span>Generar</span> Reporte</div>
+        <div class="my-form-body">   
+            <div class="my-formgroup">
+                <label for="exampleInputEmail1">Seleccione Fecha</label>
+                <input type="date" name="date" id="date">
             </div>
-            <input type="date" name="date" id="date">
             <br>
             Generar reporte desde 
             <span id="desde"></span>
             hasta 
             <span id="hasta"></span>
             <br>
-            <a class="btn btn-primary" id="boton" href="#" target="_blank">Generar</a>
         </div>
-
     </div>
+    <br>
+    <a id="boton" href="#" class="mybutton morado" target="_blank">
+        <i class="fa fa-file-pdf-o"></i>
+        <span>Ver Reporte</span>
+    </a>
     <script>        
         $(document).ready(function(){
             $("#date").change(function(){

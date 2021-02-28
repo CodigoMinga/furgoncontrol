@@ -1,84 +1,64 @@
 
 @extends('template.phonecontainer')
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 <style>
-    .btn{
-        display:flex!important;
+    .viaje{
+        display:flex;
         flex-direction: row;
+        border-width:  0 0 3px 3px;
+        border-color: white;
+        border-style: solid;
+        margin-top: 12px;
+        background-color: #F7CE26;
+        font-family: 'Montserrat', sans-serif;
+        position: relative;
+        font-weight: 800;
     }
-    .btn i{
+    
+    .viaje .icono{
         display: block;
-        font-size: 2.5rem;
-        width:10%
+        font-size: 5rem;
+        text-align: center;
+        padding:1.5rem;
+        width: 9rem;
     }
-    .btn span{
-        display: block;
-        font-size: 2rem;
-        width:85%
+
+    .viaje .informacion{
+        padding:1.5rem 0;
+        flex-grow: 1;
     }
-    .info-box-icon{
-        display:flex!important;
+
+    .viaje .informacion p{
+        margin:0;
+    }
+
+    .viaje .flecha{
+        font-size:4rem;
+        position: absolute;
+        left: 1rem;
+    }
+
+    .viaje .boton{
+        width: 8rem;
+        border:3px solid #242424;
+        border-radius: 8px;
+        margin:10px;
+        display:flex;
+        flex-direction: column;
         align-items:center;
         justify-content:center;
+        color:#242424;
+    }
+    .viaje .boton:hover{
+        color:white;
+        border-color:white;
     }
 
-    .mybutton{
-        display:flex!important;
-        flex-direction: row;
-        border:3px solid;
-        margin-bottom: 12px;
+    .viaje .boton i{
+        font-size:4rem;
     }
-
-    .mybutton i{
-        display: block;
-        font-size: 2.5rem;
-        text-align: center;
-        padding:1.5rem;
-    }
-
-    .mybutton span{
-        display: block;
-        text-align: center;
-        font-size: 2rem;
-        padding:1.5rem;
-        width:90%;
-        font-family: 'Montserrat', sans-serif;
-    }
-
-    .content-wrapper{
-        background-color: rgb(51, 51, 51)!important;
-    }
-
-    .verde{
-        color:#00e676;
-    }
-
-    
-    .verde:hover{
-        color:#b9f6ca;
-    }
-
-    .azul{
-        color:#00b0ff;
-    }
-    .azul:hover{
-        color:#80d8ff ;
-    }
-
-    .rojo{
-        color:#ff9100;
-    }
-    .rojo:hover{
-        color:#ffd180;
-    }
-
-    .morado{
-        color:#ef5350 ;
-    }
-
-    .morado:hover{
-        color:#ef9a9a ;
+    .viaje .boton span{
+        font-weight: 800;
+        font-size:1.5rem;
     }
 
 </style>
@@ -103,22 +83,31 @@
         <i class="fa fa-file-pdf-o"></i>
         <span>Reportes</span>
     </a>
+    <div align="center" style="padding: 1rem">
+        <a class="titulo">
+            <span style="color:black">Viajes</span>
+            <span style="color:black">de</span>
+            <span style="color:white">Hoy</span>
+        </a>
+    </div>
 
-    <b>Viajes de Hoy:</b>
     @foreach($travels as $travel)
-        <div class="info-box bg-green">
-
-            <span class="info-box-icon">
-                <i class="fa fa-bus"></i>
-            </span>
-            <div class="info-box-content">
-                <span class="info-box-text">Viaje {{$travel->type==0 ? 'Ida' : 'Regreso'}}</span>
-                <span class="info-box-number">{{date('H:i d/m/Y', strtotime($travel->start))}}</span>
-                <span class="progress-description">
-                    <a class="btn btn-success" href="{{url('/app/travel/'.$travel->id)}}">Detalles</a>
-                </span>
+        <div class="viaje">
+            <i class="icono fa fa-bus"></i>
+            @if($travel->type==0)
+            <i class="flecha fa fa-caret-up" style="color:rgb(27, 230, 27)"></i>
+            @else
+            <i class="flecha fa fa-caret-down" style="color:red"></i>
+            @endif
+            <div class="informacion">
+                <p>Viaje de {{$travel->type==0 ? 'Ida' : 'Regreso'}}</p>
+                <p>{{date('H:i d/m/Y', strtotime($travel->start))}}</p>
+                <p>Pasajeros {{COUNT($travel->travelstudent)}}</p>
             </div>
-            <!-- /.info-box-content -->
+            <a class="boton" href="{{url('/app/travel/'.$travel->id)}}">
+                <i class="fa fa-navicon"></i>
+                <span>Datos</span>
+            </a>
         </div>
     @endforeach
 @stop

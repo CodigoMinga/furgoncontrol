@@ -42,14 +42,138 @@
     <script src="{{ url('/') }}/dist/js/adminlte.min.js"></script>
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
 </head>
 <style>
     .barra{
         background-color: #F7CE26;
         position: sticky;
     }
+    body{
+        background-color: rgb(51, 51, 51);
+    }
+
+    .mybutton{
+        display:flex!important;
+        flex-direction: row;
+        border:3px solid;
+        margin-bottom: 12px;
+        background-color:rgba(0,0,0,0);
+    }
+
+    .verde{
+        color:#00e676;
+    }
+
+    
+    .verde:hover{
+        color:#b9f6ca;
+    }
+
+    .azul{
+        color:#00b0ff;
+    }
+    .azul:hover{
+        color:#80d8ff ;
+    }
+
+    .rojo{
+        color:#ff9100;
+    }
+    .rojo:hover{
+        color:#ffd180;
+    }
+
+    .morado{
+        color:#ef5350 ;
+    }
+
+    .morado:hover{
+        color:#ef9a9a ;
+    }
+
+    .mybutton i{
+        display: block;
+        font-size: 2.5rem;
+        text-align: center;
+        padding:1.5rem;
+    }
+
+    .mybutton span{
+        display: block;
+        text-align: center;
+        font-size: 2rem;
+        padding:1.5rem;
+        width:90%;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .my-formgroup input{
+        background: rgba(0,0,0,0);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2rem!important;
+        border:3px solid #F7CE26;
+        outline: none;
+        padding:1rem;
+        color:white!important;
+        transition: border .5s ease;
+        width: 100%
+    }
+
+    .my-formgroup input:focus{
+        border:3px solid white;
+    }
+
+    .my-formgroup{
+        color:#F7CE26;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom:1.5rem; 
+    }
+
+    .my-formgroup label{
+        font-size: 2rem!important;
+        width: 100%;
+    }
+
+    .my-form-box{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5rem;
+        border:3px solid #F7CE26;
+        border-radius: 3rem 3rem 0 0;
+        color:white;
+    }
+
+    .my-form-title{
+        color:white;
+        padding: 1rem;
+        font-size: 3rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        text-align: center;
+    }
+    
+    .my-form-title span{
+        color:black;
+    }
+    
+    .my-form-body{
+        padding: 2rem;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    
+    .titulo{
+        background-color: #F7CE26;
+        padding: 1rem;
+        font-size: 3rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        border-radius: 3rem 0 ;
+    }
+
 </style>
-<body class="hold-transition skin-yellow sidebar-mini">
+<body>
 <div class="wrapper">
     <div class="barra" align="center">
         <img src="{{ url('/') }}/images/logo.svg" height="75" style="padding:10px;">

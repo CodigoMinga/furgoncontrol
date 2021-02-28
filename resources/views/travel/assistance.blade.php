@@ -25,13 +25,12 @@
                     <div class="info-box-content">
                         <span class="info-box-text">{{$student->name}} {{$student->last_name}} {{$student->id}}</span>
                         <span class="progress-description">
-                            @if(isset($student->temperature))
-                                <b>Temperatura: {{$student->temperature}}</b>
-                            @else
-                                <a href="{{url('/app/travel/'.$travel->id.'/assistance/'.$student->id.'/mark')}}">Registrar Ingreso</a>
-                            @endif
-
-                  </span>
+                        @if(isset($student->temperature))
+                            <b>Temperatura: {{$student->temperature}}</b>
+                        @else
+                            <a href="{{url('/app/travel/'.$travel->id.'/assistance/'.$student->id.'/mark')}}">Registrar Ingreso</a>
+                        @endif
+                    </span>
                     </div>
                 </div>
             @endforeach
