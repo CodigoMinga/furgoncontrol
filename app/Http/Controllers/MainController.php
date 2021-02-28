@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Commune;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
@@ -43,9 +44,9 @@ class MainController extends Controller
 
 
     public function register(){
+        $communes = Commune::all()->sortBy('name');
 
-
-        return view('register');
+        return view('register',compact('communes'));
     }
 
 
@@ -61,7 +62,7 @@ class MainController extends Controller
             $sucess  = true;
             $returnUrl = url('/')."/app/home";
             $message =  "Usuario creado, bienvenido a nuestro sistema";
-            return view('template.genericprocess',compact('message','sucess','returnUrl'));
+            return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
         }else{
             return back();
         }

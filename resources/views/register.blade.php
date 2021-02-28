@@ -81,9 +81,15 @@
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" placeholder="Telefono" name="phone">
+                <input type="number" class="form-control" placeholder="Telefono" name="phone">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
+
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" placeholder="Patente del Vehiculo" name="plate">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+
             <div class="form-group has-feedback">
                 <input type="email" class="form-control" placeholder="Email" name="email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -92,6 +98,17 @@
                 <input type="password" class="form-control" placeholder="Password" name="password">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
+
+            <div class="form-group">
+                <label>Ciudad</label>
+                <select class="form-control" name="commune_id" required>
+                   @foreach($communes as $commune)
+                        <option value="{{$commune->id}}">{{$commune->name}}</option>
+                    @endforeach
+                </select>
+            </div>
+
+
             <div class="row">
                 <div class="col-xs-8">
 
