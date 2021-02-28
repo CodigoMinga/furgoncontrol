@@ -94,13 +94,10 @@ class TravelController extends Controller
         return view('travel.add');
     }
 
-    public function addProcess(Request $request){
+    public function addProcess($type){
         $fecha_actual = Carbon::now();
-
-
-        $input = $request->all();
         $travel = new Travel();
-        $travel->type = $input['type'];
+        $travel->type = $type;
         $travel->user_id = Auth::user()->id;
         $travel->start = $fecha_actual;
         $travel->save();

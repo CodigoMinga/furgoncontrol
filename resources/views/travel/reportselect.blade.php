@@ -7,7 +7,7 @@
         <div class="my-form-body">   
             <div class="my-formgroup">
                 <label for="exampleInputEmail1">Seleccione Fecha</label>
-                <input type="date" name="date" id="date">
+                <input type="date" name="date" id="date" maxlength="10" style="width:auto">
             </div>
             <br>
             Generar reporte desde 

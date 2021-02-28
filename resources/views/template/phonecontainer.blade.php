@@ -61,6 +61,16 @@
         margin-bottom: 12px;
         background-color:rgba(0,0,0,0);
     }
+    
+    .mybutton-column{
+        position: relative;
+        flex-direction: column;
+        align-items:center;
+        justify-content:center;
+        margin:2rem;
+        width: 50%;
+        min-width: 150px;
+    }
 
     .verde{
         color:#00e676;
@@ -93,11 +103,23 @@
         color:#ef9a9a ;
     }
 
+    
+    .primario{
+        color:#F7CE26 ;
+    }
+
+    .primario:hover{
+        color:white ;
+    }
+
     .mybutton i{
         display: block;
         font-size: 2.5rem;
         text-align: center;
         padding:1.5rem;
+    }
+    .mybutton-column i{
+        font-size: 5rem;
     }
 
     .mybutton span{
@@ -164,12 +186,18 @@
 
     
     .titulo{
-        background-color: #F7CE26;
         padding: 1rem;
         font-size: 3rem;
         font-family: 'Montserrat', sans-serif;
         font-weight: 800;
         border-radius: 3rem 0 ;
+    }
+
+    .flex-grid{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: stretch 
     }
 
 </style>
