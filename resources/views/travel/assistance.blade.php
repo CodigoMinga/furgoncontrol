@@ -7,10 +7,10 @@
 
         <div class="box-body">
             <div class="box-header with-border">
-                <h3 class="box-title">Titulo de pruebas</h3>
+                <h3 class="box-title">Registrar asistencia para el viaje ID:{{$travel->id}}</h3>
             </div>
 
-            <b>Aqui va el contenido</b>
+            <b>Estudiantes:</b>
 
             @foreach($students as $student)
 
@@ -20,18 +20,17 @@
                     <div class="info-box bg-red">
                 @endif
 
-                    <span class="info-box-icon"><i class="ion ion-ios-cloud-download-outline"></i></span>
+                    <span class="info-box-icon"><i class="ion ion-person"></i></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">{{$student->name}} {{$student->last_name}}</span>
-                        <span class="info-box-number">114,381</span>
-
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 70%"></div>
-                        </div>
+                        <span class="info-box-text">{{$student->name}} {{$student->last_name}} {{$student->id}}</span>
                         <span class="progress-description">
-                        <a href="{{url('/app/travel/'.$travel->id.'/assistance/'.$student->id.'/mark')}}">Registrar Ingreso</a>
-                  </span>
+                        @if(isset($student->temperature))
+                            <b>Temperatura: {{$student->temperature}}</b>
+                        @else
+                            <a href="{{url('/app/travel/'.$travel->id.'/assistance/'.$student->id.'/mark')}}">Registrar Ingreso</a>
+                        @endif
+                    </span>
                     </div>
                 </div>
             @endforeach
