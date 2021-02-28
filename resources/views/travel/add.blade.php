@@ -1,29 +1,31 @@
 
-@extends('template.maincontainer')
-
+@extends('template.phonecontainer')
+<style>
+    .flecha{
+        font-size:4rem!important;
+        position: absolute;
+        left: calc(50% - 5rem);
+    }
+</style>
 @section('content')
-    <div class="box">
 
 
-        <div class="box-body">
-            <div class="box-header with-border">
-                <h3 class="box-title">Registrar nuevo Viaje</h3>
-            </div>
-
-            <form method="post" action="{{url('/app/travel/add/process')}}">
-                {{csrf_field()}}
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Tipo de Viaje</label>
-                    <select class="form-control" name="type">
-                        <option value="0">Viaje de Ida</option>
-                        <option value="1">Viaje de Regreso</option>
-
-                    </select>
-                </div>
-
-                <button type="submit" class="btn btn-success"><i class="fa fa-check"></i>Guardar</button>
-            </form>
-        </div>
-
-    </div>
+<div align="center" style="padding: 1rem">
+    <a class="titulo">
+        <span style="color:black">Tipo de </span>
+        <span style="color:white">Viaje</span>
+    </a>
+</div>
+<div class="flex-grid">
+    <a href="{{url('/app/travel/add/0/process')}}" class="mybutton mybutton-column primario">
+        <i class="fa fa-bus"></i>
+        <b class="flecha fa fa-caret-up" style="color:rgb(27, 230, 27)"></b>
+        <span>Viaje de Ida</span>
+    </a>    
+    <a href="{{url('/app/travel/add/1/process')}}" class="mybutton mybutton-column primario">
+        <i class="fa fa-bus"></i>
+        <b class="flecha fa fa-caret-down" style="color:red"></b>
+        <span>Viaje de Regreso</span>
+    </a>
+</div>
 @stop

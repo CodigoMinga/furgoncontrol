@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class TravelController extends Controller
 {
@@ -93,13 +94,10 @@ class TravelController extends Controller
         return view('travel.add');
     }
 
-    public function addProcess(Request $request){
+    public function addProcess($type){
         $fecha_actual = Carbon::now();
-
-
-        $input = $request->all();
         $travel = new Travel();
-        $travel->type = $input['type'];
+        $travel->type = $type;
         $travel->user_id = Auth::user()->id;
         $travel->start = $fecha_actual;
         $travel->save();
@@ -118,6 +116,11 @@ class TravelController extends Controller
 
         return view('travel.details',compact('travel'));
 
+    }
+
+    
+    public function reportselect(){
+        return view('travel.reportselect');
     }
 
 
@@ -159,6 +162,39 @@ class TravelController extends Controller
         $returnUrl = url('/')."/app/travel/".$travel_id."/assistance";
         $message =  "Se añadió temperatura y asistencia correctamente";
         return view('template.genericprocess',compact('message','sucess','returnUrl'));
+
+    }
+
+    
+
+    public function report($desde,$hasta){
+
+        $document_title = 'Reporte Semanal';
+        $usuario = Auth::user();
+
+        $lunes = date('Y-m-d', strtotime($desde));
+        $martes = date('Y-m-d', strtotime($desde.' +1 day'));
+        $miercoles = date('Y-m-d', strtotime($desde.' +2 day'));
+        $jueves = date('Y-m-d', strtotime($desde.' +3 day'));
+        $viernes = date('Y-m-d', strtotime($desde.' +4 day'));
+
+        $query ="select s.name,s.last_name,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$lunes') as lunes1,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$lunes') as lunes2,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$martes') martes1,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$martes') martes2,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$miercoles') miercoles1,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$miercoles') miercoles2,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$jueves') jueves1,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$jueves') jueves2,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$viernes') viernes1,
+        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$viernes') viernes2
+        from students s where s.user_id = $usuario->id order by s.last_name";
+
+        $datos = DB::select($query);
+        $pdf = PDF::loadView('travel.report', compact('document_title','desde','hasta','usuario','datos'))->setOptions(['isRemoteEnabled' => true,'name'=>$document_title]);
+        $pdf->setPaper('A4', 'landscape');
+        return $pdf->stream($document_title);
 
     }
 }

@@ -43,7 +43,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="{{url('/')}}/assets/images/logo.png" alt="" /></a>
+                <a class="brand-img" href="index.html"><img src="{{url('/')}}/images/logo.svg" alt="" height="80" width="160" /></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -52,7 +52,7 @@
                     <li><a class="nav-item nav-link active" href="#home">Inicio<span class="sr-only">(current)</span></a></li>
                     <li><a class="nav-item nav-link" href="#nosotros">Nosotros</a></li>
                     <li><a class="nav-item nav-link" href="#precios">Precios</a></li>
-                    <li><a class="nav-item nav-link" href="#contacto">Contacto</a></li>
+                    <li><a class="nav-item nav-link" href="#footer">Contacto</a></li>
 
 
 
@@ -80,7 +80,7 @@
                                 facilita tu registro de estudiantes digitalmente con nuestra aplicacion y optimiza tu tiempo.
                             </p>
 
-                            <div class="home-btn">
+                            <div class="home-btn" style="color: black">
 
                                 <a class="btn btn-primary" href="{{url('/app/register')}}">Registrarse <span><i class="fa fa-check"></i></span></a>
                                 <a class="btn btn-primary" href="{{url('/app/login')}}">Iniciar Sesion <span><i class="fa fa-user"></i></span></a>
@@ -134,18 +134,17 @@
 
     </header>
 
-    <!-- Sections -->
     <section id="servicios" class="sections">
         <div class="container">
 
             <div class="row">
                 <div class="heading">
                     <div class="title text-center arrow-right">
-                        <h4 class="">Servicios de Furgón Controlado</h4>
-                        <img class="hidden-xs" src="{{url('/')}}/assets/images/right-arrow.png" alt="" />
+                        <h4 class="">¿Comó funciona?</h4>
+                        <img class="hidden-xs" src="assets/images/right-arrow.png" alt="" />
 
                     </div>
-                </div>
+                </div>	
 
 
                 <!-- Example row of columns -->
@@ -155,17 +154,16 @@
                     <div class="portfolio">
 
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <img src="{{url('/')}}/assets/images/monitor.png" alt="" />
+                            <img src="{{url('/')}}/images/foto1.svg" alt="" />
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="portfolio-item">
-                                <h4>Registro digital de estudiantes</h4>
+                                <h4>Seguir los protocolos</h4>
                                 <p>
-                                    Se puede registrar los estudiantes por medio de la aplicación, para asi tener un listado que se mostrara por
-                                    cada usuario.
+                                  Sigue los protocolos establecidos por el Ministerio de Salud.
 
                                 </p>
-
+                          
                             </div>
                         </div>
 
@@ -179,15 +177,15 @@
                             <div class="portfolio-item">
                                 <h4>Optimiza tu tiempo</h4>
                                 <p>
-                                    olvidate del lapiz y el papel, con Furgón controlado, podras hacer registros de estudiantes rápidamente
-                                    y lo mejor de todo, es que está a tu alcance.
+                                    Optimiza el tiempo registrando la bitacora de cada estudiante, podrás acceder a informes diarios, semanales
+                                    y mensuales en un práctico formato digital.
                                 </p>
-
+                               
                             </div>
                         </div>
 
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <img class="portfolio-img img-responsive" src="{{url('/')}}/assets/images/monitor.png" alt="" />
+                            <img class="portfolio-img img-responsive" src="{{url('/')}}/images/foto2.svg" alt="" />
                         </div>
 
                     </div>
@@ -196,16 +194,15 @@
 
                     <div class="portfolio">
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <img class="portfolio-img img-responsive" src="{{url('/')}}/assets/images/monitor.png" alt="" />
+                            <img class="portfolio-img img-responsive" src="{{url('/')}}/images/foto3.svg" alt="" />
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="portfolio-item">
-                                <h4>AFFILIATE MARKETING</h4>
+                                <h4>Cuidemonos </h4>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est. laboru
+                                    Olvidate del papel, digitalizate y cuidémonos entre todos.
                                 </p>
-
+                               
                             </div>
                         </div>
                     </div>
@@ -213,34 +210,11 @@
             </div>
         </div>
 
-
-        <!-- /container -->
-    </section>
-
-    <section id="nosotros" class="sections">
-        <div class="container text-center">
-
-            <div class="heading">
-                <div class="title text-center arrow-left">
-                    <img class="hidden-xs" src="{{url('/')}}/assets/images/left-arrow.png" alt="" />
-
-                    <h4 class="">¿Comó Trabajamos? </h4>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="main-works">
-                        <img src="{{url('/')}}/assets/images/map.png" alt="" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
 
 
-    <section id="precios" class="sections lightbg">
+    <section id="PRECIOS" class="sections lightbg">
         <div class="container">
 
             <div class="heading">
@@ -257,7 +231,7 @@
                 <div class="main-package text-center">
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="package-item basic">
-                            <h5>1 Semestre</h5>
+                            <h5>Gratis Usuarios Chiloé</h5>
 
                             <ul>
                                 <li>Registro digital de estudiantes </li>
@@ -305,7 +279,7 @@
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="package-item premium">
 
-                            <h5>2 Semestre</h5>
+                            <h5>Plan único</h5>
 
                             <ul>
                                 <li>Registro digital de estudiantes </li>
@@ -315,7 +289,7 @@
                             </ul>
 
                             <div class="package-bottom-area">
-                                <h3>$ 0</h3>
+                                <h3>$ 0.5 UF Mensual</h3>
                             </div>
 
                             <div class="pkg-btn"><a href="tel:+56998281526" class="btn btn-primary">Solicítalo Ahora</a></div>
@@ -332,217 +306,13 @@
         </div>
     </section>
 
-    <section id="our-history" class="sections">
-        <div class="container">
-
-            <div class="row">
-
-                <div class="main-history">
-
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="history-img">
-                            <img src="{{url('/')}}/assets/images/history-img.png" alt="" />
-                        </div>
-                    </div>
+   
 
 
 
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="history-wrapper">
-                            <div class="history-heading">
-                                <h5 class="our-history">Nuestra Historia</h5>
-                            </div>
+  
 
-                            <div class="history-content">
-                                <p>
-                                    A lo largo de esta pandemia, nos hemos dado cuenta.....
-                                </p>
-
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat.
-                                </p>
-
-                                <div class="hst-btn"><button class="btn btn-primary">BROWSE OUR HISTORY</button></div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="our-project" class="sections">
-        <div class="container">
-
-            <div class="heading">
-                <div class="title text-center arrow-left">
-
-                    <h4 class="">Our Business Project</h4>
-                    <img class="hidden-xs" src="{{url('/')}}/assets/images/right-arrow.png" alt="" />
-                </div>
-            </div>
-
-            <div class="row">
-
-
-                <div class="main-project text-center">
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="project-item">
-                            <div class="project-photo"><img src="{{url('/')}}/assets/images/projects/1.png" alt="" /></div>
-                            <h5>TECHNICAL AID</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="project-item">
-                            <div class="project-photo"><img src="{{url('/')}}/assets/images/projects/2.png" alt="" /></div>
-                            <h5>SECURE ACCESS</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="project-item">
-                            <div class="project-photo"><img src="{{url('/')}}/assets/images/projects/3.png" alt="" /></div>
-                            <h5>MARKET RESERCH</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="project-item">
-                            <div class="project-photo"><img src="{{url('/')}}/assets/images/projects/4.png" alt="" /></div>
-                            <h5>CREDIT RESERCH</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="project-item">
-                            <div class="project-photo"><img src="{{url('/')}}/assets/images/projects/5.png" alt="" /></div>
-                            <h5>TECHNICAL AID</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="project-item">
-                            <div class="project-photo"><img src="{{url('/')}}/assets/images/projects/6.png" alt="" /></div>
-                            <h5>TECHNICAL AID</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="project-item">
-                            <div class="project-photo"><img src="{{url('/')}}/assets/images/projects/7.png" alt="" /></div>
-                            <h5>TECHNICAL AID</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="project-item">
-                            <div class="project-photo"><img src="{{url('/')}}/assets/images/projects/8.png" alt="" /></div>
-                            <h5>TECHNICAL AID</h5>
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="our-team" class="sections">
-        <div class="container">
-
-            <div class="heading">
-                <div class="title text-center arrow-left">
-                    <img class="hidden-xs" src="{{url('/')}}/assets/images/left-arrow.png" alt="" />
-
-                    <h4 class="">Our Team Members</h4>
-                </div>
-            </div>
-        </div>
-
-        <div class="container-fluid project-bg">
-            <div class="row">
-
-                <div class="main-team text-center">
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="team-member">
-
-                            <img class="img-circle" src="{{url('/')}}/assets/images/team/1.png" alt="" />
-                            <h5>SAYED MIRAJ</h5>
-                            <p>UI & UX DESIGNER</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="team-member">
-                            <img class="img-circle" src="{{url('/')}}/assets/images/team/2.png" alt="" />
-                            <h5>PENNY HUSTON</h5>
-                            <p>DEVELOPER</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="team-member">
-                            <img class="img-circle" src="{{url('/')}}/assets/images/team/3.png" alt="" />
-                            <h5>LENNERD SHELLY</h5>
-                            <p>REVIEWER</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="team-member">
-                            <img class="img-circle" src="{{url('/')}}/assets/images/team/4.png" alt="" />
-                            <h5>SHELDON CUPPER</h5>
-                            <p>MARKETTER</p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="our-supports" class="sections">
-        <div class="container">
-
-            <div class="heading">
-                <div class="title text-center arrow-left">
-
-                    <h4 class="">Updates & Support</h4>
-                    <img class="hidden-xs" src="{{url('/')}}/assets/images/right-arrow.png" alt="" />
-                </div>
-            </div>
-
-            <!-- Example row of columns -->
-            <div class="row">
-
-
-                <div class="col-sm-6 col-xs-12">
-                    <div class="supports-content">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est. laboru
-                        </p>
-                        <div class="spt-btn"><button class="btn btn-primary">SUPPORT CENTER</button></div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-xs-12">
-                    <div class="supports-img"><img class="img-responsive" src="{{url('/')}}/assets/images/monitor.png" alt="" /></div>
-                </div>
-
-
-            </div>
-
-        </div> <!-- /container -->
-    </section>
-
+    
 
 
     <div class="scroll-top">
@@ -554,7 +324,7 @@
     </div>
 
     <!--Footer-->
-    <footer id="footer" class="footer">
+    <footer id="footer" class="footer" style="text-decoration-color: white">
         <div class="container">
 
             <div class="row">
@@ -562,8 +332,8 @@
 
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="footer-item" >
-                            <h2>Contacto</h2>
+                        <div class="footer-item" style="text-decoration-color: white" >
+                            <h2 style="color: white">Contacto</h2>
                             <ul>
                                 <li>Direccion : <a href="#"></a>Ignacio Carrera Pinto #387</li>
                                 <li>Fono: <a href="tel:+56998281526"></a>+56 9 98281526</li>
