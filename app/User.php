@@ -91,4 +91,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Travel');
     }
+
+    public function schools()
+    {
+        return $this->hasMany('App\School');
+    }
 }
