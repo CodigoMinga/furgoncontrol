@@ -22,12 +22,13 @@ Route::get('/', function () {
 Route::get('/app/login','MainController@login');
 Route::post('/app/checklogin','MainController@checkLogin');
 Route::get('/app/register', 'MainController@register');
+Route::post('/app/register/process', 'MainController@registerProcess');
 Route::group(['middleware' => ['auth']], function() {
 
 //vista register
 
 
-    Route::post('/app/register/process', 'MainController@registerProcess');
+
 
     Route::get('/app/home', 'HomeController@index');
     Route::get('/app/student/add', 'StudentController@add');
