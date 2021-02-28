@@ -144,6 +144,7 @@
     .my-formgroup label{
         font-size: 2rem!important;
         color:white!important;
+        font-weight: 400;
         width: 100%;
     }
 

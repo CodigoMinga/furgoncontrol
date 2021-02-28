@@ -106,7 +106,7 @@ class TravelController extends Controller
         $sucess  = true;
         $returnUrl = url('/')."/app/home";
         $message =  "Se creo el viaje correctamente";
-        return view('template.genericprocess',compact('message','sucess','returnUrl'));
+        return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
     }
 
     public function details($travel_id){
@@ -131,11 +131,9 @@ class TravelController extends Controller
                     select students.*,travelstudents.temperature from students
                     left join travelstudents
                     on travelstudents.student_id = students.id
-                    and travelstudents.travel_id = 1
-                    ');
-
-
-
+                    and travelstudents.travel_id = '.$travel_id.
+                    ' and students.user_id = '.$user_id
+                );
 
         $travel = Travel::findOrFail($travel_id);
         return view('travel.assistance',compact('students','travel'));
@@ -159,10 +157,11 @@ class TravelController extends Controller
 
 
         $sucess  = true;
+
+
         $returnUrl = url('/')."/app/travel/".$travel_id."/assistance";
         $message =  "Se añadió temperatura y asistencia correctamente";
-        return view('template.genericprocess',compact('message','sucess','returnUrl'));
-
+        return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
     }
 
     
