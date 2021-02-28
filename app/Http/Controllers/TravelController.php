@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class TravelController extends Controller
 {
@@ -164,6 +165,17 @@ class TravelController extends Controller
         $returnUrl = url('/')."/app/travel/".$travel_id."/assistance";
         $message =  "Se añadió temperatura y asistencia correctamente";
         return view('template.genericprocess',compact('message','sucess','returnUrl'));
+
+    }
+
+    
+
+    public function report($desde,$hasta){
+        $document_title = 'reporte semana';
+        $usuario = Auth::user();
+        $pdf = PDF::loadView('travel.report', compact('document_title','desde','hasta','usuario'))->setOptions(['isRemoteEnabled' => true,'name'=>$document_title]);
+        $pdf->setPaper('A4', 'landscape');
+        return $pdf->stream($document_title);
 
     }
 }

@@ -55,7 +55,7 @@
                             CONDUCTOR
                         </th>
                         <td>
-                            
+                            {{$usuario->name}} {{$usuario->last_name}}
                         </td>
                     </tr>
                     <tr>
