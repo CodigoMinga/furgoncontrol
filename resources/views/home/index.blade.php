@@ -37,6 +37,11 @@
                 <i class="fa fa-bus"></i>
                 <span>Crear nuevo Viaje</span>
             </a>
+
+            <a href="{{url('/app/reportselect')}}" type="button" class="btn btn-block bg-maroon">
+                <i class="fa fa-file-pdf-o"></i>
+                <span>Reportes</span>
+            </a>
         </div>
 
         <div class="box-body">

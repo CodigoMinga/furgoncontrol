@@ -85,10 +85,11 @@ class TravelstudentController extends Controller
     }
 
 
-    public function report(){
-
+    public function report($desde,$hasta){
+        
         $document_title = 'reporte semana';
-        $pdf = PDF::loadView('travel.report', compact('document_title'))->setOptions(['isRemoteEnabled' => true,'name'=>$document_title]);
+        $pdf = PDF::loadView('travel.report', compact('document_title','desde','hasta'))->setOptions(['isRemoteEnabled' => true,'name'=>$document_title]);
+        $pdf->setPaper('A4', 'landscape');
         return $pdf->stream($document_title);
 
     }

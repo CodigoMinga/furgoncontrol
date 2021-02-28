@@ -43,6 +43,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/app/travel/{travel_id}/assistance/{student_id}/mark', 'TravelController@setAssistance');
     Route::post('/app/travel/{travel_id}/assistance/{student_id}/mark/process', 'TravelController@setAssistanceProcess');
     Route::get('/app/logout', 'MainController@logout');
+    Route::get('/app/reportselect','TravelController@reportselect');
+    Route::get('/app/report/{desde}/entre/{hasta}','TravelstudentController@report');
 });
-Route::get('/app/report','TravelstudentController@report');
 

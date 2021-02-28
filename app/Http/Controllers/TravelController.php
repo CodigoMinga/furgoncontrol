@@ -120,6 +120,11 @@ class TravelController extends Controller
 
     }
 
+    
+    public function reportselect(){
+        return view('travel.reportselect');
+    }
+
 
     public function assistance($travel_id){
 
