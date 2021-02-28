@@ -1,69 +1,113 @@
 
-@extends('template.maincontainer')
-
+@extends('template.phonecontainer')
 <style>
-    .btn{
-        display:flex!important;
+    .viaje{
+        display:flex;
         flex-direction: row;
+        border-width:  0 0 3px 3px;
+        border-color: white;
+        border-style: solid;
+        margin-top: 12px;
+        background-color: #F7CE26;
+        font-family: 'Montserrat', sans-serif;
+        position: relative;
+        font-weight: 800;
     }
-    .btn i{
+    
+    .viaje .icono{
         display: block;
-        font-size: 2.5rem;
-        width:10%
+        font-size: 5rem;
+        text-align: center;
+        padding:1.5rem;
+        width: 9rem;
     }
-    .btn span{
-        display: block;
-        font-size: 2rem;
-        width:85%
+
+    .viaje .informacion{
+        padding:1.5rem 0;
+        flex-grow: 1;
     }
+
+    .viaje .informacion p{
+        margin:0;
+    }
+
+    .viaje .flecha{
+        font-size:4rem;
+        position: absolute;
+        left: 1rem;
+    }
+
+    .viaje .boton{
+        width: 8rem;
+        border:3px solid #242424;
+        border-radius: 8px;
+        margin:10px;
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content:center;
+        color:#242424;
+    }
+    .viaje .boton:hover{
+        color:white;
+        border-color:white;
+    }
+
+    .viaje .boton i{
+        font-size:4rem;
+    }
+    .viaje .boton span{
+        font-weight: 800;
+        font-size:1.5rem;
+    }
+
 </style>
 
 @section('content')
-    <div class="box">
+    <a href="{{url('/app/student/add')}}" class="mybutton verde">
+        <i class="fa fa-user-plus"></i>
+        <span>Registrar Nuevo Alumno</span>
+    </a>
 
+    <a href="{{url('/app/student/list')}}" class="mybutton azul">
+        <i class="fa fa-list-ul"></i>
+        <span>Listado de Alumnos</span>
+    </a>
 
-        <div class="box-body">
-            <a href="{{url('/app/student/add')}}" type="button" class="btn btn-block bg-navy">
-                <i class="fa fa-user-plus"></i>
-                <span>Registrar Nuevo Alumno</span>
-            </a>
+    <a href="{{url('/app/travel/add')}}" class="mybutton rojo">
+        <i class="fa fa-bus"></i>
+        <span>Crear nuevo Viaje</span>
+    </a>
 
-            <a href="{{url('/app/student/list')}}" type="button" class="btn btn-block btn-primary">
-                <i class="fa fa-list-ul"></i>
-                <span>Listado de Alumnos</span>
-            </a>
-
-            <a href="{{url('/app/travel/add')}}" type="button" class="btn btn-block btn-info">
-                <i class="fa fa-bus"></i>
-                <span>Crear nuevo Viaje</span>
-            </a>
-        </div>
-
-        <div class="box-body">
-        <b>Viajes de Hoy:</b>
-            <br/>
-            @foreach($travels as $travel)
-
-
-                <div class="info-box bg-green">
-
-                    <span class="info-box-icon"><i class="ion ion-android-bus"></i></span>
-
-                    <div class="info-box-content">
-                        <span class="info-box-text">Viaje N° {{$travel->id}}</span>
-                        <span class="info-box-number">{{date('H:i d/m/Y', strtotime($travel->start))}}</span>
-
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 20%"></div>
-                        </div>
-                        <span class="progress-description">
-                    <a href="{{url('/app/travel/'.$travel->id)}}">Detalles</a>
-                  </span>
-                    </div>
-                    <!-- /.info-box-content -->
-                </div>
-            @endforeach
-
-        </div>
+    <a href="{{url('/app/reportselect')}}" class="mybutton morado">
+        <i class="fa fa-file-pdf-o"></i>
+        <span>Reportes</span>
+    </a>
+    <div align="center" style="padding: 1rem">
+        <a class="titulo">
+            <span style="color:black">Viajes</span>
+            <span style="color:black">de</span>
+            <span style="color:white">Hoy</span>
+        </a>
     </div>
+
+    @foreach($travels as $travel)
+        <div class="viaje">
+            <i class="icono fa fa-bus"></i>
+            @if($travel->type==0)
+            <i class="flecha fa fa-caret-up" style="color:rgb(27, 230, 27)"></i>
+            @else
+            <i class="flecha fa fa-caret-down" style="color:red"></i>
+            @endif
+            <div class="informacion">
+                <p>Viaje de {{$travel->type==0 ? 'Ida' : 'Regreso'}}</p>
+                <p>{{date('H:i d/m/Y', strtotime($travel->start))}}</p>
+                <p>Pasajeros {{COUNT($travel->travelstudent)}}</p>
+            </div>
+            <a class="boton" href="{{url('/app/travel/'.$travel->id)}}">
+                <i class="fa fa-navicon"></i>
+                <span>Datos</span>
+            </a>
+        </div>
+    @endforeach
 @stop
