@@ -24,11 +24,6 @@
 
                     <div class="info-box-content">
                         <span class="info-box-text">{{$student->name}} {{$student->last_name}} {{$student->id}}</span>
-                        <span class="info-box-number">114,381</span>
-
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 70%"></div>
-                        </div>
                         <span class="progress-description">
                             @if(isset($student->temperature))
                                 <b>Temperatura: {{$student->temperature}}</b>
