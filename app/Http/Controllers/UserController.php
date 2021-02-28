@@ -77,5 +77,23 @@ class UserController extends Controller
     }
 
 
+    public function changePasswordProcess (Request $request,$user_id){
+
+        $returnUrl = url('/')."/app/users/".$user_id."/detail";
+        $user = User::find($user_id);
+        $input = $request->all();
+        $user->password = bcrypt($input['password']);
+        $message =  "Se cambio la clave correctamente";
+        if($user->save()){
+            $sucess = true;
+
+        }else{
+            $sucess = false;
+        }
+        return view('template.genericprocess',compact('returnUrl','sucess','message'));
+
+    }
+
+
 
 }

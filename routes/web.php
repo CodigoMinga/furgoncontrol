@@ -51,6 +51,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/app/users/{user_id}/detail','UserController@detail');
     Route::get('/app/users/{user_id}/licences/add','UserController@addLicence');
     Route::post('/app/users/{user_id}/licences/add/process','UserController@addLicenceProcess');
+    Route::post('/app/users/{user_id}/password/change/process','UserController@changePasswordProcess');
 
 });
 
