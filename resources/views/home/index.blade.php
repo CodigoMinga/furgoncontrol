@@ -47,8 +47,9 @@
 
                 <div class="info-box bg-green">
 
-                    <span class="info-box-icon"><i class="ion ion-android-bus"></i></span>
-
+                    <span class="info-box-icon">
+                        <i class="ion ion-android-bus"></i>
+                    </span>
                     <div class="info-box-content">
                         <span class="info-box-text">Viaje N° {{$travel->id}}</span>
                         <span class="info-box-number">{{date('H:i d/m/Y', strtotime($travel->start))}}</span>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Travelstudent;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class TravelstudentController extends Controller
 {
@@ -81,5 +82,14 @@ class TravelstudentController extends Controller
     public function destroy(Travelstudent $travelstudent)
     {
         //
+    }
+
+
+    public function report(){
+
+        $document_title = 'reporte semana';
+        $pdf = PDF::loadView('travel.report', compact('document_title'))->setOptions(['isRemoteEnabled' => true,'name'=>$document_title]);
+        return $pdf->stream($document_title);
+
     }
 }
