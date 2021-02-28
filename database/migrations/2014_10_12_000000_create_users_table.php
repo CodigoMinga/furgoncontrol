@@ -26,6 +26,10 @@ class CreateUsersTable extends Migration
             $table->boolean('enabled')->default(1);
             $table->rememberToken();
             $table->timestamps();
+            $table->string('plate')->nullable();
+
+            $table->bigInteger('commune_id')->unsigned()->nullable();
+            $table->foreign('commune_id')->references('id')->on('communes');
         });
     }
 
