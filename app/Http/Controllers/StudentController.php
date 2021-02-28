@@ -99,7 +99,7 @@ class StudentController extends Controller
         $sucess  = true;
         $returnUrl = url('/')."/app/home";
         $message =  "Se guardo el alumno con exito";
-        return view('template.genericprocess',compact('message','sucess','returnUrl'));
+        return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
     }
 
     public function list(){

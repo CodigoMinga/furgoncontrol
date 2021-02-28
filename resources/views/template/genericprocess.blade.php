@@ -9,14 +9,12 @@
 
             @if($sucess)
                 <div class="alert alert-success">
-                    Se ejecuto correctamente la operacion<br>
                     @if(isset($message))
                         <b>{{$message}}</b>
                     @endif
                 </div>
             @else
                 <div class="alert alert-danger">
-                    Ocurrio un error al realizar la operacion<br>
                     @if(isset($message))
                         <b>{{$message}}</b>
                     @endif
