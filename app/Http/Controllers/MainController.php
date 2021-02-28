@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use Symfony\Component\Console\Input\Input;
-
+use App\School;
 class MainController extends Controller
 {
     public function login(){
@@ -57,6 +57,12 @@ class MainController extends Controller
         $user = User::create($input);
 
         if($user){
+            $school = new School();
+            $school->name = $input['school_name'];
+            $school->user_id = $user->id;
+            $school->save();
+
+
             $userAutentificated = Auth::loginUsingId($user->id);
 
             $sucess  = true;

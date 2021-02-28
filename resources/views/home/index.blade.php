@@ -84,6 +84,12 @@
         <span>Reportes</span>
     </a>
 
+
+    <a href="{{url('/app/users/'.Auth::user()->id.'/schools')}}" class="mybutton morado">
+        <i class="fa fa-file-pdf-o"></i>
+        <span>Administrar Establecimientos</span>
+    </a>
+
     @if(Auth::user()->is_codigo_minga)
         <div align="center" style="padding: 1rem">
             <a class="titulo">

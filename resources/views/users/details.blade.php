@@ -2,6 +2,32 @@
 @extends('template.maincontainer')
 
 @section('content')
+
+
+    <div class="box">
+        <div class="box-body">
+            <h2 class="page-header">
+                <i class="fa fa-list"></i> Cambiar Clave del usuario: {{$user->name}}<b></b>
+            </h2>
+            <div class="col-sm-6 invoice-col">
+
+                <form method="post" action="{{url('/app/users/'.$user->id.'/password/change/process')}}">
+                    {{csrf_field()}}
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Contraseña</label>
+                            <input required type="text" class="form-control" name="password" placeholder="">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-check"></i>Cambiar Clave</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+
     <div class="box">
 
 
