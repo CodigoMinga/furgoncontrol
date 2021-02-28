@@ -17,10 +17,10 @@
                     <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Nombre</th>
-                        <th>Estado</th>
-                        <th>Opciones</th>
-
+                        <th>Fecha Pago</th>
+                        <th>Desde</th>
+                        <th>Hasta</th>
+                        <th>Monto</th>
                     </tr>
                     </thead>
                 </table>
@@ -48,29 +48,12 @@
                 "ajax" : "{{ url('/') }}/app/users/{{$user->id}}/getlicences",
                 "columns" : [
                     {"data" : "id"},
-                    {"data" : "name"},
-                    //Estado
-                    {
-                        "render": function ( data, type, full, meta ) {
-                            var returnString = '';
-                            if(full.enabled == 1){
-                                returnString =  "<span class='label bg-green'><i class='fa fa-check'></i> Activa</span>";
-                            }else{
-                                returnString =  "<span class='label bg-red'><i class='fa fa-close'></i> Desactivada</span>";
-                            }
-                            return returnString;
-                        }
-                    },
+                    {"data" : "pay_date"},
+                    {"data" : "from"},
+                    {"data" : "to"},
+                    {"data" : "ammount"},
 
-                    //Opciones
-                    {
-                        "render": function ( data, type, full, meta ) {
 
-                            returnString =  "<a class='btn btn-success' href='{{ url('/')}}/app/users/"+full.id+"/detail'> <i class='fa fa-edit'></i>Editar</a>";
-
-                            return returnString;
-                        }
-                    },
 
                 ],
                 language: {
