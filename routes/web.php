@@ -46,5 +46,13 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/app/logout', 'MainController@logout');
     Route::get('/app/reportselect','TravelController@reportselect');
     Route::get('/app/report/{desde}/entre/{hasta}','TravelController@report');
+
+    Route::get('/app/users','UserController@list');
+    Route::get('/app/users/getdata','UserController@getData');
+    Route::get('/app/users/{user_id}/getlicences','UserController@getLicences');
+    Route::get('/app/users/{user_id}/detail','UserController@detail');
+    Route::get('/app/users/{user_id}/licences/add','UserController@addLicence');
+
+
 });
 
