@@ -7,6 +7,13 @@
         left: calc(50% - 5rem);
     }
 </style>
+
+@section('backbutton')
+    <a href="{{url('/app/home')}}" class="botton-volver">
+        <i class="fa fa-angle-left"></i>
+    </a>
+@stop
+
 @section('content')
 
 

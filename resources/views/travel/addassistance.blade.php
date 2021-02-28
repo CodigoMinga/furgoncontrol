@@ -16,10 +16,6 @@
                     <label for="exampleInputEmail1">Temperatura</label>
                     <input required type="number" class="form-control" name="temperature" placeholder="">
                 </div>
-
-
-
-
                 <button type="submit" class="btn btn-success"><i class="fa fa-check"></i>Guardar</button>
             </form>
 
