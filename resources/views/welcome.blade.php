@@ -43,7 +43,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="{{url('/')}}/assets/images/logo.png" alt="" /></a>
+                <a class="navbar-brand" href="index.html"><img src="{{url('/')}}/images/logo.svg" alt="" height="80" width="160" /></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -52,7 +52,7 @@
                     <li><a class="nav-item nav-link active" href="#home">Inicio<span class="sr-only">(current)</span></a></li>
                     <li><a class="nav-item nav-link" href="#nosotros">Nosotros</a></li>
                     <li><a class="nav-item nav-link" href="#precios">Precios</a></li>
-                    <li><a class="nav-item nav-link" href="#contacto">Contacto</a></li>
+                    <li><a class="nav-item nav-link" href="#footer">Contacto</a></li>
 
 
 
@@ -134,18 +134,17 @@
 
     </header>
 
-    <!-- Sections -->
     <section id="servicios" class="sections">
         <div class="container">
 
             <div class="row">
                 <div class="heading">
                     <div class="title text-center arrow-right">
-                        <h4 class="">Servicios de Furgón Controlado</h4>
-                        <img class="hidden-xs" src="{{url('/')}}/assets/images/right-arrow.png" alt="" />
+                        <h4 class="">¿Comó funciona?</h4>
+                        <img class="hidden-xs" src="assets/images/right-arrow.png" alt="" />
 
                     </div>
-                </div>
+                </div>	
 
 
                 <!-- Example row of columns -->
@@ -155,17 +154,16 @@
                     <div class="portfolio">
 
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <img src="{{url('/')}}/assets/images/monitor.png" alt="" />
+                            <img src="{{url('/')}}/images/foto1.svg" alt="" />
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="portfolio-item">
-                                <h4>Registro digital de estudiantes</h4>
+                                <h4>Seguir los protocolos</h4>
                                 <p>
-                                    Se puede registrar los estudiantes por medio de la aplicación, para asi tener un listado que se mostrara por
-                                    cada usuario.
+                                  Sigue los protocolos establecidos por el Ministerio de Salud.
 
                                 </p>
-
+                          
                             </div>
                         </div>
 
@@ -179,15 +177,15 @@
                             <div class="portfolio-item">
                                 <h4>Optimiza tu tiempo</h4>
                                 <p>
-                                    olvidate del lapiz y el papel, con Furgón controlado, podras hacer registros de estudiantes rápidamente
-                                    y lo mejor de todo, es que está a tu alcance.
+                                    Optimiza el tiempo registrando la bitacora de cada estudiante, podrás acceder a informes diarios, semanales
+                                    y mensuales en un práctico formato digital.
                                 </p>
-
+                               
                             </div>
                         </div>
 
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <img class="portfolio-img img-responsive" src="{{url('/')}}/assets/images/monitor.png" alt="" />
+                            <img class="portfolio-img img-responsive" src="{{url('/')}}/images/foto2.svg" alt="" />
                         </div>
 
                     </div>
@@ -196,16 +194,15 @@
 
                     <div class="portfolio">
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <img class="portfolio-img img-responsive" src="{{url('/')}}/assets/images/monitor.png" alt="" />
+                            <img class="portfolio-img img-responsive" src="{{url('/')}}/images/foto3.svg" alt="" />
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="portfolio-item">
-                                <h4>AFFILIATE MARKETING</h4>
+                                <h4>Cuidemonos </h4>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est. laboru
+                                    Olvidate del papel, digitalizate y cuidémonos entre todos.
                                 </p>
-
+                               
                             </div>
                         </div>
                     </div>
@@ -213,34 +210,11 @@
             </div>
         </div>
 
-
-        <!-- /container -->
-    </section>
-
-    <section id="nosotros" class="sections">
-        <div class="container text-center">
-
-            <div class="heading">
-                <div class="title text-center arrow-left">
-                    <img class="hidden-xs" src="{{url('/')}}/assets/images/left-arrow.png" alt="" />
-
-                    <h4 class="">¿Comó Trabajamos? </h4>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="main-works">
-                        <img src="{{url('/')}}/assets/images/map.png" alt="" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
 
 
-    <section id="precios" class="sections lightbg">
+    <section id="PRECIOS" class="sections lightbg">
         <div class="container">
 
             <div class="heading">
@@ -452,61 +426,7 @@
         </div>
     </section>
 
-    <section id="our-team" class="sections">
-        <div class="container">
-
-            <div class="heading">
-                <div class="title text-center arrow-left">
-                    <img class="hidden-xs" src="{{url('/')}}/assets/images/left-arrow.png" alt="" />
-
-                    <h4 class="">Our Team Members</h4>
-                </div>
-            </div>
-        </div>
-
-        <div class="container-fluid project-bg">
-            <div class="row">
-
-                <div class="main-team text-center">
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="team-member">
-
-                            <img class="img-circle" src="{{url('/')}}/assets/images/team/1.png" alt="" />
-                            <h5>SAYED MIRAJ</h5>
-                            <p>UI & UX DESIGNER</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="team-member">
-                            <img class="img-circle" src="{{url('/')}}/assets/images/team/2.png" alt="" />
-                            <h5>PENNY HUSTON</h5>
-                            <p>DEVELOPER</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="team-member">
-                            <img class="img-circle" src="{{url('/')}}/assets/images/team/3.png" alt="" />
-                            <h5>LENNERD SHELLY</h5>
-                            <p>REVIEWER</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="team-member">
-                            <img class="img-circle" src="{{url('/')}}/assets/images/team/4.png" alt="" />
-                            <h5>SHELDON CUPPER</h5>
-                            <p>MARKETTER</p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </section>
+  
 
     <section id="our-supports" class="sections">
         <div class="container">
