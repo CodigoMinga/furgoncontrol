@@ -80,7 +80,11 @@
                                 facilita tu registro de estudiantes digitalmente con nuestra aplicacion y optimiza tu tiempo.
                             </p>
 
-                            <div class="home-btn"><button class="btn btn-primary">Ver Más <span><i class="fa fa-paper-plane"></i></span></button></div>
+                            <div class="home-btn">
+
+                                <a class="btn btn-primary" href="{{url('/app/register')}}">Registrarse <span><i class="fa fa-check"></i></span></a>
+                                <a class="btn btn-primary" href="{{url('/app/login')}}">Iniciar Sesion <span><i class="fa fa-user"></i></span></a>
+                            </div>
                         </div>
                     </div>
 
