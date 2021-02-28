@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
+use Illuminate\Support\Facades\Hash;
+use Symfony\Component\Console\Input\Input;
 
 class MainController extends Controller
 {
@@ -46,9 +49,29 @@ class MainController extends Controller
     }
 
 
-    public function registerProcess(){
+    public function registerProcess( Request $request){
+        $input = $request->all();
+        $input['password'] = Hash::make($request->password);
 
+        $user = User::create($input);
 
-        return view('');
+        if($user){
+            $userAutentificated = Auth::loginUsingId($user->id);
+
+            $sucess  = true;
+            $returnUrl = url('/')."/app/home";
+            $message =  "Usuario creado, bienvenido a nuestro sistema";
+            return view('template.genericprocess',compact('message','sucess','returnUrl'));
+        }else{
+            return back();
+        }
+
     }
+
+    function logout()
+    {
+        Auth::logout();
+        return redirect(url('/'));
+    }
+
 }
