@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Furgon Controlado</title>
-    
+
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="{{ url('/') }}/bower_components/bootstrap/dist/css/bootstrap.min.css">
 
@@ -33,7 +33,10 @@
 <style>
     .barra{
         background-color: #F7CE26;
+        display:flex!important;
+        flex-direction: row;
         position: sticky;
+        align-items: center;
     }
     body{
         background-color: rgb(51, 51, 51);
@@ -186,11 +189,35 @@
         align-items: stretch 
     }
 
+    .botton-volver{
+        display: block;
+        font-size: 4rem;
+        margin-left: 1rem;
+        display:flex!important;
+        flex-direction: row;
+        position: sticky;
+        align-items: center;
+        justify-content: center;
+        color:black;
+    }
+
+    .botton-volver:hover{
+        color:white;
+    }
+
 </style>
 <body>
 <div class="wrapper">
     <div class="barra" align="center">
-        <img src="{{ url('/') }}/images/logo.svg" height="75" style="padding:10px;">
+        <div style="width:5rem">
+            @yield('backbutton')
+        </div>
+        <div style="flex-grow:1">
+            <img src="{{ url('/') }}/images/logo.svg" height="75" style="padding:10px;">
+        </div>
+        <div style="width:5rem">
+            @yield('menubutton')
+        </div>
     </div>
     <div class="container" style="margin-top:3rem">
         @yield('content')

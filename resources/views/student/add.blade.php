@@ -1,6 +1,11 @@
 
 @extends('template.phonecontainer')
 
+@section('backbutton')
+    <a href="{{url('/app/home')}}" class="botton-volver">
+        <i class="fa fa-angle-left"></i>
+    </a>
+@stop
 @section('content')
             <form method="post" action="{{url('/app/student/add/process')}}">
                 {{csrf_field()}}

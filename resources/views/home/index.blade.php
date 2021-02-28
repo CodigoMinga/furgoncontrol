@@ -116,7 +116,7 @@
                 <p>{{date('H:i d/m/Y', strtotime($travel->start))}}</p>
                 <p>Pasajeros {{COUNT($travel->travelstudent)}}</p>
             </div>
-            <a class="boton" href="{{url('/app/travel/'.$travel->id)}}">
+            <a class="boton" href="{{url('/app/travel/'.$travel->id.'/assistance')}}">
                 <i class="fa fa-navicon"></i>
                 <span>Datos</span>
             </a>
