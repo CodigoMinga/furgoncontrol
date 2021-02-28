@@ -1,5 +1,5 @@
 
-@extends('template.maincontainer')
+@extends('template.phonecontainer')
 
 @section('content')
     <div class="box">
