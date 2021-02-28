@@ -99,6 +99,11 @@
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
 
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" placeholder="Nombre Establecimiento" name="school_name">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+
             <div class="form-group">
                 <label>Ciudad</label>
                 <select class="form-control" name="commune_id" required>
