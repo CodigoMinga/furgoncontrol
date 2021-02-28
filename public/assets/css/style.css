@@ -573,6 +573,10 @@ input:-ms-input-placeholder {
     border:transparent;
     padding-top: 70px;
 }
+.brand-img{
+	max-width:100%;
+	height:auto;
+}
 
 .navbar {
     margin-bottom: 20px;
