@@ -64,7 +64,6 @@
         color:#00e676;
     }
 
-    
     .verde:hover{
         color:#b9f6ca;
     }
@@ -76,18 +75,18 @@
         color:#80d8ff ;
     }
 
-    .rojo{
+    .morado{
         color:#ea80fc  ;
     }
-    .rojo:hover{
+    .morado:hover{
         color:#ce93d8  ;
     }
 
-    .morado{
+    .rojo{
         color:#ef5350 ;
     }
 
-    .morado:hover{
+    .rojo:hover{
         color:#ef9a9a ;
     }
 
