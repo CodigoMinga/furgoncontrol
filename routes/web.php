@@ -31,9 +31,17 @@ Route::group(['middleware' => ['auth']], function() {
 //vista register
 
     Route::get('/app/home', 'HomeController@index');
+
+    //STUDENT CRUDS
     Route::get('/app/student/add', 'StudentController@add');
+    Route::get('/app/student/{student_id}/details', 'StudentController@details');
+    Route::get('/app/student/{student_id}/edit', 'StudentController@edit');
+
     Route::post('/app/student/add/process', 'StudentController@addProcess');
+    Route::post('/app/student/edit/process', 'StudentController@editProcess');
     Route::get('/app/student/list', 'StudentController@list');
+
+
 
     Route::get('/app/travel/add/', 'TravelController@add');
     Route::get('/app/travel/add/{type}/process', 'TravelController@addProcess');
