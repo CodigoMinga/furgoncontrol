@@ -9,6 +9,13 @@ use App\User;
 use Illuminate\Support\Facades\Hash;
 use Symfony\Component\Console\Input\Input;
 use App\School;
+use Illuminate\Support\Str;
+use DB;
+use Carbon\Carbon;
+
+
+
+
 class MainController extends Controller
 {
     public function login(){
@@ -81,4 +88,34 @@ class MainController extends Controller
         return redirect(url('/'));
     }
 
+
+    function passwordLost(){
+
+
+        return view('passwordlost');
+    }
+
+    function passwordLostProcess(Request $request){
+
+        //dd($request->email);
+        $user = User::where ('email', $request->email)->first();
+        if ( !$user ) return redirect()->back()->withErrors(['error' => '404']);
+
+        //create a new token to be sent to the user.
+        DB::table('password_resets')->insert([
+            'email' => $request->email,
+            'token' => Str::random(60), //change 60 to any length you want
+            'created_at' => Carbon::now()
+        ]);
+
+        $tokenData = DB::table('password_resets')
+            ->where('email', $request->email)->first();
+
+        $token = $tokenData->token;
+        $email = $request->email; // or $email = $tokenData->email;
+
+
+        $message = "Se ha enviado un correo para reestablecer contraseña";
+        return view('generic',compact('message'));
+    }
 }
