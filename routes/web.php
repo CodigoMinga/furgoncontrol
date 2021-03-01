@@ -45,6 +45,15 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/app/student/edit/process', 'StudentController@editProcess');
     Route::get('/app/student/list', 'StudentController@list');
 
+    //SCHOOL CRUDS
+    Route::get('/app/school/add', 'SchoolController@add');
+    Route::get('/app/school/{school_id}/details', 'SchoolController@details');
+    Route::get('/app/school/{school_id}/edit', 'SchoolController@edit');
+
+    Route::post('/app/school/add/process', 'SchoolController@addProcess');
+    Route::post('/app/school/edit/process', 'SchoolController@editProcess');
+    Route::get('/app/school/list', 'SchoolController@list');
+
 
 
     Route::get('/app/travel/add/', 'TravelController@add');

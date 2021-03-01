@@ -29,6 +29,7 @@ class AddNewColumnsToStudentsTable extends Migration
     public function down()
     {
         Schema::table('students', function (Blueprint $table) {
+            $table->dropForeign('school_id');
             $table->dropColumn('school_id');
             $table->string('school_name');
         });

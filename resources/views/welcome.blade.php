@@ -31,7 +31,7 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<div class='preloader'><div class='loaded'>&nbsp;</div></div>
+<div class='preloader'><div class='loaded' >&nbsp;</div></div>
 <div id="menubar" class="main-menu">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -50,7 +50,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a class="nav-item nav-link active" href="#home">Inicio<span class="sr-only">(current)</span></a></li>
-                    <li><a class="nav-item nav-link" href="#nosotros">Nosotros</a></li>
+                    <li><a class="nav-item nav-link" href="#nosotros">¿Comó funciona?</a></li>
                     <li><a class="nav-item nav-link" href="#precios">Precios</a></li>
                     <li><a class="nav-item nav-link" href="#footer">Contacto</a></li>
 
@@ -213,7 +213,7 @@
 
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="portfolio-item">
-                                <h4 style="text-align: center">Cuidemonos </h4>
+                                <h4 style="text-align: center">Cuidémonos </h4>
                                 <p style="text-align: center">
                                     Olvidate del papel, digitalizate y cuidémonos entre todos.
                                 </p>
@@ -236,7 +236,7 @@
                 <div class="title text-center arrow-left">
                     <img class="hidden-xs" src="{{url('/')}}/assets/images/left-arrow.png" alt="" />
 
-                    <h4 class="">Nuestros Precios</h4>
+                    <h4 class="">Precios</h4>
                 </div>
             </div>
 
@@ -343,13 +343,13 @@
         <div class="container">
 
             <div class="row">
-                <div class="main-footer">
+                <div class="main-footer" >
                     <br>
                     <br>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="col-md-3 col-sm-6 col-xs-12" >
                         <div class="footer-item" style="text-decoration-color: white" >
                             <h2 style="color: white">Contacto</h2>
-                            <ul>
+                            <ul><li>Quellón, Chiloé</li>
                                 <li>Direccion : <a href="#"></a>Ignacio Carrera Pinto #387</li>
                                 <li>Fono: <a href="tel:+56998281526"></a>+56 9 98281526</li>
                                 <li>Email: <a href="mailto:contacto@codigominga.cl">contacto@codigominga.cl</a></li>
@@ -360,7 +360,7 @@
 
                 </div>
 
-                <div class="socio-copyright">
+                <div class="socio-copyright" >
 
                     <div class="social">
                         <a target="_blank" href="https://www.facebook.com/codigominga/"><i class="fa fa-facebook"></i></a>

@@ -14,9 +14,7 @@ use Barryvdh\DomPDF\Facade as PDF;
 class TravelController extends Controller
 {
     public function add(){
-
-
-
+        $schools = Auth::user()->schools;
         return view('travel.add',compact('schools'));
     }
 

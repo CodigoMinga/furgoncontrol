@@ -94,6 +94,6 @@ class User extends Authenticatable
 
     public function schools()
     {
-        return $this->hasMany('App\School');
+        return $this->hasMany('App\School','user_id','id');
     }
 }
