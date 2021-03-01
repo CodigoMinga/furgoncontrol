@@ -22,17 +22,26 @@ Route::get('/', function () {
 Route::get('/app/login','MainController@login');
 Route::post('/app/checklogin','MainController@checkLogin');
 Route::get('/app/register', 'MainController@register');
+Route::post('/app/register/process', 'MainController@registerProcess');
+
+Route::get('/app/passwordlost', 'MainController@passwordLost');
+Route::post('/app/passwordlost/process', 'MainController@passwordLostProcess');
 Route::group(['middleware' => ['auth']], function() {
 
 //vista register
 
-
-    Route::post('/app/register/process', 'MainController@registerProcess');
-
     Route::get('/app/home', 'HomeController@index');
+
+    //STUDENT CRUDS
     Route::get('/app/student/add', 'StudentController@add');
+    Route::get('/app/student/{student_id}/details', 'StudentController@details');
+    Route::get('/app/student/{student_id}/edit', 'StudentController@edit');
+
     Route::post('/app/student/add/process', 'StudentController@addProcess');
+    Route::post('/app/student/edit/process', 'StudentController@editProcess');
     Route::get('/app/student/list', 'StudentController@list');
+
+
 
     Route::get('/app/travel/add/', 'TravelController@add');
     Route::get('/app/travel/add/{type}/process', 'TravelController@addProcess');
@@ -42,8 +51,18 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/app/travel/{travel_id}/assistance/{student_id}/mark', 'TravelController@setAssistance');
     Route::post('/app/travel/{travel_id}/assistance/{student_id}/mark/process', 'TravelController@setAssistanceProcess');
+
     Route::get('/app/logout', 'MainController@logout');
     Route::get('/app/reportselect','TravelController@reportselect');
     Route::get('/app/report/{desde}/entre/{hasta}','TravelController@report');
+
+    Route::get('/app/users','UserController@list');
+    Route::get('/app/users/getdata','UserController@getData');
+    Route::get('/app/users/{user_id}/getlicences','UserController@getLicences');
+    Route::get('/app/users/{user_id}/detail','UserController@detail');
+    Route::get('/app/users/{user_id}/licences/add','UserController@addLicence');
+    Route::post('/app/users/{user_id}/licences/add/process','UserController@addLicenceProcess');
+    Route::post('/app/users/{user_id}/password/change/process','UserController@changePasswordProcess');
+    Route::get('/app/users/{user_id}/schools/','UserController@schools');
 });
 

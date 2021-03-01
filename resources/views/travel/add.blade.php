@@ -7,13 +7,20 @@
         left: calc(50% - 5rem);
     }
 </style>
+
+@section('backbutton')
+    <a href="{{url('/app/home')}}" class="botton-volver">
+        <i class="fa fa-angle-left"></i>
+    </a>
+@stop
+
 @section('content')
 
 
 <div align="center" style="padding: 1rem">
     <a class="titulo">
-        <span style="color:black">Tipo de </span>
-        <span style="color:white">Viaje</span>
+        <span>Tipo de </span>
+        <span>Viaje</span>
     </a>
 </div>
 <div class="flex-grid">

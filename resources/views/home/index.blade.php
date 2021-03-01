@@ -13,7 +13,7 @@
         position: relative;
         font-weight: 800;
     }
-    
+
     .viaje .icono{
         display: block;
         font-size: 5rem;
@@ -64,30 +64,48 @@
 </style>
 
 @section('content')
-    <a href="{{url('/app/student/add')}}" class="mybutton verde">
-        <i class="fa fa-user-plus"></i>
-        <span>Registrar Nuevo Alumno</span>
+    <div align="center" style="padding: 1rem">
+        <a class="titulo">
+            <span>Hola </span>
+            <span>{{Auth::user()->name}}</span>
+        </a>
+    </div>
+    <a href="{{url('/app/travel/add')}}" class="mybutton verde">
+        <i class="fa fa-bus"></i>
+        <span>Nuevo Viaje</span>
     </a>
 
     <a href="{{url('/app/student/list')}}" class="mybutton azul">
-        <i class="fa fa-list-ul"></i>
-        <span>Listado de Alumnos</span>
+        <i class="fa fa-users"></i>
+        <span>Alumnos</span>
     </a>
 
-    <a href="{{url('/app/travel/add')}}" class="mybutton rojo">
-        <i class="fa fa-bus"></i>
-        <span>Crear nuevo Viaje</span>
+    <a href="{{url('/app/users/'.Auth::user()->id.'/schools')}}" class="mybutton rojo">
+        <i class="fa fa-list-ul"></i>
+        <span>Establecimientos</span>
     </a>
 
     <a href="{{url('/app/reportselect')}}" class="mybutton morado">
         <i class="fa fa-file-pdf-o"></i>
         <span>Reportes</span>
     </a>
+
+    @if(Auth::user()->is_codigo_minga)
+        <div align="center" style="padding: 1rem">
+            <a class="titulo">
+                <span>Administración </span>
+                <span>Codigominga</span>
+            </a>
+        </div>
+        <a href="{{url('/app/users')}}" class="mybutton gris">
+            <i class="fa fa-address-card"></i>
+            <span>Listado Usuarios</span>
+        </a>
+    @endif
     <div align="center" style="padding: 1rem">
         <a class="titulo">
-            <span style="color:black">Viajes</span>
-            <span style="color:black">de</span>
-            <span style="color:white">Hoy</span>
+            <span>Viajes </span>
+            <span>de Hoy</span>
         </a>
     </div>
 
@@ -104,7 +122,7 @@
                 <p>{{date('H:i d/m/Y', strtotime($travel->start))}}</p>
                 <p>Pasajeros {{COUNT($travel->travelstudent)}}</p>
             </div>
-            <a class="boton" href="{{url('/app/travel/'.$travel->id)}}">
+            <a class="boton" href="{{url('/app/travel/'.$travel->id.'/assistance')}}">
                 <i class="fa fa-navicon"></i>
                 <span>Datos</span>
             </a>
