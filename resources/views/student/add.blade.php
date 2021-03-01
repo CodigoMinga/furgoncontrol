@@ -62,7 +62,7 @@
                 <div class="my-formgroup">
                     <label for="exampleInputEmail1">Nombre del Establecimiento</label>
                     @if($edit)
-                        <select class="my-formgroup" required name="school_id">
+                        <select required name="school_id">
                             <option value="">--seleccione un elemento--</option>
                             @foreach($schools as $school)
                                 @if($student->school_id == $school->id)

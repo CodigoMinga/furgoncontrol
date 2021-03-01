@@ -54,6 +54,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/app/school/edit/process', 'SchoolController@editProcess');
     Route::get('/app/school/list', 'SchoolController@list');
 
+    //REPORTES LINK
+    Route::get('/app/reportselect','TravelController@reportselect');
+    Route::get('/app/report/{desde}/school/{school_id}','TravelController@report');
 
 
     Route::get('/app/travel/add/', 'TravelController@add');
@@ -66,8 +69,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/app/travel/{travel_id}/assistance/{student_id}/mark/process', 'TravelController@setAssistanceProcess');
 
     Route::get('/app/logout', 'MainController@logout');
-    Route::get('/app/reportselect','TravelController@reportselect');
-    Route::get('/app/report/{desde}/entre/{hasta}','TravelController@report');
 
     Route::get('/app/users','UserController@list');
     Route::get('/app/users/getdata','UserController@getData');
