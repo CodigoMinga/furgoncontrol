@@ -27,7 +27,7 @@ class TravelController extends Controller
         $travel->start = $fecha_actual;
         $travel->save();
         $sucess  = true;
-        $returnUrl = url('/')."/app/home";
+        $returnUrl = url('/')."/app/travel/".$travel->id."/assistance";
         $message =  "Se creo el viaje correctamente";
         return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
     }
