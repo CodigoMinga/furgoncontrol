@@ -77,10 +77,10 @@
     }
 
     .rojo{
-        color:#ff9100;
+        color:#ea80fc  ;
     }
     .rojo:hover{
-        color:#ffd180;
+        color:#ce93d8  ;
     }
 
     .morado{
@@ -89,6 +89,14 @@
 
     .morado:hover{
         color:#ef9a9a ;
+    }
+
+    .gris{
+        color:#90a4ae;
+    }
+
+    .gris:hover{
+        color:#cfd8dc ;
     }
 
     
@@ -128,7 +136,8 @@
         padding:1rem;
         color:white!important;
         transition: border .5s ease;
-        width: 100%
+        width: 100%;
+        min-height: 54px;
     }
 
     .my-formgroup input:focus{
@@ -157,7 +166,7 @@
     }
 
     .my-form-title{
-        color:white;
+        color:#F7CE26;
         padding: 1rem;
         font-size: 3rem;
         font-family: 'Montserrat', sans-serif;
@@ -166,7 +175,7 @@
     }
     
     .my-form-title span{
-        color:black;
+        color:white;
     }
     
     .my-form-body{
@@ -181,6 +190,13 @@
         font-family: 'Montserrat', sans-serif;
         font-weight: 800;
         border-radius: 3rem 0 ;
+    }
+    
+    .titulo span:first-child{
+        color:white;
+    }
+    .titulo span:last-child{
+        color:#F7CE26;
     }
 
     .flex-grid{
@@ -220,7 +236,7 @@
             @yield('menubutton')
         </div>
     </div>
-    <div class="container" style="margin-top:3rem">
+    <div class="container" style="margin-top:1rem">
         @yield('content')
     </div>
 </div>
