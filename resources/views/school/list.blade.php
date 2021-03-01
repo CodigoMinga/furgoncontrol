@@ -71,27 +71,26 @@
         <div align="center" style="padding: 1rem">
             <a class="titulo">
                 <span>Listado de </span>
-                <span>Alumnos</span>
+                <span>Establecimientos</span>
             </a>
         </div>
         <div class="lista">
-            @foreach ($students as $student)
+            @foreach ($schools as $school)
             <div class="estudiante">
 
                 <div class="informacion">
-                    <p>{{$student->name}} {{$student->last_name}}</p>
-                    <p>Colegio: {{$student->school->name}}</p>
-                    <p>Apodarado: {{$student->parent_name}} {{$student->parent_last_name}}</p>
+                    <p>{{$school->name}} {{$school->last_name}}</p>
+                    <p>Direccion: {{$school->adress}}</p>
                 </div>
-                <a class="boton" href="{{url('/app/student/'.$student->id.'/details')}}">
-                    <i class="fa fa-user"></i>
+                <a class="boton" href="{{url('/app/school/'.$school->id.'/details')}}">
+                    <i class="fa fa-university"></i>
                     <span>Datos</span>
                 </a>
             </div>
             @endforeach
         </div>
-        <a href="{{url('/app/student/add')}}" class="mybutton verde">
-            <i class="fa fa-user-plus"></i>
+        <a href="{{url('/app/school/add')}}" class="mybutton verde">
+            <i class="fa fa-plus"></i>
             <span>Registrar Nuevo Alumno</span>
         </a>
     </div>

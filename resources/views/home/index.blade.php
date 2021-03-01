@@ -80,7 +80,7 @@
         <span>Alumnos</span>
     </a>
 
-    <a href="{{url('/app/users/'.Auth::user()->id.'/schools')}}" class="mybutton rojo">
+    <a href="{{url('/app/school/list')}}" class="mybutton rojo">
         <i class="fa fa-list-ul"></i>
         <span>Establecimientos</span>
     </a>
