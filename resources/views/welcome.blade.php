@@ -369,7 +369,7 @@
                         <a target="_blank" href="https://www.linkedin.com/company/67172626/admin/"><i class="fa fa-linkedin"></i></a>
                     </div>
 
-                    <p>Creado por <a target="_blank" href="http://www.codigominga.cl">Codigo Minga </a>2021.</p>
+                    <p style="color: white">Creado por <a target="_blank" href="http://www.codigominga.cl">Codigo Minga </a>2021.</p>
                 </div>
 
             </div>
