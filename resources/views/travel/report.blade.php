@@ -54,7 +54,7 @@
                             PPU
                         </th>
                         <td style="width:300px">
-                            
+                            {{$usuario->plate}}
                         </td>
                     </tr>
                     <tr>
@@ -83,8 +83,8 @@
                         </th>
                     </tr>
                     <tr>
-                        <td style="height:42.5px">
-
+                        <td style="height:42.5px" align="center">
+                            {{$school->name}}
                         </td>
                     </tr>
                 </table>
