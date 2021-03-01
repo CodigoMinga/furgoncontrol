@@ -36,17 +36,17 @@ PRE LOADER
 }
 
 .loaded {
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    left: 25%;
+    top: 30%;
     background-image: url(../images/gifbus.gif);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position:center;
     -moz-background-size: cover;
     background-size: cover;
-    margin: -20px 0 0 -20px;
+    margin: 0px 0 0 0px;
 }
 img {
     -moz-user-select: none;
@@ -411,7 +411,7 @@ btn-group-md > .btn {
 }
 .btn-default:hover {
     border-color: #ffffff;
-    color: #f56363;
+    color: #F7CE26;
     background-color: #ffffff;
 }
 .btn-primary {
@@ -429,11 +429,11 @@ btn-group-md > .btn {
     background-color: #ffffff;
 }
 .btn-primary:focus {
-    background-color: #f56363;
+    background-color:#F7CE26;
     border-color: transparent;
 }
 .btn-primary:hover {
-    color: #f56363;
+    color: #F7CE26;
 }
 /*
 Section Title Bar CSS
@@ -785,7 +785,7 @@ input:-ms-input-placeholder {
 }
 .main-package .package-item.standard h5{
 
-    color:#f26c4f;
+    color:#F7CE26;
     font-size:27px;
 
 }
@@ -794,16 +794,16 @@ input:-ms-input-placeholder {
     font-weight:bold;
 }
 .package-item.standard .package-bottom-area h3{
-    color:#f26c4f;
+    color:#F7CE26;
     font-weight:600;
     font-size: 50px;
     margin-top: -4px;
 }
 .package-item.standard .package-bottom-area h3 span{
-    color:#f26c4f;
+    color:#F7CE26;
 }
 .package-item.standard .pkg-btn a{
-    background:#f26c4f;
+    background:#F7CE26;
     padding: 15px 44px;
 }
 .package-item.standard .pkg-btn a:hover{
@@ -847,7 +847,7 @@ input:-ms-input-placeholder {
     font-weight:600;
 }
 .package-item .pkg-btn a:hover{
-    background:#f26c4f;
+    background:#F7CE26;
     color:#fff;
     font-weight:500;
 }
@@ -1016,15 +1016,23 @@ input:-ms-input-placeholder {
 #footer{
     background:black;
     color:#FFF;
+    float: none !important;
+text-align: center;
 }
 .main-footer .footer-item h2{
     color:#e6e9ed;
     font-size:18px;
     text-transform:uppercase;
+    float: none !important;
+    text-align: center;
+    
+    
+    
 }
 .main-footer .footer-item ul li a{
     font-size:16px;
     line-height:32px;
+    
     color:white;
 }
 .main-footer .footer-item ul li a:hover{

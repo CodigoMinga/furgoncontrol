@@ -36,7 +36,7 @@ class StudentController extends Controller
 
         Student::create($request->all());
         $sucess  = true;
-        $returnUrl = url('/')."/app/home";
+        $returnUrl = url('/')."/app/student/list";
         $message =  "Se guardo el alumno con exito";
         return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
     }
