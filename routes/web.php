@@ -26,6 +26,10 @@ Route::post('/app/register/process', 'MainController@registerProcess');
 
 Route::get('/app/passwordlost', 'MainController@passwordLost');
 Route::post('/app/passwordlost/process', 'MainController@passwordLostProcess');
+
+Route::get('/app/resetpassword/{user_id}/token/{token}', 'MainController@passwordRessetToken');
+Route::post('/app/resetpassword/{user_id}/token/{token}/process', 'MainController@passwordRessetTokenProcess');
+
 Route::group(['middleware' => ['auth']], function() {
 
 //vista register
@@ -64,5 +68,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/app/users/{user_id}/licences/add/process','UserController@addLicenceProcess');
     Route::post('/app/users/{user_id}/password/change/process','UserController@changePasswordProcess');
     Route::get('/app/users/{user_id}/schools/','UserController@schools');
+
+    //botones de pago
+    Route::get('/app/pago/{tipo_pago}', 'PayController@process');
+
 });
 
