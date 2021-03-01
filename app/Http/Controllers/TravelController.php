@@ -13,82 +13,6 @@ use Barryvdh\DomPDF\Facade as PDF;
 
 class TravelController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Travel  $travel
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Travel $travel)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Travel  $travel
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Travel $travel)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Travel  $travel
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Travel $travel)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Travel  $travel
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Travel $travel)
-    {
-        //
-    }
-
     public function add(){
 
         return view('travel.add');
@@ -102,7 +26,6 @@ class TravelController extends Controller
         $travel->start = $fecha_actual;
         $travel->save();
 
-
         $sucess  = true;
         $returnUrl = url('/')."/app/home";
         $message =  "Se creo el viaje correctamente";
@@ -110,29 +33,20 @@ class TravelController extends Controller
     }
 
     public function details($travel_id){
-
         $travel = Travel::findOrFail($travel_id);
-
-
         return view('travel.details',compact('travel'));
-
     }
 
-    
     public function reportselect(){
         return view('travel.reportselect');
     }
 
-
     public function assistance($travel_id){
-
         $user_id = Auth::user()->id;
         $students = Db::select('
                     select students.*,travelstudents.temperature from students
                     left join travelstudents
-                    on travelstudents.student_id = students.id
-                    and travelstudents.travel_id = '.$travel_id.
-                    ' and students.user_id = '.$user_id
+                    on travelstudents.student_id = students.id and travelstudents.travel_id = '.$travel_id.' where students.user_id = '.$user_id
                 );
 
         $travel = Travel::findOrFail($travel_id);
