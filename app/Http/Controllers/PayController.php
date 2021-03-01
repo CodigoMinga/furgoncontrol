@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\User;
+use App\Pay;
+use App\License;
 
 class PayController extends Controller
 {
@@ -18,6 +20,16 @@ class PayController extends Controller
         if($success =='true'){
             $user = User::findOrFail(Auth::user()->id);
             $license = "ASdff";
+
+            //guarda el pago en la tabla pays
+            $pay = new Pay;
+            $pay->ammount = 10000;
+            $pay->user_id = Auth::user()->id;
+            $pay->save();
+
+            //guarda la nueva licencia
+
+
             //dispara correo de un nuevo pago procesado
             $subject = "Se proceso su pago correctamente";
             $receivers = ['contacto@codigominga.cl',$user->email];
