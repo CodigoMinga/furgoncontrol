@@ -15,7 +15,9 @@ class TravelController extends Controller
 {
     public function add(){
 
-        return view('travel.add');
+
+
+        return view('travel.add',compact('schools'));
     }
 
     public function addProcess($type){
@@ -78,7 +80,7 @@ class TravelController extends Controller
         return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
     }
 
-    
+
 
     public function report($desde,$hasta){
 

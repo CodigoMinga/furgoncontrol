@@ -61,12 +61,26 @@
 
                 <div class="my-formgroup">
                     <label for="exampleInputEmail1">Nombre del Establecimiento</label>
-                    <input required type="text"  name="school_name"     value="{{$student->school_name}}" {{!$edit ? 'disabled' : ''}}>
+                    @if($edit)
+                        <select class="my-formgroup" required>
+                            <option value="">--seleccione un elemento--</option>
+                            @foreach($schools as $school)
+                                @if($student->school_id == $school->id)
+                                    <option selected value="{{$school->id}}">{{$school->name}}</option>
+                                @else
+                                    <option value="{{$school->id}}">{{$school->name}}</option>
+                                @endif
+                            @endforeach
+                        </select>
+                    @else
+                        <input required type="text"  name="parent_phone"    value="{{$student->school->name}}" {{!$edit ? 'disabled' : ''}}>
+                    @endif
+
                 </div>
             </div>
         </div>
         <br>
-        
+
         @if(isset($student->id))
             @if(!$edit)
             <a href="{{url('/app/student/'.$student->id.'/edit')}}" class="mybutton azul" style="width:100%">
@@ -76,7 +90,7 @@
             <a href="tel:{{$student->parent_phone}}" class="mybutton morado" style="width:100%">
                 <i class="fa fa-phone"></i>
                 <span>Llamar Apoderado</span>
-            </a>                
+            </a>
             @else
                 <button type="submit" class="mybutton verde" style="width:100%">
                     <i class="fa fa-pencil"></i>
