@@ -144,7 +144,7 @@
                         <img class="hidden-xs" src="assets/images/right-arrow.png" alt="" />
 
                     </div>
-                </div>	
+                </div>
 
 
                 <!-- Example row of columns -->
@@ -169,7 +169,7 @@
                                   Sigue los protocolos establecidos por el Ministerio de Salud.
 
                                 </p>
-                          
+
                             </div>
                         </div>
 
@@ -187,11 +187,11 @@
                                 <br>
                                 <h4 style="text-align: center">Optimiza tu tiempo</h4>
                                 <p style="text-align: center">
-                                   
+
                                     Optimiza el tiempo registrando la bitacora de cada estudiante, podrás acceder a informes diarios, semanales
                                     y mensuales en un práctico formato digital.
                                 </p>
-                               
+
                             </div>
                         </div>
 
@@ -210,14 +210,14 @@
                         <br>
                         <br>
                         <br>
-                        
+
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="portfolio-item">
                                 <h4 style="text-align: center">Cuidemonos </h4>
                                 <p style="text-align: center">
                                     Olvidate del papel, digitalizate y cuidémonos entre todos.
                                 </p>
-                               
+
                             </div>
                         </div>
                     </div>
@@ -225,7 +225,7 @@
             </div>
         </div>
 
-    
+
 
 
 
@@ -364,7 +364,7 @@
 
                     <div class="social">
                         <a target="_blank" href="https://www.facebook.com/codigominga/"><i class="fa fa-facebook"></i></a>
-                        <a target="_blank" href="https://github.com/CodigoMinga"><i class="fa fa-github"></i></a>
+                        <!--<a target="_blank" href="https://github.com/CodigoMinga"><i class="fa fa-github"></i></a>-->
                         <a target="_blank" href="https://www.instagram.com/codigominga/"><i class="fa fa-instagram"></i></a>
                         <a target="_blank" href="https://www.linkedin.com/company/67172626/admin/"><i class="fa fa-linkedin"></i></a>
                     </div>
