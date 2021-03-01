@@ -80,7 +80,7 @@
                 <div class="estudiante">
                     <div class="informacion">
                         <p>{{$student->name}} {{$student->last_name}}</p>
-                        <span class="progress-description">
+                        <p>{{$student->school_name}}</p>
                     </span>
                     </div>         
                     @if(isset($student->temperature))
