@@ -45,12 +45,12 @@
 <body class="hold-transition login-page" id="grad2">
 <div class="login-box">
     <div class="login-logo">
-     <!--   <img src="{{url("/")}}/images/logo_2021.png" width="100%"> -->
+    <!--   <img src="{{url("/")}}/images/logo_2021.png" width="100%"> -->
 
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body" style="border-radius: 10px">
-        <p class="login-box-msg">Inicie sesion</p>
+        <p class="login-box-msg"><b>Ingrese su Email para recuperar su clave.</b></p>
         @if ($message = Session::get('error'))
             <div class="alert alert-danger alert-block">
                 <button type="button" class="close" data-dismiss="alert">×</button>
@@ -66,33 +66,24 @@
                 </ul>
             </div>
         @endif
-        <form method="post" action="{{url('/app/checklogin')}}">
+        <form method="post" action="{{url('/app/passwordlost/process')}}">
             {{csrf_field()}}
             <div class="form-group has-feedback">
                 <input type="email" class="form-control" placeholder="Email" name="email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
-            <div class="form-group has-feedback">
-                <input type="password" class="form-control" placeholder="Password" name="password">
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-            </div>
+
             <div class="row">
                 <div class="col-xs-8">
 
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Iniciar</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Enviar</button>
                 </div>
                 <!-- /.col -->
             </div>
         </form>
-        <p class="login-box-msg"><b>Furgon Controlado.cl</b><br/>
-            <b> <a href="https://www.codigominga.cl">Desarrollo: www.codigominga.cl</a></b>
-
-            <br/><br/>
-            <b> <a href="{{url('/app/passwordlost')}}">Recuperar Contraseña</a></b>
-        </p>
 
 
         <!-- /.social-auth-links -->
