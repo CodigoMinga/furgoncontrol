@@ -26,6 +26,10 @@ Route::post('/app/register/process', 'MainController@registerProcess');
 
 Route::get('/app/passwordlost', 'MainController@passwordLost');
 Route::post('/app/passwordlost/process', 'MainController@passwordLostProcess');
+
+Route::get('/app/resetpassword/{user_id}/token/{token}', 'MainController@passwordRessetToken');
+Route::post('/app/resetpassword/{user_id}/token/{token}/process', 'MainController@passwordRessetTokenProcess');
+
 Route::group(['middleware' => ['auth']], function() {
 
 //vista register
