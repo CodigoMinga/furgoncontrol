@@ -77,7 +77,7 @@
                         <div class="unique-apps">
                             <h2>Furgón Controlado</h2>
                             <p>
-                                facilita tu registro de estudiantes digitalmente con nuestra aplicacion y optimiza tu tiempo.
+                                Facilita tu registro de estudiantes digitalmente con nuestra aplicación y optimiza tu tiempo.
                             </p>
 
                             <div class="home-btn" style="color: black">
@@ -144,7 +144,7 @@
                         <img class="hidden-xs" src="assets/images/right-arrow.png" alt="" />
 
                     </div>
-                </div>	
+                </div>
 
 
                 <!-- Example row of columns -->
@@ -156,31 +156,42 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <img src="{{url('/')}}/images/foto1.svg" alt="" />
                         </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="portfolio-item">
-                                <h4>Seguir los protocolos</h4>
-                                <p>
+                                <h4 style="text-align: center">Seguir los protocolos</h4>
+                                <p style="text-align: center">
                                   Sigue los protocolos establecidos por el Ministerio de Salud.
 
                                 </p>
-                          
+
                             </div>
                         </div>
 
                     </div>
 
-
-
                     <div class="portfolio">
 
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="portfolio-item">
-                                <h4>Optimiza tu tiempo</h4>
-                                <p>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <h4 style="text-align: center">Optimiza tu tiempo</h4>
+                                <p style="text-align: center">
+
                                     Optimiza el tiempo registrando la bitacora de cada estudiante, podrás acceder a informes diarios, semanales
                                     y mensuales en un práctico formato digital.
                                 </p>
-                               
+
                             </div>
                         </div>
 
@@ -190,19 +201,23 @@
 
                     </div>
 
-
-
                     <div class="portfolio">
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <img class="portfolio-img img-responsive" src="{{url('/')}}/images/foto3.svg" alt="" />
                         </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="portfolio-item">
-                                <h4>Cuidemonos </h4>
-                                <p>
+                                <h4 style="text-align: center">Cuidemonos </h4>
+                                <p style="text-align: center">
                                     Olvidate del papel, digitalizate y cuidémonos entre todos.
                                 </p>
-                               
+
                             </div>
                         </div>
                     </div>
@@ -210,11 +225,11 @@
             </div>
         </div>
 
-    
 
 
 
-    <section id="PRECIOS" class="sections lightbg">
+
+    <section id="precios" class="sections lightbg">
         <div class="container">
 
             <div class="heading">
@@ -279,7 +294,7 @@
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="package-item premium">
 
-                            <h5>Plan único</h5>
+                            <h5>Plan Único</h5>
 
                             <ul>
                                 <li>Registro digital de estudiantes </li>
@@ -305,16 +320,16 @@
             </div>
         </div>
     </section>
-
-   
-
-
-
-  
-
-    
-
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <div class="scroll-top">
 
         <div class="scrollup">
@@ -324,13 +339,13 @@
     </div>
 
     <!--Footer-->
-    <footer id="footer" class="footer" style="text-decoration-color: white">
+    <footer id="footer" class="footer" >
         <div class="container">
 
             <div class="row">
                 <div class="main-footer">
-
-
+                    <br>
+                    <br>
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="footer-item" style="text-decoration-color: white" >
                             <h2 style="color: white">Contacto</h2>
@@ -349,7 +364,7 @@
 
                     <div class="social">
                         <a target="_blank" href="https://www.facebook.com/codigominga/"><i class="fa fa-facebook"></i></a>
-                        <a target="_blank" href="https://github.com/CodigoMinga"><i class="fa fa-github"></i></a>
+                        <!--<a target="_blank" href="https://github.com/CodigoMinga"><i class="fa fa-github"></i></a>-->
                         <a target="_blank" href="https://www.instagram.com/codigominga/"><i class="fa fa-instagram"></i></a>
                         <a target="_blank" href="https://www.linkedin.com/company/67172626/admin/"><i class="fa fa-linkedin"></i></a>
                     </div>
