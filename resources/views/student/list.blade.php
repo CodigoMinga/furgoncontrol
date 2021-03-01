@@ -58,31 +58,13 @@
         width: 100%
     }
 
-    select{
-        background: rgba(0,0,0,0);
-        font-family: 'Montserrat', sans-serif;
-        font-size: 1.8rem!important;
-        border:2px solid #F7CE26;
-        outline: none;
-        padding:0.8rem;
-        color:white!important;
-        transition: border .5s ease;
-        width: 100%
-    }
-    select option{
-        color:white!important;
-        background: rgba(50,50,50,1);
-    }
-
     label{
         font-family: 'Montserrat', sans-serif;
         font-size: 1.8rem!important;
         color:white!important;
     }
 
-    input:focus,select:focus{
-        border:2px solid white;
-    }
+
 
     .table-btn{
         display: block;

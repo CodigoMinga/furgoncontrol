@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\School;
+
 
 class SchoolSeeder extends Seeder
 {
@@ -10,7 +12,10 @@ class SchoolSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        //
+    {        
+        $school = new School;
+        $school->name = 'Escuela de Prueba';
+        $school->user_id = 2;
+        $school->save();
     }
 }

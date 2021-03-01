@@ -140,6 +140,27 @@
         min-height: 54px;
     }
 
+    .my-formgroup select{
+        background: rgba(0,0,0,0);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.8rem!important;
+        border:3px solid #F7CE26;
+        outline: none;
+        padding:1rem;
+        color:white!important;
+        transition: border .5s ease;
+        width: 100%;
+        min-height: 54px;
+    }
+    .my-formgroup select option{
+        color:white!important;
+        background: rgba(50,50,50,1);
+    }    
+    
+    .my-formgroup select:focus{
+        border:3px solid white;
+    }
+
     .my-formgroup input:focus{
         border:3px solid white;
     }

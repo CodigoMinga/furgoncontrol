@@ -45,6 +45,18 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/app/student/edit/process', 'StudentController@editProcess');
     Route::get('/app/student/list', 'StudentController@list');
 
+    //SCHOOL CRUDS
+    Route::get('/app/school/add', 'SchoolController@add');
+    Route::get('/app/school/{school_id}/details', 'SchoolController@details');
+    Route::get('/app/school/{school_id}/edit', 'SchoolController@edit');
+
+    Route::post('/app/school/add/process', 'SchoolController@addProcess');
+    Route::post('/app/school/edit/process', 'SchoolController@editProcess');
+    Route::get('/app/school/list', 'SchoolController@list');
+
+    //REPORTES LINK
+    Route::get('/app/reportselect','TravelController@reportselect');
+    Route::get('/app/report/{desde}/school/{school_id}','TravelController@report');
 
 
     Route::get('/app/travel/add/', 'TravelController@add');
@@ -57,8 +69,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/app/travel/{travel_id}/assistance/{student_id}/mark/process', 'TravelController@setAssistanceProcess');
 
     Route::get('/app/logout', 'MainController@logout');
-    Route::get('/app/reportselect','TravelController@reportselect');
-    Route::get('/app/report/{desde}/entre/{hasta}','TravelController@report');
 
     Route::get('/app/users','UserController@list');
     Route::get('/app/users/getdata','UserController@getData');
@@ -68,5 +78,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/app/users/{user_id}/licences/add/process','UserController@addLicenceProcess');
     Route::post('/app/users/{user_id}/password/change/process','UserController@changePasswordProcess');
     Route::get('/app/users/{user_id}/schools/','UserController@schools');
+
+    //botones de pago
+    Route::get('/app/pago/{tipo_pago}', 'PayController@process');
+
 });
 
