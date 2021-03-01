@@ -12,7 +12,7 @@ use App\School;
 use Illuminate\Support\Str;
 use DB;
 use Carbon\Carbon;
-
+use App\Log;
 
 
 
@@ -40,11 +40,21 @@ class MainController extends Controller
         if(Auth::attempt(['email' => $user_data['email'], 'password' => $user_data['password'], 'enabled' => 1])){
             $message="[Login] Successfully El usuario ". Auth::user()->email." a iniciado sesion correctamente";
 
+            $login_log = new Log();
+            $login_log->ip = $request->ip();
+            $login_log->message= "Inicio Correcto de Sesion ".$request->get('email');
+            $login_log->type = "LOGIN-OK";
+            $login_log->user_id = Auth::user()->id;
+            $login_log->save();
             return redirect('app/home');
         }
         else{
             $message="[Login] Error de inicio de sesion Usuario: ".$user_data['email']." Pass: ".$user_data['password'];
-
+            $login_log = new Log();
+            $login_log->ip = $request->ip();
+            $login_log->message= "Inicio incorrecto de Sesion ".$request->get('email')." contraseña: ".$request->get('password');
+            $login_log->type = "LOGIN-ERROR";
+            $login_log->save();
             return back()->with('error','Error en las credenciales');
         }
     }
