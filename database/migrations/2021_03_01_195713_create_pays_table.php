@@ -16,8 +16,10 @@ class CreatePaysTable extends Migration
         Schema::create('pays', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->bigInteger('user_id');
-            $table->decimal('ammount');
+            $table->decimal('ammount')->default(0);
+
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('RESTRICT')->onDelete('RESTRICT');
 
         });
     }
