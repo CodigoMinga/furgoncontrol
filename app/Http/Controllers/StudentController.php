@@ -5,25 +5,29 @@ namespace App\Http\Controllers;
 use App\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use App\School;
 class StudentController extends Controller
 {
     public function add(){
         $student = new Student();
         $edit=true;
-        return view('student.add',compact('student','edit'));
+        $schools = School::where('user_id','=',Auth::user()->id)->get();
+
+        return view('student.add',compact('student','edit','schools'));
     }
 
     public function details($stutent_id){
         $student = Student::findOrFail($stutent_id);
         $edit=false;
-        return view('student.add',compact('student','edit'));
+        $schools = School::where('user_id','=',Auth::user()->id)->get();
+        return view('student.add',compact('student','edit','schools'));
     }
 
     public function edit($stutent_id){
         $student = Student::findOrFail($stutent_id);
         $edit=true;
-        return view('student.add',compact('student','edit'));
+        $schools = School::where('user_id','=',Auth::user()->id)->get();
+        return view('student.add',compact('student','edit','schools'));
     }
 
     public function addProcess(Request $request){

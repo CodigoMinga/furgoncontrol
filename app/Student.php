@@ -26,7 +26,7 @@ class Student extends Model
 {
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -34,7 +34,7 @@ class Student extends Model
     /**
      * @var array
      */
-    protected $fillable = ['user_id', 'created_at', 'updated_at', 'name', 'last_name', 'rut', 'parent_email', 'parent_name', 'parent_last_name', 'parent_rut', 'parent_phone', 'enabled', 'school_name'];
+    protected $fillable = ['user_id', 'created_at', 'updated_at', 'name', 'last_name', 'rut', 'parent_email', 'parent_name', 'parent_last_name', 'parent_rut', 'parent_phone', 'enabled', 'school_id'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -50,5 +50,11 @@ class Student extends Model
     public function travelstudents()
     {
         return $this->hasMany('App\Travelstudent');
+    }
+
+
+    public function school()
+    {
+        return $this->belongsTo('App\School');
     }
 }
