@@ -13,7 +13,7 @@
         position: relative;
         font-weight: 800;
     }
-    
+
     .viaje .icono{
         display: block;
         font-size: 5rem;
@@ -83,6 +83,24 @@
         <i class="fa fa-file-pdf-o"></i>
         <span>Reportes</span>
     </a>
+
+
+    <a href="{{url('/app/users/'.Auth::user()->id.'/schools')}}" class="mybutton morado">
+        <i class="fa fa-file-pdf-o"></i>
+        <span>Administrar Establecimientos</span>
+    </a>
+
+    @if(Auth::user()->is_codigo_minga)
+        <div align="center" style="padding: 1rem">
+            <a class="titulo">
+             <span>Administracion Codigomingera</span>
+            </a>
+        </div>
+        <a href="{{url('/app/users')}}" class="mybutton morado">
+            <i class="fa fa-file-pdf-o"></i>
+            <span>Listado Usuarios</span>
+        </a>
+    @endif
     <div align="center" style="padding: 1rem">
         <a class="titulo">
             <span style="color:black">Viajes</span>
@@ -104,7 +122,7 @@
                 <p>{{date('H:i d/m/Y', strtotime($travel->start))}}</p>
                 <p>Pasajeros {{COUNT($travel->travelstudent)}}</p>
             </div>
-            <a class="boton" href="{{url('/app/travel/'.$travel->id)}}">
+            <a class="boton" href="{{url('/app/travel/'.$travel->id.'/assistance')}}">
                 <i class="fa fa-navicon"></i>
                 <span>Datos</span>
             </a>

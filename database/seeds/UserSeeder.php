@@ -20,6 +20,8 @@ class UserSeeder extends Seeder
         $user->phone = '+56973155545';
         $user->rut = '17999388-0';
         $user->password = bcrypt('password');
+        $user->commune_id = 303;
+        $user->is_codigo_minga = 1;
         $user->save();
 
         $user = new User;
@@ -28,6 +30,7 @@ class UserSeeder extends Seeder
         $user->email = 'programador@microbesolutions.cl';
         $user->phone = '+56973155545';
         $user->rut = '17999388-0';
+        $user->is_codigo_minga = 1;
         $user->password = bcrypt('000000');
         $user->save();
     }

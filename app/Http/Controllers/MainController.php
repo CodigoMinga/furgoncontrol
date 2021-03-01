@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Commune;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use Symfony\Component\Console\Input\Input;
+use App\School;
+use Illuminate\Support\Str;
+use DB;
+use Carbon\Carbon;
+
+
+
 
 class MainController extends Controller
 {
@@ -43,9 +51,9 @@ class MainController extends Controller
 
 
     public function register(){
+        $communes = Commune::all()->sortBy('name');
 
-
-        return view('register');
+        return view('register',compact('communes'));
     }
 
 
@@ -56,12 +64,18 @@ class MainController extends Controller
         $user = User::create($input);
 
         if($user){
+            $school = new School();
+            $school->name = $input['school_name'];
+            $school->user_id = $user->id;
+            $school->save();
+
+
             $userAutentificated = Auth::loginUsingId($user->id);
 
             $sucess  = true;
             $returnUrl = url('/')."/app/home";
             $message =  "Usuario creado, bienvenido a nuestro sistema";
-            return view('template.genericprocess',compact('message','sucess','returnUrl'));
+            return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
         }else{
             return back();
         }
@@ -74,4 +88,34 @@ class MainController extends Controller
         return redirect(url('/'));
     }
 
+
+    function passwordLost(){
+
+
+        return view('passwordlost');
+    }
+
+    function passwordLostProcess(Request $request){
+
+        //dd($request->email);
+        $user = User::where ('email', $request->email)->first();
+        if ( !$user ) return redirect()->back()->withErrors(['error' => '404']);
+
+        //create a new token to be sent to the user.
+        DB::table('password_resets')->insert([
+            'email' => $request->email,
+            'token' => Str::random(60), //change 60 to any length you want
+            'created_at' => Carbon::now()
+        ]);
+
+        $tokenData = DB::table('password_resets')
+            ->where('email', $request->email)->first();
+
+        $token = $tokenData->token;
+        $email = $request->email; // or $email = $tokenData->email;
+
+
+        $message = "Se ha enviado un correo para reestablecer contraseña";
+        return view('generic',compact('message'));
+    }
 }

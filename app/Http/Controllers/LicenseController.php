@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Student;
+use App\License;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class StudentController extends Controller
+class LicenseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +41,10 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Student  $student
+     * @param  \App\License  $license
      * @return \Illuminate\Http\Response
      */
-    public function show(Student $student)
+    public function show(License $license)
     {
         //
     }
@@ -53,10 +52,10 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Student  $student
+     * @param  \App\License  $license
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
+    public function edit(License $license)
     {
         //
     }
@@ -65,10 +64,10 @@ class StudentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Student  $student
+     * @param  \App\License  $license
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, License $license)
     {
         //
     }
@@ -76,40 +75,11 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Student  $student
+     * @param  \App\License  $license
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy(License $license)
     {
         //
-    }
-
-    public function add(){
-
-        return view('student.add');
-    }
-
-
-    public function addProcess(Request $request){
-
-        //le añade en el request el campo user_id
-        $request->request->add(['user_id' => Auth::user()->id]);
-
-        Student::create($request->all());
-        $sucess  = true;
-        $returnUrl = url('/')."/app/home";
-        $message =  "Se guardo el alumno con exito";
-        return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
-    }
-
-    public function list(){
-
-        $user_id = Auth::user()->id;
-
-
-        $students = Student::where('user_id','=',$user_id)->get();
-
-
-        return view('student.list',compact('students'));
     }
 }

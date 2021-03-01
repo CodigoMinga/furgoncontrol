@@ -1,6 +1,12 @@
 
 @extends('template.phonecontainer')
 
+@section('backbutton')
+    <a href="{{url('/app/home')}}" class="botton-volver">
+        <i class="fa fa-angle-left"></i>
+    </a>
+@stop
+
 @section('content')                
     <div class="my-form-box">
         <div class="my-form-title"><span>Generar</span> Reporte</div>
