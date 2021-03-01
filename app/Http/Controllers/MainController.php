@@ -161,4 +161,27 @@ class MainController extends Controller
             return redirect()->back()->withErrors(['error' => 'No se pudo cambiar la contraseña']);
         }
     }
+
+    public function passwordChange(){
+        
+      
+        return view('passwordchange');
+
+    }
+
+    public function passwordChangeProcess($user_id, Request $request){
+
+
+        $user = User::findOrFail($user_id);
+
+        $user->update($request->all());
+
+        $userAutentificated = Auth::loginUsingId($user->id);
+        $sucess  = true;
+        $returnUrl = url('/')."/app/home";
+        $message =  "Contraseña Cambiada Correctamente";
+        return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
+
+    }
+
 }
