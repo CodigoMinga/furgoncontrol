@@ -30,15 +30,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <style>
         #grad {
-            background-image: linear-gradient(to right, red , yellow);
-            border-radius:20px;
-            width:100%;
+            background-color:#F7CE26;
         }
 
         #grad2 {
-            background: rgb(255,255,255);
-            background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,158,0,1) 100%);
-            max-height: 80%;
+            background-color:#F7CE26;
         }
     </style>
 </head>

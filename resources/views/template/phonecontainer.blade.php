@@ -98,6 +98,14 @@
         color:#cfd8dc ;
     }
 
+    .naranja{
+        color:#ffab40 ;
+    }
+
+    .naranja:hover{
+        color:#ffd180 ;
+    }
+
     
     .primario{
         color:#F7CE26 ;
@@ -107,16 +115,16 @@
         color:white ;
     }
 
+    .mybutton-column i{
+        font-size: 5rem;
+    }
+
     .mybutton i{
         display: block;
         font-size: 2.5rem;
         text-align: center;
         padding:1.5rem;
     }
-    .mybutton-column i{
-        font-size: 5rem;
-    }
-
     .mybutton span{
         display: block;
         text-align: center;
@@ -124,6 +132,17 @@
         padding:1.5rem;
         width:90%;
         font-family: 'Montserrat', sans-serif;
+    }
+    
+    .mybutton.sm i{
+        font-size: 2rem;
+        padding:1rem;
+    }
+    
+
+    .mybutton.sm span{
+        font-size: 1.8rem;
+        padding:1rem;
     }
     
     .my-formgroup input{
@@ -226,10 +245,9 @@
         align-items: stretch 
     }
 
-    .botton-volver{
+    .botton-volver,.botton-menu{
         display: block;
         font-size: 4rem;
-        margin-left: 1rem;
         display:flex!important;
         flex-direction: row;
         position: sticky;
@@ -238,21 +256,52 @@
         color:black;
     }
 
-    .botton-volver:hover{
+    .botton-volver:hover,.botton-menu:hover{
         color:white;
     }
 
+    .alert-box, .success-box{
+        display:flex!important;
+        flex-direction: row;
+        margin-bottom: 12px;
+        background-color:rgba(0,0,0,0);
+        font-size: 3rem;
+    }
+    .alert-box{
+        border:3px solid #ef5350;
+        color:#ef5350;
+    }
+    
+    .success-box{
+        border:3px solid #00e676;
+        color:#00e676;
+    }
+
+    .alert-box i, .success-box i{
+        display: block;
+        font-size: 2.5rem;
+        text-align: center;
+        padding:1.5rem;
+    }
+    .alert-box span, .success-box span {
+        display: block;
+        text-align: center;
+        font-size: 2rem;
+        padding:1.5rem;
+        flex-grow: 1;
+        font-family: 'Montserrat', sans-serif;
+    }
 </style>
 <body>
 <div class="wrapper">
     <div class="barra" align="center">
-        <div style="width:5rem">
+        <div style="width:5rem" align="right">
             @yield('backbutton')
         </div>
         <div style="flex-grow:1">
             <img src="{{ url('/') }}/images/logo.svg" height="75" style="padding:10px;">
         </div>
-        <div style="width:5rem">
+        <div style="width:5rem" align="left">
             @yield('menubutton')
         </div>
     </div>

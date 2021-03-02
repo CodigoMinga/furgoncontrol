@@ -10,6 +10,7 @@
     .lista{
         flex-grow: 1;
         margin-bottom:2rem;
+        overflow-y: scroll;
     }
     .estudiante{
         display: flex;
@@ -59,6 +60,23 @@
     .estudiante .boton i{
         font-size: 4rem;
     }
+
+    .modal-dialog-centered{
+        margin-top:25vh!important;
+    }
+
+    .modal-title{
+        display: inline;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 3rem;
+    }
+
+    .modal-content{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2rem;
+        background-color: black!important;
+        color:white;
+    }
 </style>
 
 @section('backbutton')
@@ -80,7 +98,7 @@
                 <div class="estudiante">
                     <div class="informacion">
                         <p>{{$student->name}} {{$student->last_name}}</p>
-                        <span class="progress-description">
+                        <p>{{$student->school_name}}</p>
                     </span>
                     </div>         
                     @if(isset($student->temperature))
@@ -96,7 +114,7 @@
                             </a>
                         @endif 
                     @else       
-                        <a class="boton Gris" href="{{url('/app/travel/'.$travel->id.'/assistance/'.$student->id.'/mark')}}">
+                        <a class="boton Gris" @if(!isset($travel->finish)) href="{{url('/app/travel/'.$travel->id.'/assistance/'.$student->id.'/mark')}}" @endif>
                             <i class="fa fa-thermometer-empty"></i>
                             <span>Sin datos</span>
                         </a>
@@ -104,9 +122,37 @@
                 </div>
             @endforeach
         </div>
-        <a href="#" class="mybutton verde">
+        @if(!isset($travel->finish))
+        <a data-toggle="modal" data-target="#exampleModal" class="mybutton verde">
             <i class="fa fa-flag-checkered"></i>
             <span>Finalizar Viaje</span>
         </a>
+        @endif
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Finalizar Viaje</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" style="color:white" class="fa fa-times"></span>
+              </button>
+            </div>
+            <div class="modal-body">
+                ¿Esta Seguro de finalizar el viaje?
+            </div>
+            <div class="modal-footer" style="display:flex; justify-content:space-between">
+                <button type="button" class="mybutton sm rojo" data-dismiss="modal" style="width:45%">  
+                    <i class="fa fa-times"></i>
+                    <span>Cancelar</span>
+                </button>
+                <a href="{{url('/app/travel/'.$travel->id.'/finish')}}" class="mybutton sm verde" style="width:45%">  
+                    <i class="fa fa-flag-checkered"></i>
+                    <span>Finalizar</span>
+                </a>
+            </div>
+          </div>
+        </div>
     </div>
 @stop

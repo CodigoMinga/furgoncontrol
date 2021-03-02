@@ -60,16 +60,66 @@
         font-weight: 800;
         font-size:1.5rem;
     }
+    .dropdown-menu{
+        float: right!important;
+        left: initial!important;
+        right: 1rem!important;
+    }
+    .dropdown-toggle{
+        box-shadow:none!important;
+    }
+    .dropdown-menu{
+        background-color: black!important;
+        font-family: 'Montserrat', sans-serif;
+        font-size:2rem!important;
+    }
+    
+    .dropdown-menu>li>a{
+        color:white!important;
+    }
+    .dropdown-menu>li>a:hover{
+        color:#F7CE26!important;
+        background-color: rgba(0,0,0,0)!important;
+    }
 
 </style>
 
+@section('menubutton')
+    <div class="btn-group">
+        <a class="fa fa-user-circle-o botton-menu dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+        </a>
+            <ul class="dropdown-menu">
+            <li><a href="{{url('/app/users/information')}}"><i class="fa fa-user-circle-o"></i> Mi Cuenta</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="{{url('/app/logout')}}"><i class="fa fa-sign-out"></i> Cerrar sesión</a></li>
+        </ul>
+    </div>
+@endsection
+
 @section('content')
+
     <div align="center" style="padding: 1rem">
         <a class="titulo">
             <span>Hola </span>
             <span>{{Auth::user()->name}}</span>
         </a>
     </div>
+
+    @if($expired_days > 0 and $expired_days < 5)
+        <div class="alert-box">
+            <i class="fa fa-warning"></i>
+            <span>Su licencia Expiro, le queda {{5 - $expired_days}} día de Uso.</span>
+            <i class="fa fa-warning"></i>
+        </div>
+    @elseif($expired_days >= 5)
+        <div class="alert-box">
+            <i class="fa fa-warning"></i>
+            <span>Usted no posee una licencia activa. Por favor renueve su licencia</span>
+            <i class="fa fa-warning"></i>
+        </div>
+    @endif
+
+    @if($expired_days <= 5)
     <a href="{{url('/app/travel/add')}}" class="mybutton verde">
         <i class="fa fa-bus"></i>
         <span>Nuevo Viaje</span>
@@ -84,19 +134,17 @@
         <span>Cambiar Clave</span>
     </a>
 
-    <a href="{{url('/app/school/list')}}" class="mybutton rojo">
+    <a href="{{url('/app/school/list')}}" class="mybutton morado">
         <i class="fa fa-list-ul"></i>
         <span>Establecimientos</span>
     </a>
 
-
-
-    <a href="{{url('/app/reportselect')}}" class="mybutton morado">
+    <a href="{{url('/app/reportselect')}}" class="mybutton rojo">
         <i class="fa fa-file-pdf-o"></i>
         <span>Reportes</span>
     </a>
-
-    <a href="https://www.flow.cl/btn.php?token=wn202xf" class="mybutton rojo">
+    @endif
+    <a href="https://www.flow.cl/btn.php?token=wn202xf" class="mybutton naranja">
         <i class="fa fa-credit-card"></i>
         <span>Pagar Licencia</span>
     </a>
@@ -119,7 +167,6 @@
             <span>de Hoy</span>
         </a>
     </div>
-
     @foreach($travels as $travel)
         <div class="viaje">
             <i class="icono fa fa-bus"></i>

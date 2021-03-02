@@ -24,6 +24,7 @@ Route::post('/app/checklogin','MainController@checkLogin');
 Route::get('/app/register', 'MainController@register');
 Route::post('/app/register/process', 'MainController@registerProcess');
 
+
 Route::get('/app/passwordlost', 'MainController@passwordLost');
 Route::post('/app/passwordlost/process', 'MainController@passwordLostProcess');
 
@@ -31,8 +32,7 @@ Route::get('/app/resetpassword/{user_id}/token/{token}', 'MainController@passwor
 Route::post('/app/resetpassword/{user_id}/token/{token}/process', 'MainController@passwordRessetTokenProcess');
 
 Route::group(['middleware' => ['auth']], function() {
-
-
+   
 
     Route::get('/app/home', 'HomeController@index');
     //Cambio de clave
@@ -67,11 +67,17 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/app/travel/{travel_id}', 'TravelController@details');
     Route::get('/app/travel/{travel_id}/assistance', 'TravelController@assistance');
+    Route::get('/app/travel/{travel_id}/finish', 'TravelController@finish');
 
     Route::get('/app/travel/{travel_id}/assistance/{student_id}/mark', 'TravelController@setAssistance');
     Route::post('/app/travel/{travel_id}/assistance/{student_id}/mark/process', 'TravelController@setAssistanceProcess');
 
     Route::get('/app/logout', 'MainController@logout');
+
+    
+    Route::get('/app/users/information' ,'UserController@information');
+    Route::get('/app/users/edit'        ,'UserController@edit');
+    Route::post('/app/users/edit/process','UserController@editProcess');
 
     Route::get('/app/users','UserController@list');
     Route::get('/app/users/getdata','UserController@getData');

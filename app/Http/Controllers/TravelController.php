@@ -41,7 +41,9 @@ class TravelController extends Controller
     public function assistance($travel_id){
         $user_id = Auth::user()->id;
         $students = Db::select('
-                    select students.*,travelstudents.temperature from students
+                    select students.*,travelstudents.temperature,schools.name as school_name from students
+                    left join schools 
+                    on schools.id = students.school_id 
                     left join travelstudents
                     on travelstudents.student_id = students.id and travelstudents.travel_id = '.$travel_id.' where students.user_id = '.$user_id
                 );
@@ -70,6 +72,16 @@ class TravelController extends Controller
     }
 
 
+    public function finish($travel_id){
+        $travel = Travel::findOrFail($travel_id);
+        $travel->finish = Carbon::now();
+        $travel->save();
+
+        $sucess  = true;
+        $returnUrl = url('/')."/app/home";
+        $message =  "Se termino con el viaje correctamente";
+        return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
+    }
 
     public function reportselect(){
         $schools = Auth::user()->schools;
