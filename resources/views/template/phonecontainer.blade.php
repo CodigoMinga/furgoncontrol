@@ -115,16 +115,22 @@
         color:white ;
     }
 
+    .mybutton-column i{
+        font-size: 5rem;
+    }
+
     .mybutton i{
         display: block;
         font-size: 2.5rem;
         text-align: center;
         padding:1.5rem;
     }
-    .mybutton-column i{
-        font-size: 5rem;
+    
+    .mybutton.sm i{
+        font-size: 2rem;
+        padding:1rem;
     }
-
+    
     .mybutton span{
         display: block;
         text-align: center;
@@ -132,6 +138,11 @@
         padding:1.5rem;
         width:90%;
         font-family: 'Montserrat', sans-serif;
+    }
+
+    .mybutton.sm span{
+        font-size: 1.8rem;
+        padding:1rem;
     }
     
     .my-formgroup input{
