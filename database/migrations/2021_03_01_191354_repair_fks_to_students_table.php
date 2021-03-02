@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddNewColumnsToStudentsTable extends Migration
+class RepairFksToStudentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +14,11 @@ class AddNewColumnsToStudentsTable extends Migration
     public function up()
     {
         Schema::table('students', function (Blueprint $table) {
-            $table->bigInteger('school_id')->unsigned()->nullable();
-            $table->foreign('school_id')->references('id')->on('users')->onUpdate('RESTRICT')->onDelete('RESTRICT');
 
-            $table->dropColumn('school_name');
+
+            $table->dropForeign('students_school_id_foreign');
+            $table->foreign('school_id')->references('id')->on('schools')->onUpdate('RESTRICT')->onDelete('RESTRICT');
+
         });
     }
 
@@ -29,8 +30,7 @@ class AddNewColumnsToStudentsTable extends Migration
     public function down()
     {
         Schema::table('students', function (Blueprint $table) {
-            $table->dropColumn('school_id');
-            $table->string('school_name');
+            //
         });
     }
 }

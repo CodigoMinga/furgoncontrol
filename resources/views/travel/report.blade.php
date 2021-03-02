@@ -2,7 +2,7 @@
 <head>
 <style type="text/css">
     @page{        
-        margin:1rem 3rem;
+        margin:1.5rem 3rem;
     }
     
     body{
@@ -54,7 +54,7 @@
                             PPU
                         </th>
                         <td style="width:300px">
-                            
+                            {{$usuario->plate}}
                         </td>
                     </tr>
                     <tr>
@@ -70,7 +70,7 @@
                             ASISTENTE
                         </th>
                         <td>
-                            
+                            {{$usuario->helper_name}}
                         </td>
                     </tr>
                 </table>
@@ -83,8 +83,8 @@
                         </th>
                     </tr>
                     <tr>
-                        <td style="height:42.5px">
-
+                        <td style="height:42.5px" align="center">
+                            {{$school->name}}
                         </td>
                     </tr>
                 </table>
