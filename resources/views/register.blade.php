@@ -100,6 +100,11 @@
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
 
+            <div class="form-group has-feedback">
+                <input required type="text" class="form-control" placeholder="Nombre Asistente" name="helper_name">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+
             <div class="form-group">
                 <label>Ciudad</label>
                 <select required class="form-control" name="commune_id" required>
@@ -210,14 +215,6 @@ Si tienes alguna duda, reclamo, comentario o sugerencia respecto a estas Políti
 <script src="{{ url('/') }}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- iCheck -->
 <script src="{{ url('/') }}/plugins/iCheck/icheck.min.js"></script>
-<script>
-    $(function () {
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass: 'iradio_square-blue',
-            increaseArea: '20%' /* optional */
-        });
-    });
-</script>
+
 </body>
 </html>
