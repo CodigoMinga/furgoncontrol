@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Commune;
+use App\License;
 use App\Mail\PasswordResetMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -76,10 +77,20 @@ class MainController extends Controller
         $user = User::create($input);
 
         if($user){
+            //crea el colegio asociado al usuario
             $school = new School();
             $school->name = $input['school_name'];
             $school->user_id = $user->id;
             $school->save();
+
+            //crea la licencia por default
+            $license = new License();
+            $license->pay_date = Carbon::now();
+            $license->from = Carbon::now();
+            $license->to = Carbon::now()->addDays(30);
+            $license->user_id = $user->id;
+            $license->pay_id = null;
+            $license->save();
 
 
             $userAutentificated = Auth::loginUsingId($user->id);

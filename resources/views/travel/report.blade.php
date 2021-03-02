@@ -2,7 +2,7 @@
 <head>
 <style type="text/css">
     @page{        
-        margin:1rem 3rem;
+        margin:1.5rem 3rem;
     }
     
     body{
@@ -70,7 +70,7 @@
                             ASISTENTE
                         </th>
                         <td>
-                            
+                            {{$usuario->helper_name}}
                         </td>
                     </tr>
                 </table>
