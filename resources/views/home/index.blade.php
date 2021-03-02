@@ -60,8 +60,37 @@
         font-weight: 800;
         font-size:1.5rem;
     }
+    .dropdown-menu{
+        float: right!important;
+        left: initial!important;
+        right: 1rem!important;
+    }
+    .dropdown-toggle{
+        box-shadow:none!important;
+    }
+    .dropdown-menu{
+        background-color: black!important;
+        font-family: 'Montserrat', sans-serif;
+        font-size:2rem!important;
+    }
+    
+    .dropdown-menu a{
+        color:white!important;
+    }
 
 </style>
+
+@section('menubutton')
+    <div class="btn-group">
+        <a class="fa fa-user-circle-o botton-menu dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+        </a>
+            <ul class="dropdown-menu">
+            <li><a href="#"><i class="fa fa-user-circle-o"></i> Mi Cuenta</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#"><i class="fa fa-sign-out"></i> Cerrar sesión</a></li>
+        </ul>
+    </div>
+@endsection
 
 @section('content')
 
@@ -93,6 +122,10 @@
     <a href="{{url('/app/student/list')}}" class="mybutton azul">
         <i class="fa fa-users"></i>
         <span>Alumnos</span>
+    </a>
+    <a href="{{url('/app/password/'.Auth::user()->id.'/change')}}" class="mybutton azul">
+        <i class="fa fa-users"></i>
+        <span>Cambiar Clave</span>
     </a>
 
     <a href="{{url('/app/school/list')}}" class="mybutton morado">
@@ -128,7 +161,6 @@
             <span>de Hoy</span>
         </a>
     </div>
-
     @foreach($travels as $travel)
         <div class="viaje">
             <i class="icono fa fa-bus"></i>

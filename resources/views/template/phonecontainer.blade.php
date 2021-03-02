@@ -245,10 +245,9 @@
         align-items: stretch 
     }
 
-    .botton-volver{
+    .botton-volver,.botton-menu{
         display: block;
         font-size: 4rem;
-        margin-left: 1rem;
         display:flex!important;
         flex-direction: row;
         position: sticky;
@@ -257,7 +256,7 @@
         color:black;
     }
 
-    .botton-volver:hover{
+    .botton-volver:hover,.botton-menu:hover{
         color:white;
     }
 
@@ -265,13 +264,13 @@
 <body>
 <div class="wrapper">
     <div class="barra" align="center">
-        <div style="width:5rem">
+        <div style="width:5rem" align="right">
             @yield('backbutton')
         </div>
         <div style="flex-grow:1">
             <img src="{{ url('/') }}/images/logo.svg" height="75" style="padding:10px;">
         </div>
-        <div style="width:5rem">
+        <div style="width:5rem" align="left">
             @yield('menubutton')
         </div>
     </div>
