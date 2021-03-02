@@ -14,9 +14,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <link rel="stylesheet" href="{{url('/')}}/assets/css/bootstrap.min.css">
-    <!--        <link rel="stylesheet" href="{{url('/')}}/assets/css/bootstrap-theme.min.css">-->
-
-
+    
     <!--For Plugins external css-->
     <link rel="stylesheet" href="{{url('/')}}/assets/css/plugins.css" />
 
@@ -27,72 +25,63 @@
     <link rel="stylesheet" href="{{url('/')}}/assets/css/responsive.css" />
 
     <script src="{{url('/')}}/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Montserrat', sans-serif;
+        }
+        .navbar-default .navbar-collapse, .navbar-default .navbar-form{
+            border-color:transparent;
+        }
+        nav{
+            background-color: #F7CE26!important;
+        }
+        section{
+            padding: 5rem 0; 
+        }
+    </style>
 </head>
+
 <body data-spy="scroll" data-target="#main-navbar">
-<!--[if lt IE 8]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]-->
-
-<div class='preloader'><div class='loaded' >&nbsp;</div></div>
-<div id="menubar" class="main-menu">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header " style="color: #F7CE26">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="brand-img" href="https://www.furgoncontrolado.cl"><img src="assets/images/logo.svg" alt="Furgon Control" height="50" width="140" /></a>
+    <div class='preloader'>
+        <div class='loaded' >&nbsp;</div>
+    </div>
+    <div id="menubar" class="main-menu">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header " style="color: #F7CE26">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="brand-img" href="https://www.furgoncontrolado.cl"><img src="assets/images/logo.svg" alt="Furgon Control" height="50" width="140" /></a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="nav-item nav-link active" href="#home">Inicio<span class="sr-only">(current)</span></a></li>
+                        <li><a class="nav-item nav-link" href="#nosotros">¿Comó Funciona?</a></li>
+                        <li><a class="nav-item nav-link" href="#precios">Precios</a></li>
+                        <li><a class="nav-item nav-link" href="#footer">Contacto</a></li>
+                        <li><a class="nav-item nav-link" href="{{url('/app/login')}}">Iniciar Sesion <span><i class="fa fa-user"></i></span></a></li>
+                    </ul>
+                </div>
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                          <li><a class="nav-item nav-link active" href="#home">Inicio<span class="sr-only">(current)</span></a></li>
-                            <li><a class="nav-item nav-link" href="#nosotros">¿Comó Funciona?</a></li>
-                            <li><a class="nav-item nav-link" href="#precios">Precios</a></li>
-                            <li><a class="nav-item nav-link" href="#footer">Contacto</a></li>
-                            <li><a class="nav-item nav-link" href="{{url('/app/register')}}">Registrarse <span><i class="fa fa-check"></i></span></a></li>
-                            <li><a class="nav-item nav-link" href="{{url('/app/login')}}">Iniciar Sesion <span><i class="fa fa-user"></i></span></a></li>
-
-
-
-                        </ul>
-
-
-
-
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
-</div>
-
-<a  title='Contactanos por WhatsApp' class="whatsapp" href="https://api.whatsapp.com/send?phone=56998281526&amp;text=Hola%20quisiera%20realizar%20una%20consulta%20sobre%20sus%20servicios" target="_blank"></a>
-<div id="FULL">
-    <!--Home page style-->
-    <header id="home" class="sections"  >
-    <br>
-    <br>
-
-    <br>
-
-        <div class="container text-center "  >
-    <br>
-    <br>
-            <div class="row">
-                <div class="homepage-style">
-
+        </nav>
+    </div>
+    <header id="home">
+        <div class="container text-center">
+        <div class="row">
+            <div class="homepage-style" style="padding-top:150px;">
                     <div class="top-arrow hidden-xs text-center"><img src="{{url('/')}}/assets/images/top-arrow.png" alt="" /></div>
-
                     <br>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="unique-apps"  style="text-align: center">
-                            <h2>Furgón Controlado</h2>
-                            <p style="color: white">
-                                Facilita tu registro de estudiantes digitalmente con nuestra aplicación y optimiza tu tiempo.
+                            <h2 style="font-weight:800;color:black">Furgón <span style="color:white">Controlado</span></h2>
+                            <p style="color: black">
+                                <b>Facilita tu registro de estudiantes digitalmente con nuestra aplicación y optimiza tu tiempo.</b>
                             </p>
                             <br>
                             <div class="home-btn">
@@ -101,122 +90,72 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="slider-area">
-
-
-
                             <img src="{{url('/')}}/images/Celu.png" alt="" width="200" height="350"/>
-
-
-                            </div>
-
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
-
     </header>
-
-    <section id="nosotros" class="sections">
+    <section id="nosotros">
         <div class="container">
-
             <div class="row">
                 <div class="heading">
                     <div class="title text-center arrow-right" >
                         <h4 class="">¿Comó funciona?</h4>
                         <img class="hidden-xs" src="assets/images/right-arrow.png" alt="" />
-
                     </div>
                 </div>
-
-
                 <!-- Example row of columns -->
-
                 <div class="portfolio-wrap">
-
-                    <div class="portfolio">
-
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="portfolio mb-5">
+                        <div class="col-md-6 col-sm-6 col-xs-12 order-2">
                             <img src="{{url('/')}}/images/foto1.svg" alt="" />
                         </div>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-md-6 col-sm-6 col-xs-12 order-1">
                             <div class="portfolio-item">
                                 <h4 style="text-align: center">Seguir los protocolos</h4>
                                 <p style="text-align: center">
                                     Sigue los protocolos establecidos por el Ministerio de Salud. Registra digitalmente los pasajeros.
                                 </p>
-
                             </div>
                         </div>
-
                     </div>
-
                     <div class="portfolio">
-
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="portfolio-item">
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
                                 <h4 style="text-align: center">Optimiza tu tiempo</h4>
                                 <p style="text-align: center">
-
                                     Optimiza el tiempo registrando la bitacora de cada estudiante, podrás acceder a informes diarios, semanales
                                     y mensuales en un práctico formato digital.
                                 </p>
-
                             </div>
                         </div>
-
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <img class="portfolio-img img-responsive" src="{{url('/')}}/images/foto2.svg" alt="" />
                         </div>
-
                     </div>
 
-                    <div class="portfolio">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="portfolio mb-5">
+                        <div class="col-md-6 col-sm-6 col-xs-12 order-2">
                             <img class="portfolio-img img-responsive" src="{{url('/')}}/images/foto3.svg" alt="" />
                         </div>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-md-6 col-sm-6 col-xs-12 order-1">
                             <div class="portfolio-item">
                                 <h4 style="text-align: center">Cuidémonos </h4>
                                 <p style="text-align: center">
                                     Olvidate del papel, digitalizate y cuidémonos entre todos. Podrás obtener reportes de trazabilidad siempre que los necesites.
                                 </p>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-
-
-    <section id="precios" class="sections lightbg">
+    </section>
+    <section id="precios" class="lightbg">
         <div class="container">
 
             <div class="heading">
@@ -307,32 +246,16 @@
             </div>
         </div>
     </section>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <div class="scroll-top">
-
         <div class="scrollup">
             <i class="fa fa-angle-double-up"></i>
         </div>
-
     </div>
-
     <!--Footer-->
-    <footer id="footer" class="footer" >
+    <footer id="footer">
         <div class="container">
-
             <div class="row">
                 <div class="main-footer" >
-                    <br>
-                    <br>
                     <div class="col-md-3 col-sm-6 col-xs-12" style="text-align: center">
                         <div class="footer-item" style="text-decoration-color: white" >
                             <h2 style="color: white">Contacto</h2>
@@ -361,13 +284,9 @@
 
             </div>
         </div>
-
     </footer>
-
-
     <script src="{{url('/')}}/assets/js/vendor/jquery-1.11.2.min.js"></script>
     <script src="{{url('/')}}/assets/js/vendor/bootstrap.min.js"></script>
-
     <script src="{{url('/')}}/assets/js/plugins.js"></script>
     <script src="{{url('/')}}/assets/js/main.js"></script>
 </body>
