@@ -72,6 +72,16 @@ class TravelController extends Controller
     }
 
 
+    public function finish($travel_id){
+        $travel = Travel::findOrFail($travel_id);
+        $travel->finish = Carbon::now();
+        $travel->save();
+
+        $sucess  = true;
+        $returnUrl = url('/')."/app/home";
+        $message =  "Se termino con el viaje correctamente";
+        return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
+    }
 
     public function reportselect(){
         $schools = Auth::user()->schools;
