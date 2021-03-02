@@ -68,6 +68,7 @@
         </div><!-- /.container-fluid -->
     </nav>
 </div>
+
 <a  title='Contactanos por WhatsApp' class="whatsapp" href="https://api.whatsapp.com/send?phone=56998281526&amp;text=Hola%20quisiera%20realizar%20una%20consulta%20sobre%20sus%20servicios" target="_blank"></a>
 <div id="FULL">
     <!--Home page style-->
@@ -93,7 +94,10 @@
                                 Facilita tu registro de estudiantes digitalmente con nuestra aplicación y optimiza tu tiempo.
                             </p>
                             <br>
-                           
+                            <div class="home-btn">
+                                <a class="btn btn-primary" href="{{url('/app/register')}}">Registrarse <span><i class="fa fa-check"></i></span></a>
+                                <a class="btn btn-primary" href="{{url('/app/login')}}">Iniciar Sesion <span><i class="fa fa-user"></i></span></a>
+                            </div>
                         </div>
                     </div>
 
