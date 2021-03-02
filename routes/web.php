@@ -24,6 +24,7 @@ Route::post('/app/checklogin','MainController@checkLogin');
 Route::get('/app/register', 'MainController@register');
 Route::post('/app/register/process', 'MainController@registerProcess');
 
+
 Route::get('/app/passwordlost', 'MainController@passwordLost');
 Route::post('/app/passwordlost/process', 'MainController@passwordLostProcess');
 
@@ -31,6 +32,7 @@ Route::get('/app/resetpassword/{user_id}/token/{token}', 'MainController@passwor
 Route::post('/app/resetpassword/{user_id}/token/{token}/process', 'MainController@passwordRessetTokenProcess');
 
 Route::group(['middleware' => ['auth']], function() {
+   
 
     Route::get('/app/home', 'HomeController@index');
     //Cambio de clave
