@@ -7,7 +7,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>FurgonControlado.cl</title>
-    <meta name="description" content="La primera aplicación para furgones escolares de chile.">
+    <link rel="shortcut icon" href="{{ url('/') }}/images/favicon.png">
+    <meta property="og:image" content="{{ url('/') }}/images/favicon.png">
+    <meta name="description" content="Registro digital de pasajeros y reportes de trazabilidad. Olvídate del papel.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
@@ -36,53 +38,64 @@
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
+            <div class="navbar-header " style="color: #F7CE26">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="brand-img" href="index.html"><img src="{{url('/')}}/images/logo.svg" alt="" height="80" width="160" /></a>
+                <a class="brand-img" href="https://www.furgoncontrolado.cl"><img src="assets/images/logo.svg" alt="Furgon Control" height="50" width="140" /></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a class="nav-item nav-link active" href="#home">Inicio<span class="sr-only">(current)</span></a></li>
-                    <li><a class="nav-item nav-link" href="#nosotros">¿Comó funciona?</a></li>
-                    <li><a class="nav-item nav-link" href="#precios">Precios</a></li>
-                    <li><a class="nav-item nav-link" href="#footer">Contacto</a></li>
+                        <ul class="nav navbar-nav navbar-right">
+                          <li><a class="nav-item nav-link active" href="#home">Inicio<span class="sr-only">(current)</span></a></li>
+                            <li><a class="nav-item nav-link" href="#nosotros">¿Comó Funciona?</a></li>
+                            <li><a class="nav-item nav-link" href="#precios">Precios</a></li>
+                            <li><a class="nav-item nav-link" href="#footer">Contacto</a></li>
+                            <li><a class="nav-item nav-link" href="{{url('/app/register')}}">Registrarse <span><i class="fa fa-check"></i></span></a></li>
+                            <li><a class="nav-item nav-link" href="{{url('/app/login')}}">Iniciar Sesion <span><i class="fa fa-user"></i></span></a></li>
+
+
+
+                        </ul>
 
 
 
 
-                </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 </div>
+
 <a  title='Contactanos por WhatsApp' class="whatsapp" href="https://api.whatsapp.com/send?phone=56998281526&amp;text=Hola%20quisiera%20realizar%20una%20consulta%20sobre%20sus%20servicios" target="_blank"></a>
 <div id="FULL">
     <!--Home page style-->
     <header id="home" class="sections"  >
-        <div class="container" >
+    <br>
+    <br>
 
+    <br>
+
+        <div class="container text-center "  >
+    <br>
+    <br>
             <div class="row">
                 <div class="homepage-style">
 
                     <div class="top-arrow hidden-xs text-center"><img src="{{url('/')}}/assets/images/top-arrow.png" alt="" /></div>
-              
+
                     <br>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="unique-apps">
-                            <h2 style="text-align: center">Furgón Controlado</h2>
-                            <p style="text-align: center">
+                        <div class="unique-apps"  style="text-align: center">
+                            <h2>Furgón Controlado</h2>
+                            <p style="color: white">
                                 Facilita tu registro de estudiantes digitalmente con nuestra aplicación y optimiza tu tiempo.
                             </p>
                             <br>
-                            <div class="home-btn" style="color: black">
-                                
+                            <div class="home-btn">
                                 <a class="btn btn-primary" href="{{url('/app/register')}}">Registrarse <span><i class="fa fa-check"></i></span></a>
                                 <a class="btn btn-primary" href="{{url('/app/login')}}">Iniciar Sesion <span><i class="fa fa-user"></i></span></a>
                             </div>
@@ -92,10 +105,10 @@
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="slider-area">
 
-  
+
 
                             <img src="{{url('/')}}/images/Celu.png" alt="" width="200" height="350"/>
-                                
+
 
                             </div>
 
@@ -109,7 +122,7 @@
 
     </header>
 
-    <section id="servicios" class="sections">
+    <section id="nosotros" class="sections">
         <div class="container">
 
             <div class="row">
@@ -141,8 +154,7 @@
                             <div class="portfolio-item">
                                 <h4 style="text-align: center">Seguir los protocolos</h4>
                                 <p style="text-align: center">
-                                  Sigue los protocolos establecidos por el Ministerio de Salud.
-
+                                    Sigue los protocolos establecidos por el Ministerio de Salud. Registra digitalmente los pasajeros.
                                 </p>
 
                             </div>
@@ -190,7 +202,7 @@
                             <div class="portfolio-item">
                                 <h4 style="text-align: center">Cuidémonos </h4>
                                 <p style="text-align: center">
-                                    Olvidate del papel, digitalizate y cuidémonos entre todos.
+                                    Olvidate del papel, digitalizate y cuidémonos entre todos. Podrás obtener reportes de trazabilidad siempre que los necesites.
                                 </p>
 
                             </div>
@@ -221,7 +233,7 @@
                 <div class="main-package text-center">
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="package-item basic">
-                            <h5>Gratis Usuarios Chiloé</h5>
+                            <h5 style="color: #F7CE26">Gratis Usuarios Chiloé</h5>
 
                             <ul>
                                 <li>Registro digital de estudiantes </li>
@@ -230,8 +242,8 @@
                                 <li>Registra temperatura</li>
                             </ul>
 
-                            <div class="package-bottom-area">
-                                <h3>$ 0</h3>
+                            <div class="package-bottom-area" style="color: #F7CE26">
+                                <h3 >$ 0</h3>
                             </div>
 
 
@@ -248,11 +260,11 @@
                             <h5>Prueba Gratis</h5>
 
                             <ul>
-                                <li>30 Días</li>
-                                <li>Registro digital de estudiantes </li>
-                                <li>Optimiza tu tiempo</li>
-                                <li>Genera reportes</li>
-                                <li>Registra temperatura</li>
+                                <li style="color: black">30 Días</li>
+                                <li style="color: black">Registro digital de estudiantes </li>
+                                <li style="color: black">Optimiza tu tiempo</li>
+                                <li style="color: black">Genera reportes</li>
+                                <li style="color: black">Registra temperatura</li>
                             </ul>
 
                             <div class="package-bottom-area">
@@ -321,7 +333,7 @@
                 <div class="main-footer" >
                     <br>
                     <br>
-                    <div class="col-md-3 col-sm-6 col-xs-12" >
+                    <div class="col-md-3 col-sm-6 col-xs-12" style="text-align: center">
                         <div class="footer-item" style="text-decoration-color: white" >
                             <h2 style="color: white">Contacto</h2>
                             <ul><li>Quellón, Chiloé</li>
