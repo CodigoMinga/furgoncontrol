@@ -74,8 +74,12 @@
         font-size:2rem!important;
     }
     
-    .dropdown-menu a{
+    .dropdown-menu>li>a{
         color:white!important;
+    }
+    .dropdown-menu>li>a:hover{
+        color:#F7CE26!important;
+        background-color: rgba(0,0,0,0)!important;
     }
 
 </style>
