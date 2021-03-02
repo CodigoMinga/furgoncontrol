@@ -62,47 +62,47 @@
                 </ul>
             </div>
         @endif
-        <form method="post" action="{{url('/app/register/process')}}">
+        <form method="post" action="{{url('/app/register/process')}}" id="form">
             {{csrf_field()}}
             <div class="form-group has-feedback">
                 <input required type="text" class="form-control" placeholder="Nombre" name="name">
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                <span class="fa fa-tag form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
                 <input required type="text" class="form-control" placeholder="Apellido" name="last_name">
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                <span class="fa fa-tags form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input required type="text" class="form-control" placeholder="RUT" name="rut">
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                <input required type="text" class="form-control rut" placeholder="RUT" name="rut">
+                <span class="fa fa-id-card form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input required type="number" class="form-control" placeholder="Telefono" name="phone">
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                <input required type="number" class="form-control" placeholder="Teléfono" name="phone">
+                <span class="fa fa-phone form-control-feedback"></span>
             </div>
 
             <div class="form-group has-feedback">
                 <input required type="text" class="form-control" placeholder="Patente del Vehiculo" name="plate">
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                <span class="fa fa-bus form-control-feedback"></span>
             </div>
 
             <div class="form-group has-feedback">
                 <input required type="email" class="form-control" placeholder="Email" name="email">
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                <span class="fa fa-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
                 <input required type="password" class="form-control" placeholder="Password" name="password">
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                <span class="fa fa-key form-control-feedback"></span>
             </div>
 
             <div class="form-group has-feedback">
                 <input required type="text" class="form-control" placeholder="Nombre Establecimiento" name="school_name">
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                <span class="fa fa-university form-control-feedback"></span>
             </div>
 
             <div class="form-group has-feedback">
                 <input required type="text" class="form-control" placeholder="Nombre Asistente" name="helper_name">
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                <span class="fa fa-user form-control-feedback"></span>
             </div>
 
             <div class="form-group">
@@ -190,7 +190,7 @@ Si tienes alguna duda, reclamo, comentario o sugerencia respecto a estas Políti
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Registrarse</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-flat" id="guardar">Registrarse</button>
                 </div>
                 <!-- /.col -->
             </div>
@@ -216,5 +216,26 @@ Si tienes alguna duda, reclamo, comentario o sugerencia respecto a estas Políti
 <!-- iCheck -->
 <script src="{{ url('/') }}/plugins/iCheck/icheck.min.js"></script>
 
+<script src="{{ url('/') }}/js/rut.js"></script>
+<script>
+    var guardar =document.getElementById('guardar');
+    var form =document.getElementById('form');
+
+    $(document).ready(function(){
+        $(".rut").rut({
+            formatOn: 'keyup',
+            minimumLength: 8, // validar largo mínimo; default: 2
+            validateOn: 'change keyup' // si no se quiere validar, pasar null
+        }).on('rutInvalido', function(e) {
+            this.style.borderColor='red';
+            guardar.disabled=true;
+            form.disabled=true;
+        }).on('rutValido', function(e, rut, dv) {
+            this.style.borderColor="green";
+            guardar.disabled=false;
+            form.disabled=false;
+        });
+    });
+</script>
 </body>
 </html>

@@ -10,6 +10,7 @@
     .lista{
         flex-grow: 1;
         margin-bottom:2rem;
+        overflow-y: scroll;
     }
     .estudiante{
         display: flex;

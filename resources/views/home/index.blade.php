@@ -60,8 +60,41 @@
         font-weight: 800;
         font-size:1.5rem;
     }
+    .dropdown-menu{
+        float: right!important;
+        left: initial!important;
+        right: 1rem!important;
+    }
+    .dropdown-toggle{
+        box-shadow:none!important;
+    }
+    .dropdown-menu{
+        background-color: black!important;
+        font-family: 'Montserrat', sans-serif;
+        font-size:2rem!important;
+    }
+    
+    .dropdown-menu>li>a{
+        color:white!important;
+    }
+    .dropdown-menu>li>a:hover{
+        color:#F7CE26!important;
+        background-color: rgba(0,0,0,0)!important;
+    }
 
 </style>
+
+@section('menubutton')
+    <div class="btn-group">
+        <a class="fa fa-user-circle-o botton-menu dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+        </a>
+            <ul class="dropdown-menu">
+            <li><a href="{{url('/app/users/information')}}"><i class="fa fa-user-circle-o"></i> Mi Cuenta</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="{{url('/app/logout')}}"><i class="fa fa-sign-out"></i> Cerrar sesión</a></li>
+        </ul>
+    </div>
+@endsection
 
 @section('content')
 
@@ -73,15 +106,17 @@
     </div>
 
     @if($expired_days > 0 and $expired_days < 5)
-        <a href="#" class="mybutton rojo">
+        <div class="alert-box">
             <i class="fa fa-warning"></i>
             <span>Su licencia Expiro, le queda {{5 - $expired_days}} día de Uso.</span>
-        </a>
-    @elseif($expired_days >= 5)
-        <a href="#" class="mybutton rojo">
             <i class="fa fa-warning"></i>
-            <span>Usted no posee una licencia Activa. Porfavor pague su licencia</span>
-        </a>
+        </div>
+    @elseif($expired_days >= 5)
+        <div class="alert-box">
+            <i class="fa fa-warning"></i>
+            <span>Usted no posee una licencia activa. Por favor renueve su licencia</span>
+            <i class="fa fa-warning"></i>
+        </div>
     @endif
 
     @if($expired_days <= 5)
@@ -128,7 +163,6 @@
             <span>de Hoy</span>
         </a>
     </div>
-
     @foreach($travels as $travel)
         <div class="viaje">
             <i class="icono fa fa-bus"></i>
