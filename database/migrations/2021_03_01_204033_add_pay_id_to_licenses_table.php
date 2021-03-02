@@ -14,7 +14,9 @@ class AddPayIdToLicensesTable extends Migration
     public function up()
     {
         Schema::table('licenses', function (Blueprint $table) {
-            //
+            $table->bigInteger('pay_id')->unsigned()->nullable();
+            $table->foreign('pay_id')->references('id')->on('pays')->onUpdate('RESTRICT')->onDelete('RESTRICT');
+
         });
     }
 
@@ -26,7 +28,7 @@ class AddPayIdToLicensesTable extends Migration
     public function down()
     {
         Schema::table('licenses', function (Blueprint $table) {
-            //
+            $table->dropColumn('pay_id');
         });
     }
 }
