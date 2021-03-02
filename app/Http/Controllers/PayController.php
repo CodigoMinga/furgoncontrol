@@ -28,15 +28,47 @@ class PayController extends Controller
             $pay->user_id = Auth::user()->id;
             $pay->save();
 
-            //guarda la nueva licencia
-            //crea la licencia por default
-            $license = new License();
-            $license->pay_date = Carbon::now();
-            $license->from = Carbon::now();
-            $license->to = Carbon::now()->addDays(30);
-            $license->user_id = $user->id;
-            $license->pay_id = $pay->id;
-            $license->save();
+            //busca si es que ya existe una licensia activa, trae la ultima
+            $old_license = License::where('user_id','=',$user->id)
+                            ->max('to');
+
+            //si tiene una licensia antigua le suma los 30 dias necesarios
+            if(isset($old_license)){
+                $old_license = Carbon::create($old_license);
+                //guarda la nueva licencia
+                //crea la licencia por default
+                $license = new License();
+                $license->pay_date = Carbon::now();
+
+                //si la fecha actual es mayor que la ultima licensia, se le sumaran 30 dias
+                //desde el dia de pago
+                if(Carbon::now()->gt($old_license)){
+                    $license->from = Carbon::now();
+                    $license->to = Carbon::now()->addDays(30);
+                }else{
+                    $license->from = $old_license;
+                    $license->to = $old_license->addDays(30);
+                }
+
+
+
+                $license->user_id = $user->id;
+                $license->pay_id = $pay->id;
+                $license->save();
+            }else{
+                //guarda la nueva licencia
+                //crea la licencia por default
+                $license = new License();
+                $license->pay_date = Carbon::now();
+                $license->from = Carbon::now();
+                $license->to = Carbon::now()->addDays(30);
+                $license->user_id = $user->id;
+                $license->pay_id = $pay->id;
+                $license->save();
+            }
+
+
+
 
             //dispara correo de un nuevo pago procesado
             $subject = $user->email." se proceso el pago id: ".$pay->id." correctamente";
