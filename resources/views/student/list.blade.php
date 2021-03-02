@@ -90,7 +90,7 @@
                     <th>Colegio</th>
                     <th>Nombre Apoderado</th>
                     <th>Apellido Apoderado</th>
-                    <th>Telefono Apoderado</th>
+                    <th>Teléfono Apoderado</th>
                     <th>Datos</th>
                 </tr>
             </thead>

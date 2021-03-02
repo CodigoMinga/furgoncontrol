@@ -8,21 +8,48 @@ use Yajra\DataTables\DataTables;
 use App\User;
 use Auth;
 
+use App\Commune;
 
 class UserController extends Controller
 {
     public function list(){
-
         return view('users.list');
     }
 
+    public function information(){
+        $edit=false;        
+        $communes = Commune::all()->sortBy('name');
+        return view('users.form',compact('edit','communes'));
+    }
+
+    public function edit(){
+        $edit=true;
+        $communes = Commune::all()->sortBy('name');
+        return view('users.form',compact('edit','communes'));
+    }
+
+    
+    public function editProcess(Request $request){
+        $input = $request->all();
+        $user = User::findOrFail($request->id);
+
+        if($user->fill($input)->save()){
+            $sucess  = true;
+            $returnUrl = url('/')."/app/home";
+            $message =  "Se guardaron los cambios de tu cuenta";
+        }else{
+            $sucess  = false;
+            $returnUrl = url('/')."/app/home";
+            $message =  "Ocurrio un error al cambiar los datos de tu cuanta";
+        }
+
+        return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
+    }
 
     public function getData(){
         if(Auth::user()->is_codigo_minga){
             $users = User::all();
-
-          return DataTables::of($users)->make(true);
-
+            return DataTables::of($users)->make(true);
         }
     }
 
