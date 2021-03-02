@@ -71,6 +71,11 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/app/logout', 'MainController@logout');
 
+    
+    Route::get('/app/users/information' ,'UserController@information');
+    Route::get('/app/users/edit'        ,'UserController@edit');
+    Route::post('/app/users/edit/process','UserController@editProcess');
+
     Route::get('/app/users','UserController@list');
     Route::get('/app/users/getdata','UserController@getData');
     Route::get('/app/users/{user_id}/getlicences','UserController@getLicences');
