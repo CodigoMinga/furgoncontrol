@@ -15,6 +15,14 @@
                 <label for="exampleInputEmail1">Seleccione Fecha</label>
                 <input type="date" name="date" id="date" maxlength="10" style="width:auto">
             </div>
+            <div class="my-formgroup">
+                <label for="exampleInputEmail1">Seleccione Establecimiento</label>
+                <select name="school_id" id="school_id">
+                    @foreach($schools as $school)
+                            <option value="{{$school->id}}">{{$school->name}}</option>
+                    @endforeach
+                </select>
+            </div>
             <br>
             Generar reporte desde 
             <span id="desde"></span>
@@ -24,7 +32,7 @@
         </div>
     </div>
     <br>
-    <a id="boton" href="#" class="mybutton morado" target="_blank">
+    <a id="boton" href="#" class="mybutton rojo" target="_blank">
         <i class="fa fa-file-pdf-o"></i>
         <span>Ver Reporte</span>
     </a>
@@ -34,6 +42,10 @@
                 seleccionfecha(this.value);
             });
 
+            $("#school_id").change(function(){
+                seleccionfecha($("#date").val());
+            });
+            
             $("#date").val(new Date().toISOString().split('T')[0]);
             seleccionfecha(new Date().toISOString().split('T')[0]);
 
@@ -45,7 +57,6 @@
                 var firstday = new Date(curr.setDate(first));
                 var lastday = new Date(curr.setDate(last));
 
-
                 console.log(firstday,lastday);
                 var desde= firstday.toISOString().split('T')[0];
                 var hasta= lastday.toISOString().split('T')[0];
@@ -53,7 +64,9 @@
                 $("#desde").html(desde);
                 $("#hasta").html(hasta);
 
-                $("#boton").attr("href", "{!! url("/") !!}" +"/app/report/"+desde+"/entre/"+hasta);
+                var escuela = $("#school_id").val();
+
+                $("#boton").attr("href", "{!! url("/") !!}" +"/app/report/"+desde+"/school/"+escuela);
             }
         });
     </script>

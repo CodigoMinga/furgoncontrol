@@ -64,7 +64,6 @@
         color:#00e676;
     }
 
-    
     .verde:hover{
         color:#b9f6ca;
     }
@@ -76,18 +75,18 @@
         color:#80d8ff ;
     }
 
-    .rojo{
+    .morado{
         color:#ea80fc  ;
     }
-    .rojo:hover{
+    .morado:hover{
         color:#ce93d8  ;
     }
 
-    .morado{
+    .rojo{
         color:#ef5350 ;
     }
 
-    .morado:hover{
+    .rojo:hover{
         color:#ef9a9a ;
     }
 
@@ -99,6 +98,14 @@
         color:#cfd8dc ;
     }
 
+    .naranja{
+        color:#ffab40 ;
+    }
+
+    .naranja:hover{
+        color:#ffd180 ;
+    }
+
     
     .primario{
         color:#F7CE26 ;
@@ -108,16 +115,22 @@
         color:white ;
     }
 
+    .mybutton-column i{
+        font-size: 5rem;
+    }
+
     .mybutton i{
         display: block;
         font-size: 2.5rem;
         text-align: center;
         padding:1.5rem;
     }
-    .mybutton-column i{
-        font-size: 5rem;
+    
+    .mybutton.sm i{
+        font-size: 2rem;
+        padding:1rem;
     }
-
+    
     .mybutton span{
         display: block;
         text-align: center;
@@ -125,6 +138,11 @@
         padding:1.5rem;
         width:90%;
         font-family: 'Montserrat', sans-serif;
+    }
+
+    .mybutton.sm span{
+        font-size: 1.8rem;
+        padding:1rem;
     }
     
     .my-formgroup input{
@@ -138,6 +156,27 @@
         transition: border .5s ease;
         width: 100%;
         min-height: 54px;
+    }
+
+    .my-formgroup select{
+        background: rgba(0,0,0,0);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.8rem!important;
+        border:3px solid #F7CE26;
+        outline: none;
+        padding:1rem;
+        color:white!important;
+        transition: border .5s ease;
+        width: 100%;
+        min-height: 54px;
+    }
+    .my-formgroup select option{
+        color:white!important;
+        background: rgba(50,50,50,1);
+    }    
+    
+    .my-formgroup select:focus{
+        border:3px solid white;
     }
 
     .my-formgroup input:focus{

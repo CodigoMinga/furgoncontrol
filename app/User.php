@@ -39,7 +39,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','last_name','rut','phone','commune_id','plate'
+        'name', 'email', 'password','last_name','rut','phone','commune_id','plate','helper_name'
     ];
 
     /**
@@ -94,6 +94,6 @@ class User extends Authenticatable
 
     public function schools()
     {
-        return $this->hasMany('App\School');
+        return $this->hasMany('App\School','user_id','id');
     }
 }

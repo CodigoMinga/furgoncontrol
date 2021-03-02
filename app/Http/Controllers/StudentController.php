@@ -5,25 +5,29 @@ namespace App\Http\Controllers;
 use App\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use App\School;
 class StudentController extends Controller
 {
     public function add(){
         $student = new Student();
         $edit=true;
-        return view('student.add',compact('student','edit'));
+        $schools = School::where('user_id','=',Auth::user()->id)->get();
+
+        return view('student.add',compact('student','edit','schools'));
     }
 
     public function details($stutent_id){
         $student = Student::findOrFail($stutent_id);
         $edit=false;
-        return view('student.add',compact('student','edit'));
+        $schools = School::where('user_id','=',Auth::user()->id)->get();
+        return view('student.add',compact('student','edit','schools'));
     }
 
     public function edit($stutent_id){
         $student = Student::findOrFail($stutent_id);
         $edit=true;
-        return view('student.add',compact('student','edit'));
+        $schools = School::where('user_id','=',Auth::user()->id)->get();
+        return view('student.add',compact('student','edit','schools'));
     }
 
     public function addProcess(Request $request){
@@ -32,7 +36,7 @@ class StudentController extends Controller
 
         Student::create($request->all());
         $sucess  = true;
-        $returnUrl = url('/')."/app/home";
+        $returnUrl = url('/')."/app/student/list";
         $message =  "Se guardo el alumno con exito";
         return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
     }

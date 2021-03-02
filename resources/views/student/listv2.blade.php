@@ -80,7 +80,6 @@
 
                 <div class="informacion">
                     <p>{{$student->name}} {{$student->last_name}}</p>
-                    <p>Colegio: {{$student->school_name}}</p>
                     <p>Apodarado: {{$student->parent_name}} {{$student->parent_last_name}}</p>
                 </div>
                 <a class="boton" href="{{url('/app/student/'.$student->id.'/details')}}">

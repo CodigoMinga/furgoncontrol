@@ -64,12 +64,27 @@
 </style>
 
 @section('content')
+
     <div align="center" style="padding: 1rem">
         <a class="titulo">
             <span>Hola </span>
             <span>{{Auth::user()->name}}</span>
         </a>
     </div>
+
+    @if($expired_days > 0 and $expired_days < 5)
+        <a href="#" class="mybutton rojo">
+            <i class="fa fa-warning"></i>
+            <span>Su licencia Expiro, le queda {{5 - $expired_days}} día de Uso.</span>
+        </a>
+    @elseif($expired_days >= 5)
+        <a href="#" class="mybutton rojo">
+            <i class="fa fa-warning"></i>
+            <span>Usted no posee una licencia Activa. Porfavor pague su licencia</span>
+        </a>
+    @endif
+
+    @if($expired_days <= 5)
     <a href="{{url('/app/travel/add')}}" class="mybutton verde">
         <i class="fa fa-bus"></i>
         <span>Nuevo Viaje</span>
@@ -84,14 +99,19 @@
         <span>Cambiar Clave</span>
     </a>
 
-    <a href="{{url('/app/users/'.Auth::user()->id.'/schools')}}" class="mybutton rojo">
+    <a href="{{url('/app/school/list')}}" class="mybutton morado">
         <i class="fa fa-list-ul"></i>
         <span>Establecimientos</span>
     </a>
 
-    <a href="{{url('/app/reportselect')}}" class="mybutton morado">
+    <a href="{{url('/app/reportselect')}}" class="mybutton rojo">
         <i class="fa fa-file-pdf-o"></i>
         <span>Reportes</span>
+    </a>
+    @endif
+    <a href="https://www.flow.cl/btn.php?token=wn202xf" class="mybutton naranja">
+        <i class="fa fa-credit-card"></i>
+        <span>Pagar Licencia</span>
     </a>
 
     @if(Auth::user()->is_codigo_minga)

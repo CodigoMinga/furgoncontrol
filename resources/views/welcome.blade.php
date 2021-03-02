@@ -31,7 +31,7 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<div class='preloader'><div class='loaded'>&nbsp;</div></div>
+<div class='preloader'><div class='loaded' >&nbsp;</div></div>
 <div id="menubar" class="main-menu">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -50,7 +50,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a class="nav-item nav-link active" href="#home">Inicio<span class="sr-only">(current)</span></a></li>
-                    <li><a class="nav-item nav-link" href="#nosotros">Nosotros</a></li>
+                    <li><a class="nav-item nav-link" href="#nosotros">¿Comó funciona?</a></li>
                     <li><a class="nav-item nav-link" href="#precios">Precios</a></li>
                     <li><a class="nav-item nav-link" href="#footer">Contacto</a></li>
 
@@ -65,23 +65,24 @@
 <a  title='Contactanos por WhatsApp' class="whatsapp" href="https://api.whatsapp.com/send?phone=56998281526&amp;text=Hola%20quisiera%20realizar%20una%20consulta%20sobre%20sus%20servicios" target="_blank"></a>
 <div id="FULL">
     <!--Home page style-->
-    <header id="home" class="sections">
-        <div class="container">
+    <header id="home" class="sections"  >
+        <div class="container" >
 
             <div class="row">
                 <div class="homepage-style">
 
                     <div class="top-arrow hidden-xs text-center"><img src="{{url('/')}}/assets/images/top-arrow.png" alt="" /></div>
-
+              
+                    <br>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="unique-apps">
-                            <h2>Furgón Controlado</h2>
-                            <p>
+                            <h2 style="text-align: center">Furgón Controlado</h2>
+                            <p style="text-align: center">
                                 Facilita tu registro de estudiantes digitalmente con nuestra aplicación y optimiza tu tiempo.
                             </p>
-
+                            <br>
                             <div class="home-btn" style="color: black">
-
+                                
                                 <a class="btn btn-primary" href="{{url('/app/register')}}">Registrarse <span><i class="fa fa-check"></i></span></a>
                                 <a class="btn btn-primary" href="{{url('/app/login')}}">Iniciar Sesion <span><i class="fa fa-user"></i></span></a>
                             </div>
@@ -91,36 +92,10 @@
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="slider-area">
 
-                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
-                                <!-- Indicators -->
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+  
 
-                                </ol>
-
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner" role="listbox">
-
-                                    <div class="item active">
-                                        <img src="{{url('/')}}/assets/images/slider-img.png" alt="" />
-                                    </div>
-
-                                    <div class="item">
-                                        <img src="{{url('/')}}/assets/images/slider-img.png" alt="" />
-                                    </div>
-
-                                    <div class="item">
-                                        <img src="{{url('/')}}/assets/images/slider-img.png" alt="" />
-                                    </div>
-
-                                    <div class="item">
-                                        <img src="{{url('/')}}/assets/images/slider-img.png" alt="" />
-                                    </div>
-
-                                </div>
+                            <img src="{{url('/')}}/images/Celu.png" alt="" width="200" height="350"/>
+                                
 
                             </div>
 
@@ -139,7 +114,7 @@
 
             <div class="row">
                 <div class="heading">
-                    <div class="title text-center arrow-right">
+                    <div class="title text-center arrow-right" >
                         <h4 class="">¿Comó funciona?</h4>
                         <img class="hidden-xs" src="assets/images/right-arrow.png" alt="" />
 
@@ -213,7 +188,7 @@
 
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="portfolio-item">
-                                <h4 style="text-align: center">Cuidemonos </h4>
+                                <h4 style="text-align: center">Cuidémonos </h4>
                                 <p style="text-align: center">
                                     Olvidate del papel, digitalizate y cuidémonos entre todos.
                                 </p>
@@ -236,7 +211,7 @@
                 <div class="title text-center arrow-left">
                     <img class="hidden-xs" src="{{url('/')}}/assets/images/left-arrow.png" alt="" />
 
-                    <h4 class="">Nuestros Precios</h4>
+                    <h4 class="">Precios</h4>
                 </div>
             </div>
 
@@ -343,13 +318,13 @@
         <div class="container">
 
             <div class="row">
-                <div class="main-footer">
+                <div class="main-footer" >
                     <br>
                     <br>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="col-md-3 col-sm-6 col-xs-12" >
                         <div class="footer-item" style="text-decoration-color: white" >
                             <h2 style="color: white">Contacto</h2>
-                            <ul>
+                            <ul><li>Quellón, Chiloé</li>
                                 <li>Direccion : <a href="#"></a>Ignacio Carrera Pinto #387</li>
                                 <li>Fono: <a href="tel:+56998281526"></a>+56 9 98281526</li>
                                 <li>Email: <a href="mailto:contacto@codigominga.cl">contacto@codigominga.cl</a></li>
@@ -360,7 +335,7 @@
 
                 </div>
 
-                <div class="socio-copyright">
+                <div class="socio-copyright" >
 
                     <div class="social">
                         <a target="_blank" href="https://www.facebook.com/codigominga/"><i class="fa fa-facebook"></i></a>
