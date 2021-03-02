@@ -76,7 +76,7 @@ class MainController extends Controller
 
         $user_mail = User::where ('email', $request->email)->first();
 
-        if($user_mail){
+        if(!isset($user_mail)){
             try {
                 $user = User::create($input);
 
@@ -107,16 +107,10 @@ class MainController extends Controller
                     return back();
                 }
             } catch (\Illuminate\Database\QueryException $exception) {
-                $sucess  = false;
-                $returnUrl = url('/');
-                $message =  "Error al crear el Usuario";
-                return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
+                return back()->with('error','Error al crear el Usuario')->withInput();
             }
         }else{
-            $sucess  = false;
-            $returnUrl = url('/').'app/login';
-            $message =  "El E-mail entregado ya se encuentra utilizado en esta aplicación (si no recuerda su clave, haga click en recuperar contraseña a continuación)";
-            return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
+            return back()->with('error','Este email ya esta registrado en nuestro sistema')->withInput();
         }
     }
 
