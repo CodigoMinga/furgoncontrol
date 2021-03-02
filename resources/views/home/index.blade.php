@@ -91,7 +91,7 @@
             <ul class="dropdown-menu">
             <li><a href="{{url('/app/users/information')}}"><i class="fa fa-user-circle-o"></i> Mi Cuenta</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#"><i class="fa fa-sign-out"></i> Cerrar sesión</a></li>
+            <li><a href="{{url('/app/logout')}}"><i class="fa fa-sign-out"></i> Cerrar sesión</a></li>
         </ul>
     </div>
 @endsection
