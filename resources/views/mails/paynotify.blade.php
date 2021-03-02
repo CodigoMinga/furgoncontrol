@@ -358,7 +358,12 @@
                                         <p>Se ha realizado un nuevo pago en nuestros sistemas</p>
 
                                         <br/>
-                                        Usuario: {{$user->name}}
+                                        <b>Usuario:</b> {{$user->email}}<br/>
+                                        <b>Nombre:</b> {{$user->name}} {{$user->last_name}}<br/>
+                                        <b>Licencia:</b> {{$license->id}}<br/>
+                                        <b>Fecha Pago:</b> {{date('H:i d/m/Y',strtotime($license->pay_date))}}<br/>
+                                        <b>Desde:</b> {{date('d/m/Y',strtotime($license->from))}}<br/>
+                                        <b>Hasta:</b> {{date('d/m/Y',strtotime($license->to))}}<br/>
 
                                     </td>
                                 </tr>
