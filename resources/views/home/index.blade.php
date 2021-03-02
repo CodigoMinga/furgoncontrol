@@ -80,7 +80,7 @@
     @elseif($expired_days >= 5)
         <a href="#" class="mybutton rojo">
             <i class="fa fa-warning"></i>
-            <span>Usted no posee una licencia Activa. Porfavor pague su licencia</span>
+            <span>Usted no posee una licencia activa. Por favor renueve su licencia</span>
         </a>
     @endif
 
