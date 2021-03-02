@@ -197,14 +197,5 @@ class MainController extends Controller
 
     }
 
-    //public function logout()
-   // {
-  ////      Auth()->logout();
-
-     ////   $sucess  = true;
-     //   $returnUrl = url('/');
-     //   $message =  "Contraseña Cambiada Correctamente";
-      //  return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
-   // }///
 
 }

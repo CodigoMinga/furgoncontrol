@@ -33,9 +33,6 @@ Route::post('/app/resetpassword/{user_id}/token/{token}/process', 'MainControlle
 
 Route::group(['middleware' => ['auth']], function() {
    
-   // Route::get('/app/logout','MainController@logout')->name('logout');
-
-
 
     Route::get('/app/home', 'HomeController@index');
     //Cambio de clave
