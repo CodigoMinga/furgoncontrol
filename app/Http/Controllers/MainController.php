@@ -74,35 +74,50 @@ class MainController extends Controller
         $input = $request->all();
         $input['password'] = Hash::make($request->password);
 
-        $user = User::create($input);
+        $user_mail = User::where ('email', $request->email)->first();
 
-        if($user){
-            //crea el colegio asociado al usuario
-            $school = new School();
-            $school->name = $input['school_name'];
-            $school->user_id = $user->id;
-            $school->save();
+        if($user_mail){
+            try {
+                $user = User::create($input);
 
-            //crea la licencia por default
-            $license = new License();
-            $license->pay_date = Carbon::now();
-            $license->from = Carbon::now();
-            $license->to = Carbon::now()->addDays(30);
-            $license->user_id = $user->id;
-            $license->pay_id = null;
-            $license->save();
+                if($user){
+                    //crea el colegio asociado al usuario
+                    $school = new School();
+                    $school->name = $input['school_name'];
+                    $school->user_id = $user->id;
+                    $school->save();
+
+                    //crea la licencia por default
+                    $license = new License();
+                    $license->pay_date = Carbon::now();
+                    $license->from = Carbon::now();
+                    $license->to = Carbon::now()->addDays(30);
+                    $license->user_id = $user->id;
+                    $license->pay_id = null;
+                    $license->save();
 
 
-            $userAutentificated = Auth::loginUsingId($user->id);
+                    $userAutentificated = Auth::loginUsingId($user->id);
 
-            $sucess  = true;
-            $returnUrl = url('/')."/app/home";
-            $message =  "Usuario creado, bienvenido a nuestro sistema";
-            return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
+                    $sucess  = true;
+                    $returnUrl = url('/')."/app/home";
+                    $message =  "Usuario creado, bienvenido a nuestro sistema";
+                    return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
+                }else{
+                    return back();
+                }
+            } catch (\Illuminate\Database\QueryException $exception) {
+                $sucess  = false;
+                $returnUrl = url('/');
+                $message =  "Error al crear el Usuario";
+                return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
+            }
         }else{
-            return back();
+            $sucess  = false;
+            $returnUrl = url('/').'app/login';
+            $message =  "El E-mail entregado ya se encuentra utilizado en esta aplicación (si no recuerda su clave, haga click en recuperar contraseña a continuación)";
+            return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
         }
-
     }
 
     function logout()
@@ -171,5 +186,24 @@ class MainController extends Controller
         }else{
             return redirect()->back()->withErrors(['error' => 'No se pudo cambiar la contraseña']);
         }
+    }
+
+    public function passwordChange(){
+        return view('users.passwordchange');
+    }
+
+    public function passwordChangeProcess($user_id, Request $request){
+
+        $user = User::findOrFail($user_id);
+        $input = $request->all();
+        $input['password'] = Hash::make($request->password);
+        $user->update($input);
+
+        $userAutentificated = Auth::loginUsingId($user->id);
+        $sucess  = true;
+        $returnUrl = url('/')."/app/home";
+        $message =  "Contraseña Cambiada Correctamente";
+        return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
+
     }
 }

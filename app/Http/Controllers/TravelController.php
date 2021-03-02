@@ -77,6 +77,14 @@ class TravelController extends Controller
         $travel->finish = Carbon::now();
         $travel->save();
 
+        if(COUNT($travel->travelstudent)==0){
+            $travel->delete();
+            $sucess  = true;
+            $returnUrl = url('/')."/app/home";
+            $message =  "El viaje no cuenta con registrod por lo cual se ha eliminado";
+            return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
+        }
+
         $sucess  = true;
         $returnUrl = url('/')."/app/home";
         $message =  "Se termino con el viaje correctamente";

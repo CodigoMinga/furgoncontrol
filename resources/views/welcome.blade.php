@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>FurgonControlado.cl</title>
+    <link rel="shortcut icon" href="{{ url('/') }}/images/favicon.png">
     <meta name="description" content="La primera aplicación para furgones escolares de chile.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
