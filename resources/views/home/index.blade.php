@@ -106,15 +106,17 @@
     </div>
 
     @if($expired_days > 0 and $expired_days < 5)
-        <a href="#" class="mybutton rojo">
+        <div class="alert-box">
             <i class="fa fa-warning"></i>
             <span>Su licencia Expiro, le queda {{5 - $expired_days}} día de Uso.</span>
-        </a>
+            <i class="fa fa-warning"></i>
+        </div>
     @elseif($expired_days >= 5)
-        <a href="#" class="mybutton rojo">
+        <div class="alert-box">
             <i class="fa fa-warning"></i>
             <span>Usted no posee una licencia activa. Por favor renueve su licencia</span>
-        </a>
+            <i class="fa fa-warning"></i>
+        </div>
     @endif
 
     @if($expired_days <= 5)

@@ -32,13 +32,10 @@ Route::post('/app/resetpassword/{user_id}/token/{token}/process', 'MainControlle
 
 Route::group(['middleware' => ['auth']], function() {
 
-
-
     Route::get('/app/home', 'HomeController@index');
     //Cambio de clave
     Route::get('/app/password/{user_id}/change', 'MainController@passwordChange');
     Route::post('/app/password/{user_id}/change/process', 'MainController@passwordChangeProcess');
-    Route::get('/logout','MainController@logout')->name('logout');
 
     //STUDENT CRUDS
     Route::get('/app/student/add', 'StudentController@add');

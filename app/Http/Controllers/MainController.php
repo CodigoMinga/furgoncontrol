@@ -196,13 +196,4 @@ class MainController extends Controller
         return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
 
     }
-
-    public function logout()
-    {
-        Auth()->logout();
-
-
-        return redirect(route('index'));
-    }
-
 }
