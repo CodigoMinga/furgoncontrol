@@ -39,7 +39,7 @@ class PayController extends Controller
             $license->save();
 
             //dispara correo de un nuevo pago procesado
-            $subject = "Se proceso su pago correctamente";
+            $subject = $user->email." se proceso el pago id: ".$pay->id." correctamente";
             $receivers = ['contacto@codigominga.cl',$user->email];
             $status = Mail::to($receivers)->send(new Paynotify($user,$license,$subject));
             $sucess  = true;
