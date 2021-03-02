@@ -80,19 +80,17 @@
         <span>Alumnos</span>
     </a>
 
-    <a href="{{url('/app/school/list')}}" class="mybutton rojo">
+    <a href="{{url('/app/school/list')}}" class="mybutton morado">
         <i class="fa fa-list-ul"></i>
         <span>Establecimientos</span>
     </a>
 
-
-
-    <a href="{{url('/app/reportselect')}}" class="mybutton morado">
+    <a href="{{url('/app/reportselect')}}" class="mybutton rojo">
         <i class="fa fa-file-pdf-o"></i>
         <span>Reportes</span>
     </a>
 
-    <a href="https://www.flow.cl/btn.php?token=wn202xf" class="mybutton rojo">
+    <a href="https://www.flow.cl/btn.php?token=wn202xf" class="mybutton naranja">
         <i class="fa fa-credit-card"></i>
         <span>Pagar Licencia</span>
     </a>

@@ -98,6 +98,14 @@
         color:#cfd8dc ;
     }
 
+    .naranja{
+        color:#ffab40 ;
+    }
+
+    .naranja:hover{
+        color:#ffd180 ;
+    }
+
     
     .primario{
         color:#F7CE26 ;
