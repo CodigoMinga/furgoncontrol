@@ -113,7 +113,7 @@
                             </a>
                         @endif 
                     @else       
-                        <a class="boton Gris" href="{{url('/app/travel/'.$travel->id.'/assistance/'.$student->id.'/mark')}}">
+                        <a class="boton Gris" @if(!isset($travel->finish)) href="{{url('/app/travel/'.$travel->id.'/assistance/'.$student->id.'/mark')}}" @endif>
                             <i class="fa fa-thermometer-empty"></i>
                             <span>Sin datos</span>
                         </a>
@@ -121,10 +121,12 @@
                 </div>
             @endforeach
         </div>
+        @if(!isset($travel->finish))
         <a data-toggle="modal" data-target="#exampleModal" class="mybutton verde">
             <i class="fa fa-flag-checkered"></i>
             <span>Finalizar Viaje</span>
         </a>
+        @endif
     </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle" aria-hidden="true">
@@ -152,9 +154,4 @@
           </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function(){
-
-        });
-    </script>
 @stop
