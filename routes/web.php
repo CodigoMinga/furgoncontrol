@@ -24,6 +24,7 @@ Route::post('/app/checklogin','MainController@checkLogin');
 Route::get('/app/register', 'MainController@register');
 Route::post('/app/register/process', 'MainController@registerProcess');
 
+
 Route::get('/app/passwordlost', 'MainController@passwordLost');
 Route::post('/app/passwordlost/process', 'MainController@passwordLostProcess');
 
@@ -31,6 +32,8 @@ Route::get('/app/resetpassword/{user_id}/token/{token}', 'MainController@passwor
 Route::post('/app/resetpassword/{user_id}/token/{token}/process', 'MainController@passwordRessetTokenProcess');
 
 Route::group(['middleware' => ['auth']], function() {
+   
+   // Route::get('/app/logout','MainController@logout')->name('logout');
 
 
 
@@ -38,7 +41,7 @@ Route::group(['middleware' => ['auth']], function() {
     //Cambio de clave
     Route::get('/app/password/{user_id}/change', 'MainController@passwordChange');
     Route::post('/app/password/{user_id}/change/process', 'MainController@passwordChangeProcess');
-    Route::get('/logout','MainController@logout')->name('logout');
+    
 
     //STUDENT CRUDS
     Route::get('/app/student/add', 'StudentController@add');
