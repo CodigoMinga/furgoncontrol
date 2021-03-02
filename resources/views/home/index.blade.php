@@ -91,7 +91,7 @@
             <ul class="dropdown-menu">
             <li><a href="{{url('/app/users/information')}}"><i class="fa fa-user-circle-o"></i> Mi Cuenta</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#"><i class="fa fa-sign-out"></i> Cerrar sesión</a></li>
+            <li><a href="{{url('/app/logout')}}"><i class="fa fa-sign-out"></i> Cerrar sesión</a></li>
         </ul>
     </div>
 @endsection
@@ -106,15 +106,17 @@
     </div>
 
     @if($expired_days > 0 and $expired_days < 5)
-        <a href="#" class="mybutton rojo">
+        <div class="alert-box">
             <i class="fa fa-warning"></i>
             <span>Su licencia Expiro, le queda {{5 - $expired_days}} día de Uso.</span>
-        </a>
-    @elseif($expired_days >= 5)
-        <a href="#" class="mybutton rojo">
             <i class="fa fa-warning"></i>
-            <span>Usted no posee una licencia Activa. Porfavor pague su licencia</span>
-        </a>
+        </div>
+    @elseif($expired_days >= 5)
+        <div class="alert-box">
+            <i class="fa fa-warning"></i>
+            <span>Usted no posee una licencia activa. Por favor renueve su licencia</span>
+            <i class="fa fa-warning"></i>
+        </div>
     @endif
 
     @if($expired_days <= 5)

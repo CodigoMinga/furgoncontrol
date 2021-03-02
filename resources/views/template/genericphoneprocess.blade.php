@@ -1,46 +1,26 @@
 
 @extends('template.phonecontainer')
-<style>
-    .alerta{
-        display: block;
-        padding:3rem;
-        font-size: 2rem;
-        border-width: 8px 3px;
-        border-style: solid;
-        margin-bottom: 3rem;
-    }
-
-    .alerta-success{        
-        color:white;
-        border-color: #00e676;
-    }
-
-    .alerta-danger{
-        color:white;
-        border-color: #e53935;
-    }
-
-</style>
-
 @section('content')
 
     @if($sucess)
-        <div class="alerta alerta-success">
-
+        <div class="success-box">
+            <i class="fa fa-check"></i>                
             @if(isset($message))
-                <b>{{$message}}</b>
+                <span>{{$message}}</span> 
             @endif
+            <i class="fa fa-check"></i>
         </div>
     @else
-        <div class="alerta alerta-danger">
-
+        <div class="alert-box">
+            <i class="fa fa-warning"></i>                
             @if(isset($message))
-                <b>{{$message}}</b>
+                <span>{{$message}}</span> 
             @endif
+            <i class="fa fa-warning"></i>
         </div>
     @endif
-    <a href="{{$returnUrl}}" type="submit" class="mybutton verde" style="width:100%">
-        <i class="fa fa-check"></i>
-        <span>Aceptar</span>
+    <a href="{{$returnUrl}}" type="submit" class="mybutton azul" style="width:100%">
+        <i class="fa fa-arrow-right"></i>
+        <span>Continuar</span>
     </a>
 @stop

@@ -125,12 +125,6 @@
         text-align: center;
         padding:1.5rem;
     }
-    
-    .mybutton.sm i{
-        font-size: 2rem;
-        padding:1rem;
-    }
-    
     .mybutton span{
         display: block;
         text-align: center;
@@ -139,6 +133,12 @@
         width:90%;
         font-family: 'Montserrat', sans-serif;
     }
+    
+    .mybutton.sm i{
+        font-size: 2rem;
+        padding:1rem;
+    }
+    
 
     .mybutton.sm span{
         font-size: 1.8rem;
@@ -260,6 +260,37 @@
         color:white;
     }
 
+    .alert-box, .success-box{
+        display:flex!important;
+        flex-direction: row;
+        margin-bottom: 12px;
+        background-color:rgba(0,0,0,0);
+        font-size: 3rem;
+    }
+    .alert-box{
+        border:3px solid #ef5350;
+        color:#ef5350;
+    }
+    
+    .success-box{
+        border:3px solid #00e676;
+        color:#00e676;
+    }
+
+    .alert-box i, .success-box i{
+        display: block;
+        font-size: 2.5rem;
+        text-align: center;
+        padding:1.5rem;
+    }
+    .alert-box span, .success-box span {
+        display: block;
+        text-align: center;
+        font-size: 2rem;
+        padding:1.5rem;
+        flex-grow: 1;
+        font-family: 'Montserrat', sans-serif;
+    }
 </style>
 <body>
 <div class="wrapper">

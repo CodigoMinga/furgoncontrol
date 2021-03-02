@@ -196,6 +196,4 @@ class MainController extends Controller
         return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
 
     }
-
-
 }
