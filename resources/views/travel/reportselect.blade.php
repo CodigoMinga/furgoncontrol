@@ -32,7 +32,7 @@
         </div>
     </div>
     <br>
-    <a id="boton" href="#" class="mybutton morado" target="_blank">
+    <a id="boton" href="#" class="mybutton rojo" target="_blank">
         <i class="fa fa-file-pdf-o"></i>
         <span>Ver Reporte</span>
     </a>
