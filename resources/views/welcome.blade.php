@@ -8,7 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>FurgonControlado.cl</title>
     <link rel="shortcut icon" href="{{ url('/') }}/images/favicon.png">
-    <meta name="description" content="La primera aplicación para furgones escolares de chile.">
+    <meta property="og:image" content="{{ url('/') }}/images/favicon.png">
+    <meta name="description" content="Registro digital de pasajeros y reportes de trazabilidad. Olvídate del papel.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
@@ -18,7 +19,7 @@
 
     <!--For Plugins external css-->
     <link rel="stylesheet" href="{{url('/')}}/assets/css/plugins.css" />
-    
+
     <!--Theme custom css -->
     <link rel="stylesheet" href="{{url('/')}}/assets/css/style.css">
 
@@ -57,34 +58,35 @@
                             <li><a class="nav-item nav-link" href="{{url('/app/register')}}">Registrarse <span><i class="fa fa-check"></i></span></a></li>
                             <li><a class="nav-item nav-link" href="{{url('/app/login')}}">Iniciar Sesion <span><i class="fa fa-user"></i></span></a></li>
 
-                      
+
 
                         </ul>
 
 
 
-                
+
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 </div>
+
 <a  title='Contactanos por WhatsApp' class="whatsapp" href="https://api.whatsapp.com/send?phone=56998281526&amp;text=Hola%20quisiera%20realizar%20una%20consulta%20sobre%20sus%20servicios" target="_blank"></a>
 <div id="FULL">
     <!--Home page style-->
     <header id="home" class="sections"  >
     <br>
     <br>
-    
+
     <br>
 
         <div class="container text-center "  >
     <br>
-    <br>    
+    <br>
             <div class="row">
                 <div class="homepage-style">
 
                     <div class="top-arrow hidden-xs text-center"><img src="{{url('/')}}/assets/images/top-arrow.png" alt="" /></div>
-              
+
                     <br>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="unique-apps"  style="text-align: center">
@@ -93,17 +95,20 @@
                                 Facilita tu registro de estudiantes digitalmente con nuestra aplicación y optimiza tu tiempo.
                             </p>
                             <br>
-                           
+                            <div class="home-btn">
+                                <a class="btn btn-primary" href="{{url('/app/register')}}">Registrarse <span><i class="fa fa-check"></i></span></a>
+                                <a class="btn btn-primary" href="{{url('/app/login')}}">Iniciar Sesion <span><i class="fa fa-user"></i></span></a>
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="slider-area">
 
-  
+
 
                             <img src="{{url('/')}}/images/Celu.png" alt="" width="200" height="350"/>
-                                
+
 
                             </div>
 
@@ -149,8 +154,7 @@
                             <div class="portfolio-item">
                                 <h4 style="text-align: center">Seguir los protocolos</h4>
                                 <p style="text-align: center">
-                                  Sigue los protocolos establecidos por el Ministerio de Salud.
-
+                                    Sigue los protocolos establecidos por el Ministerio de Salud. Registra digitalmente los pasajeros.
                                 </p>
 
                             </div>
@@ -198,7 +202,7 @@
                             <div class="portfolio-item">
                                 <h4 style="text-align: center">Cuidémonos </h4>
                                 <p style="text-align: center">
-                                    Olvidate del papel, digitalizate y cuidémonos entre todos.
+                                    Olvidate del papel, digitalizate y cuidémonos entre todos. Podrás obtener reportes de trazabilidad siempre que los necesites.
                                 </p>
 
                             </div>
