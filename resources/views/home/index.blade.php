@@ -89,9 +89,9 @@
         <a class="fa fa-user-circle-o botton-menu dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
         </a>
             <ul class="dropdown-menu">
-            <li><a href="#"><i class="fa fa-user-circle-o"></i> Mi Cuenta</a></li>
+            <li><a href="{{url('/app/users/information')}}"><i class="fa fa-user-circle-o"></i> Mi Cuenta</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#"><i class="fa fa-sign-out"></i> Cerrar sesión</a></li>
+            <li><a href="{{url('/app/logout')}}"><i class="fa fa-sign-out"></i> Cerrar sesión</a></li>
         </ul>
     </div>
 @endsection
@@ -106,15 +106,17 @@
     </div>
 
     @if($expired_days > 0 and $expired_days < 5)
-        <a href="#" class="mybutton rojo">
+        <div class="alert-box">
             <i class="fa fa-warning"></i>
             <span>Su licencia Expiro, le queda {{5 - $expired_days}} día de Uso.</span>
-        </a>
+            <i class="fa fa-warning"></i>
+        </div>
     @elseif($expired_days >= 5)
-        <a href="#" class="mybutton rojo">
+        <div class="alert-box">
             <i class="fa fa-warning"></i>
             <span>Usted no posee una licencia activa. Por favor renueve su licencia</span>
-        </a>
+            <i class="fa fa-warning"></i>
+        </div>
     @endif
 
     @if($expired_days <= 5)
@@ -126,10 +128,6 @@
     <a href="{{url('/app/student/list')}}" class="mybutton azul">
         <i class="fa fa-users"></i>
         <span>Alumnos</span>
-    </a>
-    <a href="{{url('/app/password/'.Auth::user()->id.'/change')}}" class="mybutton azul">
-        <i class="fa fa-users"></i>
-        <span>Cambiar Clave</span>
     </a>
 
     <a href="{{url('/app/school/list')}}" class="mybutton morado">
