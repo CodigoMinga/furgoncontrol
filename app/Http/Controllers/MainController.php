@@ -174,20 +174,15 @@ class MainController extends Controller
     }
 
     public function passwordChange(){
-        
-      
-        return view('passwordchange');
-
+        return view('users.passwordchange');
     }
 
     public function passwordChangeProcess($user_id, Request $request){
 
-
         $user = User::findOrFail($user_id);
-
         $input = $request->all();
         $input['password'] = Hash::make($request->password);
-         $user->update($input);
+        $user->update($input);
 
         $userAutentificated = Auth::loginUsingId($user->id);
         $sucess  = true;

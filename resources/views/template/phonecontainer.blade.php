@@ -26,6 +26,7 @@
     <script src="{{ url('/') }}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <script src="{{ url('/') }}/dist/js/adminlte.min.js"></script>
+    <script src="{{ url('/') }}/js/rut.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
@@ -290,6 +291,14 @@
         padding:1.5rem;
         flex-grow: 1;
         font-family: 'Montserrat', sans-serif;
+    }
+    input:-internal-autofill-selected,
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        transition: background-color 1000000s ease-in-out 0s;
+        -webkit-text-fill-color: #fff !important;
     }
 </style>
 <body>

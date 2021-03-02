@@ -129,10 +129,6 @@
         <i class="fa fa-users"></i>
         <span>Alumnos</span>
     </a>
-    <a href="{{url('/app/password/'.Auth::user()->id.'/change')}}" class="mybutton azul">
-        <i class="fa fa-users"></i>
-        <span>Cambiar Clave</span>
-    </a>
 
     <a href="{{url('/app/school/list')}}" class="mybutton morado">
         <i class="fa fa-list-ul"></i>

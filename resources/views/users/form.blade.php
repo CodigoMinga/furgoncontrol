@@ -68,7 +68,7 @@
                 <i class="fa fa-pencil"></i>
                 <span>Modificar datos</span>
             </a>
-            <a href="{{url('/app/user/'.Auth::user()->id.'/edit')}}" class="mybutton morado" style="width:100%">
+            <a href="{{url('/app/password/'.Auth::user()->id.'/change')}}" class="mybutton morado" style="width:100%">
                 <i class="fa fa-key"></i>
                 <span>Cambiar clave</span>
             </a>
