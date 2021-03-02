@@ -77,7 +77,7 @@
                 <span class="fa fa-id-card form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input required type="number" class="form-control" placeholder="Telefono" name="phone">
+                <input required type="number" class="form-control" placeholder="Teléfono" name="phone">
                 <span class="fa fa-phone form-control-feedback"></span>
             </div>
 

@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="my-formgroup">
-                    <label for="exampleInputEmail1">Telefono del Apoderado</label>
+                    <label for="exampleInputEmail1">Teléfono del Apoderado</label>
                     <input required type="text"  name="parent_phone"    value="{{$student->parent_phone}}" {{!$edit ? 'disabled' : ''}}>
                 </div>
 
