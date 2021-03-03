@@ -92,7 +92,7 @@
         </div>
         <a href="{{url('/app/school/add')}}" class="mybutton verde">
             <i class="fa fa-plus"></i>
-            <span>Registrar Nuevo Alumno</span>
+            <span>Nuevo Establecimiento</span>
         </a>
     </div>
 @stop
