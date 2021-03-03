@@ -42,8 +42,8 @@ class TravelController extends Controller
         $user_id = Auth::user()->id;
         $students = Db::select('
                     select students.*,travelstudents.temperature,schools.name as school_name from students
-                    left join schools 
-                    on schools.id = students.school_id 
+                    left join schools
+                    on schools.id = students.school_id
                     left join travelstudents
                     on travelstudents.student_id = students.id and travelstudents.travel_id = '.$travel_id.' where students.user_id = '.$user_id
                 );
@@ -92,7 +92,13 @@ class TravelController extends Controller
     }
 
     public function reportselect(){
-        $schools = Auth::user()->schools;
+
+        if(Auth::user()->is_codigo_minga){
+            $schools = School::all();
+        }else{
+            $schools = Auth::user()->schools;
+        }
+
         return view('travel.reportselect',compact('schools'));
     }
 
