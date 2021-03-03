@@ -73,7 +73,7 @@
         font-family: 'Montserrat', sans-serif;
         font-size:2rem!important;
     }
-    
+
     .dropdown-menu>li>a{
         color:white!important;
     }
@@ -104,6 +104,19 @@
             <span>{{Auth::user()->name}}</span>
         </a>
     </div>
+
+    @if(Auth::user()->is_codigo_minga)
+        <div align="center" style="padding: 1rem">
+            <a class="titulo">
+                <span>Administración </span>
+                <span>Codigominga</span>
+            </a>
+        </div>
+        <a href="{{url('/app/users')}}" class="mybutton gris">
+            <i class="fa fa-address-card"></i>
+            <span>Listado Usuarios</span>
+        </a>
+    @endif
 
     @if($expired_days > 0 and $expired_days < 5)
         <div class="alert-box">
@@ -150,18 +163,7 @@
         <span>Pagar Licencia</span>
     </a>
 
-    @if(Auth::user()->is_codigo_minga)
-        <div align="center" style="padding: 1rem">
-            <a class="titulo">
-                <span>Administración </span>
-                <span>Codigominga</span>
-            </a>
-        </div>
-        <a href="{{url('/app/users')}}" class="mybutton gris">
-            <i class="fa fa-address-card"></i>
-            <span>Listado Usuarios</span>
-        </a>
-    @endif
+
     <div align="center" style="padding: 1rem">
         <a class="titulo">
             <span>Viajes </span>
