@@ -16,7 +16,7 @@ use Illuminate\Support\Str;
 use DB;
 use Carbon\Carbon;
 use App\Log;
-
+use Session;
 
 
 class MainController extends Controller
@@ -182,16 +182,25 @@ class MainController extends Controller
 
     public function passwordChangeProcess($user_id, Request $request){
 
-        $user = User::findOrFail($user_id);
-        $input = $request->all();
-        $input['password'] = Hash::make($request->password);
-        $user->update($input);
+        $user = User::findOrFail($user_id);        
+        $oldpassword = $request->oldpassword;
 
-        $userAutentificated = Auth::loginUsingId($user->id);
-        $sucess  = true;
-        $returnUrl = url('/')."/app/home";
-        $message =  "Contraseña Cambiada Correctamente";
-        return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
+        if(Hash::check($oldpassword,$user->password)){
+            $input = $request->all();
+            $input['password'] = Hash::make($request->password);
+            $user->update($input);
 
+            $userAutentificated = Auth::loginUsingId($user->id);
+            /*
+            $sucess  = true;
+            $returnUrl = url('/')."/app/home";
+            $message =  "Contraseña Cambiada Correctamente";
+            */
+            Session::flash('noti-check', "Contraseña Cambiada Correctamente");
+            //return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
+            return redirect('/app/home');
+        }else{
+            return back()->with('noti-error','La clave antigua no corresponde')->withInput();
+        }
     }
 }

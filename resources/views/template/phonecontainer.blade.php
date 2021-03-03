@@ -294,6 +294,19 @@
         transition: background-color 1000000s ease-in-out 0s;
         -webkit-text-fill-color: #fff !important;
     }
+
+    .notificacion-box{
+        display: block;
+        position: fixed;
+        bottom: -150px;
+        width: 100%;
+        color:white;
+        text-align: center;
+        font-size: 2rem;
+        padding:1.5rem;
+        font-family: 'Montserrat', sans-serif;
+        transition: bottom 1s;
+    }
 </style>
 <body>
 <div class="wrapper">
@@ -311,6 +324,28 @@
     <div class="container" style="margin-top:1rem">
         @yield('content')
     </div>
+    <div class="notificacion-box" id="notificacion">
+        ***
+    </div>
 </div>
+@if ($message = Session::get('noti-error'))
+<script>
+    var notificacion = document.getElementById('notificacion');
+    notificacion.innerText='{!! $message !!}';
+    notificacion.style.backgroundColor='#ef5350';
+    setTimeout(() => {  notificacion.style.bottom="0px"; }, 250);
+    setTimeout(() => {  notificacion.style.bottom="-150px"; }, 4000);
+</script>
+@endif
+
+@if ($message = Session::get('noti-check'))
+<script>
+    var notificacion = document.getElementById('notificacion');
+    notificacion.innerText='{!! $message !!}';
+    notificacion.style.backgroundColor='#00e676';
+    setTimeout(() => {  notificacion.style.bottom="0px"; }, 250);
+    setTimeout(() => {  notificacion.style.bottom="-150px"; }, 4000);
+</script>
+@endif
 </body>
 </html>
