@@ -16,17 +16,14 @@ use Illuminate\Support\Str;
 use DB;
 use Carbon\Carbon;
 use App\Log;
-
+use Session;
 
 
 class MainController extends Controller
 {
     public function login(){
-
-
-        return view('login');
+        return view('users.login');
     }
-
 
     public function checkLogin(Request $request){
 
@@ -41,21 +38,23 @@ class MainController extends Controller
         );
 
         if(Auth::attempt(['email' => $user_data['email'], 'password' => $user_data['password'], 'enabled' => 1])){
-            $message="[Login] Successfully El usuario ". Auth::user()->email." a iniciado sesion correctamente";
+            $message="[Login] Successfully El usuario ". Auth::user()->email." a iniciado sesión correctamente";
 
             $login_log = new Log();
             $login_log->ip = $request->ip();
-            $login_log->message= "Inicio Correcto de Sesion ".$request->get('email');
+            $login_log->message= "Inicio correcto de sesión ".$request->get('email');
             $login_log->type = "LOGIN-OK";
             $login_log->user_id = Auth::user()->id;
             $login_log->save();
+
+            Session::flash('noti-check', "Sesión Iniciada");
             return redirect('app/home');
         }
         else{
-            $message="[Login] Error de inicio de sesion Usuario: ".$user_data['email']." Pass: ".$user_data['password'];
+            $message="[Login] Error de inicio de sesión usuario: ".$user_data['email']." Pass: ".$user_data['password'];
             $login_log = new Log();
             $login_log->ip = $request->ip();
-            $login_log->message= "Inicio incorrecto de Sesion ".$request->get('email')." contraseña: ".$request->get('password');
+            $login_log->message= "Inicio incorrecto de sesión ".$request->get('email')." contraseña: ".$request->get('password');
             $login_log->type = "LOGIN-ERROR";
             $login_log->save();
             return back()->with('error','Error en las credenciales');
@@ -65,7 +64,6 @@ class MainController extends Controller
 
     public function register(){
         $communes = Commune::all()->sortBy('name');
-
         return view('register',compact('communes'));
     }
 
@@ -76,7 +74,7 @@ class MainController extends Controller
 
         $user_mail = User::where ('email', $request->email)->first();
 
-        if($user_mail){
+        if(!isset($user_mail)){
             try {
                 $user = User::create($input);
 
@@ -91,7 +89,7 @@ class MainController extends Controller
                     $license = new License();
                     $license->pay_date = Carbon::now();
                     $license->from = Carbon::now();
-                    $license->to = Carbon::now()->addDays(30);
+                    $license->to = Carbon::now()->addDays(10);
                     $license->user_id = $user->id;
                     $license->pay_id = null;
                     $license->save();
@@ -107,16 +105,10 @@ class MainController extends Controller
                     return back();
                 }
             } catch (\Illuminate\Database\QueryException $exception) {
-                $sucess  = false;
-                $returnUrl = url('/');
-                $message =  "Error al crear el Usuario";
-                return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
+                return back()->with('error','Error al crear el Usuario')->withInput();
             }
         }else{
-            $sucess  = false;
-            $returnUrl = url('/').'app/login';
-            $message =  "El E-mail entregado ya se encuentra utilizado en esta aplicación (si no recuerda su clave, haga click en recuperar contraseña a continuación)";
-            return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
+            return back()->with('error','Este email ya esta registrado en nuestro sistema')->withInput();
         }
     }
 
@@ -128,8 +120,6 @@ class MainController extends Controller
 
 
     function passwordLost(){
-
-
         return view('passwordlost');
     }
 
@@ -195,15 +185,24 @@ class MainController extends Controller
     public function passwordChangeProcess($user_id, Request $request){
 
         $user = User::findOrFail($user_id);
-        $input = $request->all();
-        $input['password'] = Hash::make($request->password);
-        $user->update($input);
+        $oldpassword = $request->oldpassword;
 
-        $userAutentificated = Auth::loginUsingId($user->id);
-        $sucess  = true;
-        $returnUrl = url('/')."/app/home";
-        $message =  "Contraseña Cambiada Correctamente";
-        return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
+        if(Hash::check($oldpassword,$user->password)){
+            $input = $request->all();
+            $input['password'] = Hash::make($request->password);
+            $user->update($input);
 
+            $userAutentificated = Auth::loginUsingId($user->id);
+            /*
+            $sucess  = true;
+            $returnUrl = url('/')."/app/home";
+            $message =  "Contraseña Cambiada Correctamente";
+            */
+            Session::flash('noti-check', "Contraseña Cambiada Correctamente");
+            //return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
+            return redirect('/app/home');
+        }else{
+            return back()->with('noti-error','La clave antigua no corresponde')->withInput();
+        }
     }
 }

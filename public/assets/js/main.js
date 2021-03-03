@@ -1,6 +1,5 @@
 "use strict";
 
-
 jQuery(document).ready(function ($) {
 	$(window).load(function () {
 		$(".loaded").fadeOut();
@@ -33,38 +32,34 @@ jQuery(document).ready(function ($) {
 	
 	var windowWidth = $(window).width();
     if (windowWidth > 757) {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() >200) {
+                $('.navbar').fadeIn(200);
+                $('.navbar').addClass('menu-bg');
 
-        
-          
-            $(window).scroll(function () {
-                if ($(this).scrollTop() >200) {
-                    $('.navbar').fadeIn(200);
-                    $('.navbar').addClass('menu-bg');
-
-                } else {
-                    
-                    $('.navbar').removeClass('menu-bg');
-                }
-            });
-        
+            } else {
+                
+                $('.navbar').removeClass('menu-bg');
+            }
+        });
     }
-		$('#bs-example-navbar-collapse-1').localScroll();
+		//$('#bs-example-navbar-collapse-1').localScroll();
 		
 	/*---------------------------------------------*
      * Scroll Up
      ---------------------------------------------*/	
-		$(window).scroll(function(){
+    $(window).scroll(function(){
         if ($(this).scrollTop() > 600) {
             $('.scrollup').fadeIn('slow');
         } else {
             $('.scrollup').fadeOut('slow');
         }
-		});
-		
-		$('.scrollup').click(function(){
-			$("html, body").animate({ scrollTop: 0 },1000);
-			return false;
-		});
+    });
+    
+    $('.scrollup').click(function(){
+        $("html, body").animate({ scrollTop: 0 },1000);
+        return false;
+    });
 		
 	
 
@@ -73,7 +68,7 @@ jQuery(document).ready(function ($) {
      * STICKY scroll
      ---------------------------------------------*/
 
-		$.localScroll();
+		//$.localScroll();
 
 
 

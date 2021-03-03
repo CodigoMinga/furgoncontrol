@@ -128,7 +128,7 @@ desired effect
 
 
 
-                <li><a href="{{ url('/') }}/app/logout"><i class="fa fa-close"></i> <span>Cerrar Sesion</span></a></li>
+                <li><a href="{{ url('/') }}/app/logout"><i class="fa fa-close"></i> <span>Cerrar Sesión</span></a></li>
 
             </ul>
             <!-- /.sidebar-menu -->

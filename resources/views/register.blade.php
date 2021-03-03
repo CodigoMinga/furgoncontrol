@@ -65,29 +65,29 @@
         <form method="post" action="{{url('/app/register/process')}}" id="form">
             {{csrf_field()}}
             <div class="form-group has-feedback">
-                <input required type="text" class="form-control" placeholder="Nombre" name="name">
+                <input required type="text" class="form-control" placeholder="Nombre" name="name" value="{{old('name','')}}">
                 <span class="fa fa-tag form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input required type="text" class="form-control" placeholder="Apellido" name="last_name">
+                <input required type="text" class="form-control" placeholder="Apellido" name="last_name" value="{{old('last_name','')}}">
                 <span class="fa fa-tags form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input required type="text" class="form-control rut" placeholder="RUT" name="rut">
+                <input required type="text" class="form-control rut" placeholder="RUT" name="rut" value="{{old('rut','')}}">
                 <span class="fa fa-id-card form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input required type="number" class="form-control" placeholder="Teléfono" name="phone">
+                <input required type="number" class="form-control" placeholder="Teléfono" name="phone" value="{{old('phone','')}}">
                 <span class="fa fa-phone form-control-feedback"></span>
             </div>
 
             <div class="form-group has-feedback">
-                <input required type="text" class="form-control" placeholder="Patente del Vehiculo" name="plate">
+                <input required type="text" class="form-control" placeholder="Patente del Vehiculo" name="plate" value="{{old('plate','')}}">
                 <span class="fa fa-bus form-control-feedback"></span>
             </div>
 
             <div class="form-group has-feedback">
-                <input required type="email" class="form-control" placeholder="Email" name="email">
+                <input required type="email" class="form-control" placeholder="Email" name="email" value="{{old('email','')}}">
                 <span class="fa fa-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
@@ -96,12 +96,12 @@
             </div>
 
             <div class="form-group has-feedback">
-                <input required type="text" class="form-control" placeholder="Nombre Establecimiento" name="school_name">
+                <input required type="text" class="form-control" placeholder="Nombre Establecimiento" name="school_name" value="{{old('school_name','')}}">
                 <span class="fa fa-university form-control-feedback"></span>
             </div>
 
             <div class="form-group has-feedback">
-                <input required type="text" class="form-control" placeholder="Nombre Asistente" name="helper_name">
+                <input required type="text" class="form-control" placeholder="Nombre Asistente" name="helper_name" value="{{old('helper_name','')}}">
                 <span class="fa fa-user form-control-feedback"></span>
             </div>
 
@@ -109,8 +109,18 @@
                 <label>Ciudad</label>
                 <select required class="form-control" name="commune_id" required>
                     <option value="">seleccione una comuna</option>
-                   @foreach($communes as $commune)
-                        <option value="{{$commune->id}}">{{$commune->name}}</option>
+                    @foreach($communes as $commune)
+                        @if(old('commune_id'))
+                            @if(old('commune_id') == $commune->id )
+                                <option selected value="{{$commune->id}}">{{$commune->name}}</option>
+                            @else
+                                <option value="{{$commune->id}}">{{$commune->name}}</option>
+                            @endif
+
+                        @else
+                            <option value="{{$commune->id}}">{{$commune->name}}</option>
+                        @endif
+
                     @endforeach
                 </select>
             </div>
