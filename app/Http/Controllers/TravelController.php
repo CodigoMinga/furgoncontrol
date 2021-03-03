@@ -81,7 +81,7 @@ class TravelController extends Controller
             $travel->delete();
             $sucess  = true;
             $returnUrl = url('/')."/app/home";
-            $message =  "El viaje no cuenta con registrod por lo cual se ha eliminado";
+            $message =  "El viaje no cuenta con registros por lo cual se ha eliminado";
             return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
         }
 
