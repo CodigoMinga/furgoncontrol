@@ -1,3 +1,4 @@
+
 <!doctype html>
 <head>
     <meta charset="utf-8">
@@ -14,11 +15,11 @@
     <!--For Plugins external css-->
     <link rel="stylesheet" href="{{url('/')}}/assets/css/plugins.css" />
 
-    <!--Theme custom css -->
-    <link rel="stylesheet" href="{{url('/')}}/assets/css/style.css">
+        <!--Theme custom css -->
+        <link rel="stylesheet" href="assets/css/style.css">
 
-    <!--Theme Responsive css-->
-    <link rel="stylesheet" href="{{url('/')}}/assets/css/responsive.css" />
+        <!--Theme Responsive css-->
+        <link rel="stylesheet" href="assets/css/responsive.css" />
 
     <script src="{{url('/')}}/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -103,7 +104,7 @@
             <div class="row">
                 <div class="heading">
                     <div class="title text-center arrow-right" >
-                        <h4 class="">¿Comó funciona?</h4>
+                        <h4 class="">¿Cómo funciona?</h4>
                         <img class="hidden-xs" src="assets/images/right-arrow.png" alt="" />
                     </div>
                 </div>
@@ -127,7 +128,7 @@
                             <div class="portfolio-item">
                                 <h4 style="text-align: center">Optimiza tu tiempo</h4>
                                 <p style="text-align: center">
-                                    Optimiza el tiempo registrando la bitacora de cada estudiante, podrás acceder a informes diarios, semanales
+                                    Optimiza el tiempo registrando la bitácora de cada estudiante, podrás acceder a informes diarios, semanales
                                     y mensuales en un práctico formato digital.
                                 </p>
                             </div>
@@ -142,7 +143,7 @@
                             <div class="portfolio-item">
                                 <h4 style="text-align: center">Cuidémonos </h4>
                                 <p style="text-align: center">
-                                    Olvidate del papel, digitalizate y cuidémonos entre todos. Podrás obtener reportes de trazabilidad siempre que los necesites.
+                                    Olvidate del papel, digitalízate y cuidémonos entre todos. Podrás obtener reportes de trazabilidad siempre que los necesites.
                                 </p>
                             </div>
                         </div>
@@ -163,28 +164,14 @@
                     <h4 class="">Precios</h4>
                 </div>
             </div>
-            <div class="row">
-                <div class="main-package text-center">
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="package-item basic">
-                            <h5 style="color: #F7CE26;font-size:27px;">Gratis Usuarios Chiloé</h5>
-                            <ul>
-                                <li>Registro digital de estudiantes </li>
-                                <li>Optimiza tu tiempo</li>
-                                <li>Genera reportes</li>
-                                <li>Registra temperatura</li>
-                            </ul>
-                            <div class="package-bottom-area" style="color: #F7CE26">
-                                <h3 >$ 0</h3>
-                            </div>
-                            <div class="pkg-btn"><a href="tel:+56998281526" class="btn btn-primary">Solicítalo Ahora</a></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12">
+            <div class="row center-block">
+                <div class="main-package text-center center-block">
+
+                    <div class="col-xs-12 center-block ">
                         <div class="package-item standard">
                             <h5>Prueba Gratis</h5>
                             <ul>
-                                <li style="color: black">30 Días</li>
+                                <li style="color: black">10 Días</li>
                                 <li style="color: black">Registro digital de estudiantes </li>
                                 <li style="color: black">Optimiza tu tiempo</li>
                                 <li style="color: black">Genera reportes</li>
@@ -198,29 +185,6 @@
                             <div class="pkg-btn"><a href="tel:+56998281526" class="btn btn-primary">Solicítalo Ahora</a></div>
 
                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="package-item premium">
-
-                            <h5 style="color: #F7CE26;font-size:27px;">Plan Único</h5>
-
-                            <ul>
-                                <li>Registro digital de estudiantes </li>
-                                <li>Optimiza tu tiempo</li>
-                                <li>Genera reportes</li>
-                                <li>Registra temperatura</li>
-                            </ul>
-
-                            <div class="package-bottom-area">
-                                <h3>$ 0.5 UF Mensual</h3>
-                            </div>
-
-                            <div class="pkg-btn"><a href="tel:+56998281526" class="btn btn-primary">Solicítalo Ahora</a></div>
-
-                        </div>
-
-
                     </div>
 
                 </div>
@@ -242,8 +206,8 @@
                     <div class="col-xs-12" style="text-align: center">
                         <div class="footer-item" style="text-decoration-color: white" >
                             <h2 style="color: white">Contacto</h2>
-                            <ul><li>Quellón, Chiloé</li>
-                                <li>Direccion : <a href="#"></a>Ignacio Carrera Pinto #387</li>
+                            <ul>
+                                <li>Dirección : <a href="#"></a>Ignacio Carrera Pinto #387 - Quellón, Chiloé</li>
                                 <li>Fono: <a href="tel:+56998281526"></a>+56 9 98281526</li>
                                 <li>Email: <a href="mailto:contacto@codigominga.cl">contacto@codigominga.cl</a></li>
                             </ul>
