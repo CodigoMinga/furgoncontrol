@@ -165,28 +165,14 @@
                     <h4 class="">Precios</h4>
                 </div>
             </div>
-            <div class="row">
-                <div class="main-package text-center">
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="package-item basic">
-                            <h5 style="color: #F7CE26;font-size:27px;">Gratis Usuarios Chiloé</h5>
-                            <ul>
-                                <li>Registro digital de estudiantes </li>
-                                <li>Optimiza tu tiempo</li>
-                                <li>Genera reportes</li>
-                                <li>Registra temperatura</li>
-                            </ul>
-                            <div class="package-bottom-area" style="color: #F7CE26">
-                                <h3 >$ 0</h3>
-                            </div>
-                            <div class="pkg-btn"><a href="tel:+56998281526" class="btn btn-primary">Solicítalo Ahora</a></div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12">
+            <div class="row center-block">
+                <div class="main-package text-center center-block">
+
+                    <div class="col-xs-12 center-block ">
                         <div class="package-item standard">
                             <h5>Prueba Gratis</h5>
                             <ul>
-                                <li style="color: black">30 Días</li>
+                                <li style="color: black">10 Días</li>
                                 <li style="color: black">Registro digital de estudiantes </li>
                                 <li style="color: black">Optimiza tu tiempo</li>
                                 <li style="color: black">Genera reportes</li>
@@ -200,29 +186,6 @@
                             <div class="pkg-btn"><a href="tel:+56998281526" class="btn btn-primary">Solicítalo Ahora</a></div>
 
                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="package-item premium">
-
-                            <h5 style="color: #F7CE26;font-size:27px;">Plan Único</h5>
-
-                            <ul>
-                                <li>Registro digital de estudiantes </li>
-                                <li>Optimiza tu tiempo</li>
-                                <li>Genera reportes</li>
-                                <li>Registra temperatura</li>
-                            </ul>
-
-                            <div class="package-bottom-area">
-                                <h3>$ 0.5 UF Mensual</h3>
-                            </div>
-
-                            <div class="pkg-btn"><a href="tel:+56998281526" class="btn btn-primary">Solicítalo Ahora</a></div>
-
-                        </div>
-
-
                     </div>
 
                 </div>

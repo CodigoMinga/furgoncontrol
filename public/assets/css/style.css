@@ -771,7 +771,8 @@ input:-ms-input-placeholder {
 
 /*Our Packages Area*/
 .main-package .col-sm-4{
-    padding:0;
+    padding: 10px 50px 20px;
+   
 }
 
 
@@ -781,6 +782,7 @@ input:-ms-input-placeholder {
 .main-package .package-item{
     padding:50px 0;
     border:1.5px solid #F7CE26;
+    
 }
 .main-package .package-item.basic {
 
