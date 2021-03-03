@@ -46,7 +46,7 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body" style="border-radius: 10px">
-        <p class="login-box-msg">Inicie sesion</p>
+        <p class="login-box-msg">Inicie Sesión</p>
         @if ($message = Session::get('error'))
             <div class="alert alert-danger alert-block">
                 <button type="button" class="close" data-dismiss="alert">×</button>

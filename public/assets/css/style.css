@@ -37,11 +37,10 @@ PRE LOADER
 }
 
 .loaded {
-    width: 50%;
-    height: 50%;
+    width:100vw;
+    height: 56.25vw;
     position: relative;
-    left: 25%;
-    top: 30%;
+    top: calc(100vh - 56.25vw);
     background-image: url(../images/gifbus.gif);
     background-repeat: no-repeat;
     background-position:center;
