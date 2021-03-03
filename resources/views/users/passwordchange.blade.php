@@ -19,11 +19,11 @@
                 </div>
                 <div class="my-formgroup">
                     <label for="exampleInputEmail1">Clave Nueva</label>
-                    <input required type="password" name="newpassword"  id="newpassword"    placeholder="******">
+                    <input required type="password" name="newpassword"  id="newpassword" placeholder="******" minlength="6">
                 </div>  
                 <div class="my-formgroup">
                     <label for="exampleInputEmail1">Clave Nueva (repetir)</label>
-                    <input required type="password" name="password"     id="password"       placeholder="******">
+                    <input required type="password" name="password"     id="password"    placeholder="******" minlength="6">
                 </div>
             </div>
         </div>
