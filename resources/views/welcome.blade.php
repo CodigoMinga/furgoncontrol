@@ -1,28 +1,27 @@
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>FurgonControlado.cl</title>
-    <link rel="shortcut icon" href="{{ url('/') }}/images/favicon.png">
-    <meta property="og:image" content="{{ url('/') }}/images/favicon.png">
-    <meta name="description" content="Registro digital de pasajeros y reportes de trazabilidad. Olvídate del papel.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>furgon controlado</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <link rel="stylesheet" href="{{url('/')}}/assets/css/bootstrap.min.css">
 
     <!--For Plugins external css-->
     <link rel="stylesheet" href="{{url('/')}}/assets/css/plugins.css" />
 
-    <!--Theme custom css -->
-    <link rel="stylesheet" href="{{url('/')}}/assets/css/style.css">
+        <!--Theme custom css -->
+        <link rel="stylesheet" href="assets/css/style.css">
 
-    <!--Theme Responsive css-->
-    <link rel="stylesheet" href="{{url('/')}}/assets/css/responsive.css" />
+        <!--Theme Responsive css-->
+        <link rel="stylesheet" href="assets/css/responsive.css" />
 
     <script src="{{url('/')}}/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -65,7 +64,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a class="nav-item nav-link active" href="#home">Inicio<span class="sr-only">(current)</span></a></li>
-                        <li><a class="nav-item nav-link" href="#nosotros">¿Comó Funciona?</a></li>
+                        <li><a class="nav-item nav-link" href="#nosotros">¿Cómo Funciona?</a></li>
                         <li><a class="nav-item nav-link" href="#precios">Precios</a></li>
                         <li><a class="nav-item nav-link" href="#footer">Contacto</a></li>
                     </ul>
@@ -88,7 +87,7 @@
                             <br>
                             <div class="home-btn">
                                 <a class="btn btn-primary" href="{{url('/app/register')}}">Registrarse <span><i class="fa fa-check"></i></span></a>
-                                <a class="btn btn-primary" href="{{url('/app/login')}}">Iniciar Sesion <span><i class="fa fa-user"></i></span></a>
+                                <a class="btn btn-primary" href="{{url('/app/login')}}">Iniciar Sesión <span><i class="fa fa-user"></i></span></a>
                             </div>
                         </div>
                     </div>
@@ -106,7 +105,7 @@
             <div class="row">
                 <div class="heading">
                     <div class="title text-center arrow-right" >
-                        <h4 class="">¿Comó funciona?</h4>
+                        <h4 class="">¿Cómo funciona?</h4>
                         <img class="hidden-xs" src="assets/images/right-arrow.png" alt="" />
                     </div>
                 </div>
@@ -130,7 +129,7 @@
                             <div class="portfolio-item">
                                 <h4 style="text-align: center">Optimiza tu tiempo</h4>
                                 <p style="text-align: center">
-                                    Optimiza el tiempo registrando la bitacora de cada estudiante, podrás acceder a informes diarios, semanales
+                                    Optimiza el tiempo registrando la bitácora de cada estudiante, podrás acceder a informes diarios, semanales
                                     y mensuales en un práctico formato digital.
                                 </p>
                             </div>
@@ -145,7 +144,7 @@
                             <div class="portfolio-item">
                                 <h4 style="text-align: center">Cuidémonos </h4>
                                 <p style="text-align: center">
-                                    Olvidate del papel, digitalizate y cuidémonos entre todos. Podrás obtener reportes de trazabilidad siempre que los necesites.
+                                    Olvidate del papel, digitalízate y cuidémonos entre todos. Podrás obtener reportes de trazabilidad siempre que los necesites.
                                 </p>
                             </div>
                         </div>
@@ -245,8 +244,8 @@
                     <div class="col-xs-12" style="text-align: center">
                         <div class="footer-item" style="text-decoration-color: white" >
                             <h2 style="color: white">Contacto</h2>
-                            <ul><li>Quellón, Chiloé</li>
-                                <li>Direccion : <a href="#"></a>Ignacio Carrera Pinto #387</li>
+                            <ul>
+                                <li>Dirección : <a href="#"></a>Ignacio Carrera Pinto #387 - Quellón, Chiloé</li>
                                 <li>Fono: <a href="tel:+56998281526"></a>+56 9 98281526</li>
                                 <li>Email: <a href="mailto:contacto@codigominga.cl">contacto@codigominga.cl</a></li>
                             </ul>
