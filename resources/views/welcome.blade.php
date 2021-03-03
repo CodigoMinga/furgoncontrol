@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <link rel="stylesheet" href="{{url('/')}}/assets/css/bootstrap.min.css">
-    
+
     <!--For Plugins external css-->
     <link rel="stylesheet" href="{{url('/')}}/assets/css/plugins.css" />
 
@@ -39,6 +39,9 @@
         }
         section{
             padding: 5rem 0; 
+        }
+        .portfolio-item{
+            padding-top:15%;
         }
     </style>
 </head>
@@ -65,7 +68,6 @@
                         <li><a class="nav-item nav-link" href="#nosotros">¿Comó Funciona?</a></li>
                         <li><a class="nav-item nav-link" href="#precios">Precios</a></li>
                         <li><a class="nav-item nav-link" href="#footer">Contacto</a></li>
-                        <li><a class="nav-item nav-link" href="{{url('/app/login')}}">Iniciar Sesion <span><i class="fa fa-user"></i></span></a></li>
                     </ul>
                 </div>
             </div>
@@ -111,16 +113,16 @@
                 <!-- Example row of columns -->
                 <div class="portfolio-wrap">
                     <div class="portfolio mb-5">
-                        <div class="col-md-6 col-sm-6 col-xs-12 order-2">
-                            <img src="{{url('/')}}/images/foto1.svg" alt="" />
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12 order-1">
+                        <div class="col-md-6 col-sm-6 col-xs-12" style="float:right!important">
                             <div class="portfolio-item">
                                 <h4 style="text-align: center">Seguir los protocolos</h4>
                                 <p style="text-align: center">
                                     Sigue los protocolos establecidos por el Ministerio de Salud. Registra digitalmente los pasajeros.
                                 </p>
                             </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <img src="{{url('/')}}/images/foto1.svg" alt="" />
                         </div>
                     </div>
                     <div class="portfolio">
@@ -139,16 +141,16 @@
                     </div>
 
                     <div class="portfolio mb-5">
-                        <div class="col-md-6 col-sm-6 col-xs-12 order-2">
-                            <img class="portfolio-img img-responsive" src="{{url('/')}}/images/foto3.svg" alt="" />
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12 order-1">
+                        <div class="col-md-7 col-sm-7 col-xs-12"  style="float:right!important">
                             <div class="portfolio-item">
                                 <h4 style="text-align: center">Cuidémonos </h4>
                                 <p style="text-align: center">
                                     Olvidate del papel, digitalizate y cuidémonos entre todos. Podrás obtener reportes de trazabilidad siempre que los necesites.
                                 </p>
                             </div>
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                            <img class="portfolio-img img-responsive" src="{{url('/')}}/images/foto3.svg" alt="" />
                         </div>
                     </div>
                 </div>
@@ -157,7 +159,6 @@
     </section>
     <section id="precios" class="lightbg">
         <div class="container">
-
             <div class="heading">
                 <div class="title text-center arrow-left">
                     <img class="hidden-xs" src="{{url('/')}}/assets/images/left-arrow.png" alt="" />
@@ -165,39 +166,26 @@
                     <h4 class="">Precios</h4>
                 </div>
             </div>
-
             <div class="row">
-
-
                 <div class="main-package text-center">
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="package-item basic">
-                            <h5 style="color: #F7CE26">Gratis Usuarios Chiloé</h5>
-
+                            <h5 style="color: #F7CE26;font-size:27px;">Gratis Usuarios Chiloé</h5>
                             <ul>
                                 <li>Registro digital de estudiantes </li>
                                 <li>Optimiza tu tiempo</li>
                                 <li>Genera reportes</li>
                                 <li>Registra temperatura</li>
                             </ul>
-
                             <div class="package-bottom-area" style="color: #F7CE26">
                                 <h3 >$ 0</h3>
                             </div>
-
-
                             <div class="pkg-btn"><a href="tel:+56998281526" class="btn btn-primary">Solicítalo Ahora</a></div>
-
                         </div>
-
-
                     </div>
-
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="package-item standard">
-
                             <h5>Prueba Gratis</h5>
-
                             <ul>
                                 <li style="color: black">30 Días</li>
                                 <li style="color: black">Registro digital de estudiantes </li>
@@ -213,14 +201,12 @@
                             <div class="pkg-btn"><a href="tel:+56998281526" class="btn btn-primary">Solicítalo Ahora</a></div>
 
                         </div>
-
-
                     </div>
 
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="package-item premium">
 
-                            <h5>Plan Único</h5>
+                            <h5 style="color: #F7CE26;font-size:27px;">Plan Único</h5>
 
                             <ul>
                                 <li>Registro digital de estudiantes </li>
@@ -256,18 +242,16 @@
         <div class="container">
             <div class="row">
                 <div class="main-footer" >
-                    <div class="col-md-3 col-sm-6 col-xs-12" style="text-align: center">
+                    <div class="col-xs-12" style="text-align: center">
                         <div class="footer-item" style="text-decoration-color: white" >
                             <h2 style="color: white">Contacto</h2>
                             <ul><li>Quellón, Chiloé</li>
                                 <li>Direccion : <a href="#"></a>Ignacio Carrera Pinto #387</li>
                                 <li>Fono: <a href="tel:+56998281526"></a>+56 9 98281526</li>
                                 <li>Email: <a href="mailto:contacto@codigominga.cl">contacto@codigominga.cl</a></li>
-
                             </ul>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="socio-copyright" >
