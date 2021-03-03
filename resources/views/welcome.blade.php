@@ -15,11 +15,11 @@
     <!--For Plugins external css-->
     <link rel="stylesheet" href="{{url('/')}}/assets/css/plugins.css" />
 
-        <!--Theme custom css -->
-        <link rel="stylesheet" href="assets/css/style.css">
+    <!--Theme custom css -->
+    <link rel="stylesheet" href="assets/css/style.css">
 
-        <!--Theme Responsive css-->
-        <link rel="stylesheet" href="assets/css/responsive.css" />
+    <!--Theme Responsive css-->
+    <link rel="stylesheet" href="assets/css/responsive.css" />
 
     <script src="{{url('/')}}/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -61,10 +61,10 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a class="nav-item nav-link active" href="{{url('/')}}#home">Inicio<span class="sr-only">(current)</span></a></li>
-                        <li><a class="nav-item nav-link" href="{{url('/')}}#nosotros">¿Comó Funciona?</a></li>
-                        <li><a class="nav-item nav-link" href="{{url('/')}}#precios">Precios</a></li>
-                        <li><a class="nav-item nav-link" href="{{url('/')}}#footer">Contacto</a></li>
+                        <li><a class="nav-item nav-link active" href="#home">Inicio<span class="sr-only">(current)</span></a></li>
+                        <li><a class="nav-item nav-link" href="#nosotros">¿Comó Funciona?</a></li>
+                        <li><a class="nav-item nav-link" href="#precios">Precios</a></li>
+                        <li><a class="nav-item nav-link" href="#footer">Contacto</a></li>
                     </ul>
                 </div>
             </div>
