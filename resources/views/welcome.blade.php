@@ -9,18 +9,13 @@
     <meta name="description" content="Registro digital de pasajeros y reportes de trazabilidad. Olvídate del papel.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
     <link rel="stylesheet" href="{{url('/')}}/assets/css/bootstrap.min.css">
-
     <!--For Plugins external css-->
     <link rel="stylesheet" href="{{url('/')}}/assets/css/plugins.css" />
-
-        <!--Theme custom css -->
-        <link rel="stylesheet" href="assets/css/style.css">
-
-        <!--Theme Responsive css-->
-        <link rel="stylesheet" href="assets/css/responsive.css" />
-
+    <!--Theme custom css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--Theme Responsive css-->
+    <link rel="stylesheet" href="assets/css/responsive.css" />
     <script src="{{url('/')}}/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
@@ -35,14 +30,13 @@
             background-color: #F7CE26!important;
         }
         section{
-            padding: 5rem 0; 
+            padding: 5rem 0;
         }
         .portfolio-item{
             padding-top:15%;
         }
     </style>
 </head>
-
 <body data-spy="scroll" data-target="#main-navbar">
     <div class='preloader'>
         <div class='loaded' >&nbsp;</div>
@@ -61,17 +55,16 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a class="nav-item nav-link active" href="{{url('/')}}#home">Inicio<span class="sr-only">(current)</span></a></li>
-                        <li><a class="nav-item nav-link" href="{{url('/')}}#nosotros">¿Comó Funciona?</a></li>
-                        <li><a class="nav-item nav-link" href="{{url('/')}}#precios">Precios</a></li>
-                        <li><a class="nav-item nav-link" href="{{url('/')}}#footer">Contacto</a></li>
+                        <li><a class="nav-item nav-link active" href="#home">Inicio<span class="sr-only">(current)</span></a></li>
+                        <li><a class="nav-item nav-link" href="#nosotros">¿Comó Funciona?</a></li>
+                        <li><a class="nav-item nav-link" href="#precios">Precios</a></li>
+                        <li><a class="nav-item nav-link" href="#footer">Contacto</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
     <header id="home">
-        
         <div class="container text-center">
         <div class="row">
             <div class="homepage-style" style="padding-top:150px;">
@@ -86,7 +79,7 @@
                             <br>
                             <div class="home-btn">
                                 <a class="btn btn-primary" href="{{url('/app/register')}}">Registrarse <span><i class="fa fa-check"></i></span></a>
-                                <a class="btn btn-primary" href="{{url('/app/login')}}">Iniciar Sesión <span><i class="fa fa-user"></i></span></a>                                
+                                <a class="btn btn-primary" href="{{url('/app/login')}}">Iniciar Sesión <span><i class="fa fa-user"></i></span></a>
                             </div>
                         </div>
                     </div>
@@ -137,7 +130,6 @@
                             <img class="portfolio-img img-responsive" src="{{url('/')}}/images/foto2.svg" alt="" />
                         </div>
                     </div>
-
                     <div class="portfolio mb-5">
                         <div class="col-md-7 col-sm-7 col-xs-12"  style="float:right!important">
                             <div class="portfolio-item">
@@ -166,30 +158,24 @@
             </div>
             <div class="row center-block">
                 <div class="main-package text-center center-block">
-
                     <div class="col-xs-12 center-block ">
                         <div class="package-item standard">
-                            <h5>Prueba Gratis</h5>
+                            <h5>Plan único</h5>
                             <ul>
-                                <li style="color: black">10 Días</li>
-                                <li style="color: black">Registro digital de estudiantes </li>
-                                <li style="color: black">Optimiza tu tiempo</li>
-                                <li style="color: black">Genera reportes</li>
+                                <li style="color: black">10 Días de prueba gratis</li>
+                                <li style="color: black">Registro digital de pasajeros </li>
                                 <li style="color: black">Registra temperatura</li>
+                                <li style="color: black">Optimiza tu tiempo</li>
+                                <li style="color: black">Genera reporte de pasajeros</li>
+
                             </ul>
-
                             <div class="package-bottom-area">
-                                <h3>$ 0</h3>
+                                <h3>$ 10.395</h3>
                             </div>
-
                             <div class="pkg-btn"><a href="tel:+56998281526" class="btn btn-primary">Solicítalo Ahora</a></div>
-
                         </div>
                     </div>
-
                 </div>
-
-
             </div>
         </div>
     </section>
@@ -214,23 +200,18 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="socio-copyright" >
-
                     <div class="social">
                         <a target="_blank" href="https://www.facebook.com/codigominga/"><i class="fa fa-facebook"></i></a>
                         <!--<a target="_blank" href="https://github.com/CodigoMinga"><i class="fa fa-github"></i></a>-->
                         <a target="_blank" href="https://www.instagram.com/codigominga/"><i class="fa fa-instagram"></i></a>
                         <a target="_blank" href="https://www.linkedin.com/company/67172626/admin/"><i class="fa fa-linkedin"></i></a>
                     </div>
-
                     <p style="color: white">Creado por <a target="_blank" href="http://www.codigominga.cl">Codigo Minga </a>2021.</p>
                 </div>
-
             </div>
         </div>
     </footer>
-    
     <script src="{{url('/')}}/assets/js/vendor/jquery-1.11.2.min.js"></script>
     <script src="{{url('/')}}/assets/js/vendor/bootstrap.min.js"></script>
     <script src="{{url('/')}}/assets/js/plugins.js"></script>
