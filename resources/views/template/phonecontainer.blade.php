@@ -1,9 +1,3 @@
-@if(isset(Auth::user()->email))
-
-@else
-    <script>window.location="/main"</script>
-@endif
-
 <!DOCTYPE html>
 <html>
 <head>

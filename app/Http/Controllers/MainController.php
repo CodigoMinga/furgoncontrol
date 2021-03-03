@@ -25,7 +25,6 @@ class MainController extends Controller
         return view('users.login');
     }
 
-
     public function checkLogin(Request $request){
 
         $this->validate($request,[
@@ -63,7 +62,6 @@ class MainController extends Controller
 
     public function register(){
         $communes = Commune::all()->sortBy('name');
-
         return view('register',compact('communes'));
     }
 
@@ -120,8 +118,6 @@ class MainController extends Controller
 
 
     function passwordLost(){
-
-
         return view('passwordlost');
     }
 
