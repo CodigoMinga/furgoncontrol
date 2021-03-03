@@ -1,8 +1,4 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -64,16 +60,17 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a class="nav-item nav-link active" href="#home">Inicio<span class="sr-only">(current)</span></a></li>
-                        <li><a class="nav-item nav-link" href="#nosotros">¿Comó Funciona?</a></li>
-                        <li><a class="nav-item nav-link" href="#precios">Precios</a></li>
-                        <li><a class="nav-item nav-link" href="#footer">Contacto</a></li>
+                        <li><a class="nav-item nav-link active" href="{{url('/')}}#home">Inicio<span class="sr-only">(current)</span></a></li>
+                        <li><a class="nav-item nav-link" href="{{url('/')}}#nosotros">¿Comó Funciona?</a></li>
+                        <li><a class="nav-item nav-link" href="{{url('/')}}#precios">Precios</a></li>
+                        <li><a class="nav-item nav-link" href="{{url('/')}}#footer">Contacto</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
     <header id="home">
+        
         <div class="container text-center">
         <div class="row">
             <div class="homepage-style" style="padding-top:150px;">
@@ -88,7 +85,7 @@
                             <br>
                             <div class="home-btn">
                                 <a class="btn btn-primary" href="{{url('/app/register')}}">Registrarse <span><i class="fa fa-check"></i></span></a>
-                                <a class="btn btn-primary" href="{{url('/app/login')}}">Iniciar Sesión <span><i class="fa fa-user"></i></span></a>
+                                <a class="btn btn-primary" href="{{url('/app/login')}}">Iniciar Sesión <span><i class="fa fa-user"></i></span></a>                                
                             </div>
                         </div>
                     </div>
@@ -269,6 +266,7 @@
             </div>
         </div>
     </footer>
+    
     <script src="{{url('/')}}/assets/js/vendor/jquery-1.11.2.min.js"></script>
     <script src="{{url('/')}}/assets/js/vendor/bootstrap.min.js"></script>
     <script src="{{url('/')}}/assets/js/plugins.js"></script>
