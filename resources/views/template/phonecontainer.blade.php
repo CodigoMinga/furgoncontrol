@@ -342,7 +342,7 @@
 <script>
     var notificacion = document.getElementById('notificacion');
     notificacion.innerText='{!! $message !!}';
-    notificacion.style.backgroundColor='#00e676';
+    notificacion.style.backgroundColor='#388e3c';
     setTimeout(() => {  notificacion.style.bottom="0px"; }, 250);
     setTimeout(() => {  notificacion.style.bottom="-150px"; }, 4000);
 </script>

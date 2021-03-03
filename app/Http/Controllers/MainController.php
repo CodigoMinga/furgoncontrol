@@ -46,6 +46,8 @@ class MainController extends Controller
             $login_log->type = "LOGIN-OK";
             $login_log->user_id = Auth::user()->id;
             $login_log->save();
+            
+            Session::flash('noti-check', "Sesión Iniciada");
             return redirect('app/home');
         }
         else{
