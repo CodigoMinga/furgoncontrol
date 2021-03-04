@@ -39,21 +39,6 @@ class TravelController extends Controller
         return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
     }
 
-    public function details($travel_id){
-        $user_id = Auth::user()->id;
-        $students = Db::select('
-                    select students.*,travelstudents.id as travelstudent_id, travelstudents.temperature,schools.name as school_name from students
-                    left join schools
-                    on schools.id = students.school_id
-                    left join travelstudents
-                    on travelstudents.student_id = students.id and travelstudents.enabled = 0 and travelstudents.travel_id = '.$travel_id.' where students.user_id = '.$user_id
-                );
-        $travel = Travel::findOrFail($travel_id);
-        $edit=false;
-        return view('travel.assistance',compact('students','travel','edit'));
-    }
-
-
     public function assistance($travel_id){
         $user_id = Auth::user()->id;
         $students = Db::select('

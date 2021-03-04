@@ -84,7 +84,7 @@
                     <p>{{$travel->type==0 ? 'Viaje de ida' : 'Viaje de regreso'}}</p>
                     <p>Pasajeros: {{COUNT($travel->travelstudent)}}</p>
                 </div>
-                <a class="boton" href="{{url('/app/travel/'.$travel->id.'/details')}}">
+                <a class="boton" href="{{url('/app/travel/'.$travel->id.'/assistance')}}">
                     <i class="fa fa-bus"></i>
                     <span>Datos</span>
                 </a>
