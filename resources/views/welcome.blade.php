@@ -59,6 +59,7 @@
                         <li><a class="nav-item nav-link" href="#nosotros">¿Comó Funciona?</a></li>
                         <li><a class="nav-item nav-link" href="#precios">Precios</a></li>
                         <li><a class="nav-item nav-link" href="#footer">Contacto</a></li>
+                        <li><a class="nav-item nav-link" href="http://public.codigominga.cl/documentos/Manual%20Furgon%20Controlado%2020210404.pdf"> Descarga el manual aquí<a></li>
                     </ul>
                 </div>
             </div>
