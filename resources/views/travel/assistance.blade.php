@@ -85,6 +85,12 @@
     </a>
 @stop
 
+@section('menubutton')
+    <a data-toggle="modal" data-target="#eliminarModal" class="botton-menu">
+        <i class="fa fa-trash"></i>
+    </a>
+@endsection
+
 @section('content')
     <div class="contenedor">
         <div align="center" style="padding: 1rem">
@@ -143,13 +149,39 @@
                 ¿Esta Seguro de finalizar el viaje?
             </div>
             <div class="modal-footer" style="display:flex; justify-content:space-between">
-                <button type="button" class="mybutton sm rojo" data-dismiss="modal" style="width:45%">  
+                <button type="button" class="mybutton sm gris" data-dismiss="modal" style="width:45%">  
                     <i class="fa fa-times"></i>
                     <span>Cancelar</span>
                 </button>
                 <a href="{{url('/app/travel/'.$travel->id.'/finish')}}" class="mybutton sm verde" style="width:45%">  
                     <i class="fa fa-flag-checkered"></i>
                     <span>Finalizar</span>
+                </a>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="eliminarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Eliminar Viaje</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" style="color:white" class="fa fa-times"></span>
+              </button>
+            </div>
+            <div class="modal-body">
+                ¿Esta Seguro de Eliminar el viaje?
+            </div>
+            <div class="modal-footer" style="display:flex; justify-content:space-between">
+                <button type="button" class="mybutton sm gris" data-dismiss="modal" style="width:45%">  
+                    <i class="fa fa-times"></i>
+                    <span>Cancelar</span>
+                </button>
+                <a href="{{url('/app/travel/'.$travel->id.'/delete')}}" class="mybutton sm rojo" style="width:45%">
+                    <i class="fa fa-trash"></i>
+                    <span>Eliminar</span>
                 </a>
             </div>
           </div>

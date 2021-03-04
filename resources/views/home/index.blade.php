@@ -137,12 +137,6 @@
         <i class="fa fa-bus"></i>
         <span>Nuevo Viaje</span>
     </a>
-
-    <a href="{{url('/app/travel/list')}}" class="mybutton primario">
-        <i class="fa fa-bus"></i>
-        <span>Viajes Anteriores</span>
-    </a>
-
     <a href="{{url('/app/student/list')}}" class="mybutton azul">
         <i class="fa fa-users"></i>
         <span>Alumnos</span>
@@ -157,10 +151,9 @@
         <i class="fa fa-file-pdf-o"></i>
         <span>Reportes</span>
     </a>
-    
-    <a href="{{url('/app/travel/list')}}" class="mybutton rojo">
-        <i class="fa fa-file-pdf-o"></i>
-        <span>Viajes</span>
+    <a href="{{url('/app/travel/list')}}" class="mybutton primario">
+        <i class="fa fa-bus"></i>
+        <span>Viajes Anteriores</span>
     </a>
     @endif
     <a href="https://www.flow.cl/btn.php?token=wn202xf" class="mybutton naranja">
