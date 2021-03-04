@@ -1,4 +1,3 @@
-
 @extends('template.phonecontainer')
 <style>
     .viaje{
@@ -73,7 +72,7 @@
         font-family: 'Montserrat', sans-serif;
         font-size:2rem!important;
     }
-
+    
     .dropdown-menu>li>a{
         color:white!important;
     }
@@ -105,71 +104,13 @@
         </a>
     </div>
 
-    @if(Auth::user()->is_codigo_minga)
-        <div align="center" style="padding: 1rem">
-            <a class="titulo">
-                <span>Administración </span>
-                <span>Codigominga</span>
-            </a>
-        </div>
-        <a href="{{url('/app/users')}}" class="mybutton gris">
-            <i class="fa fa-address-card"></i>
-            <span>Listado Usuarios</span>
-        </a>
-    @endif
-
-    @if($expired_days > 0 and $expired_days < 5)
-        <div class="alert-box">
-            <i class="fa fa-warning"></i>
-            <span>Su licencia Expiro, le queda {{5 - $expired_days}} día de Uso.</span>
-            <i class="fa fa-warning"></i>
-        </div>
-    @elseif($expired_days >= 5)
-        <div class="alert-box">
-            <i class="fa fa-warning"></i>
-            <span>Usted no posee una licencia activa. Por favor renueve su licencia</span>
-            <i class="fa fa-warning"></i>
-        </div>
-    @endif
-
-    @if($expired_days <= 5)
-    <a href="{{url('/app/travel/add')}}" class="mybutton verde">
-        <i class="fa fa-bus"></i>
-        <span>Nuevo Viaje</span>
-    </a>
-
-    <a href="{{url('/app/student/list')}}" class="mybutton azul">
-        <i class="fa fa-users"></i>
-        <span>Alumnos</span>
-    </a>
-
-    <a href="{{url('/app/school/list')}}" class="mybutton morado">
-        <i class="fa fa-list-ul"></i>
-        <span>Establecimientos</span>
-    </a>
-
-    <a href="{{url('/app/reportselect')}}" class="mybutton rojo">
-        <i class="fa fa-file-pdf-o"></i>
-        <span>Reportes</span>
-    </a>
-    
-    <a href="{{url('/app/travel/list')}}" class="mybutton rojo">
-        <i class="fa fa-file-pdf-o"></i>
-        <span>Viajes</span>
-    </a>
-    @endif
-    <a href="https://www.flow.cl/btn.php?token=wn202xf" class="mybutton naranja">
-        <i class="fa fa-credit-card"></i>
-        <span>Pagar Licencia</span>
-    </a>
 
 
-    <div align="center" style="padding: 1rem">
-        <a class="titulo">
-            <span>Viajes </span>
-            <span>de Hoy</span>
-        </a>
-    </div>
+
+
+
+
+
     @foreach($travels as $travel)
         <div class="viaje">
             <i class="icono fa fa-bus"></i>

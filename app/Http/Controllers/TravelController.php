@@ -51,6 +51,19 @@ class TravelController extends Controller
         $travel = Travel::findOrFail($travel_id);
         return view('travel.assistance',compact('students','travel'));
     }
+    public function list($travel_id){
+        $user_id = Auth::user()->id;
+        $students = Db::select('
+                    select students.*,travelstudents.temperature,schools.name as school_name from students
+                    left join schools 
+                    on schools.id = students.school_id 
+                    left join travelstudents
+                    on travelstudents.student_id = students.id and travelstudents.travel_id = '.$travel_id.' where students.user_id = '.$user_id
+                );
+
+        $travel = Travel::findOrFail($travel_id);
+        return view('travel.travellist',compact('students','travel'));
+    }
 
     public function setAssistance($travel_id,$student_id){
         return view('travel.addassistance',compact('travel_id','student_id'));
