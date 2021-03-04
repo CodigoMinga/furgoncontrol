@@ -7,80 +7,45 @@ use Illuminate\Http\Request;
 
 class TravelstudentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function edit($travelstudent_id){
+        $travelstudent = Travelstudent::findOrFail($travelstudent_id);
+        $travel_id=$travelstudent->travel_id;
+        $student=$travelstudent->student;
+        return view('travel.addassistance',compact('travelstudent','travel_id','student'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function editProcess(Request $request){
+        $input = $request->all();
+
+        $travelstudent = Travelstudent::findOrFail($request->id);
+        $travel_id=$travelstudent->travel_id;
+
+        if($travelstudent->fill($input)->save()){
+            $sucess  = true;
+            $returnUrl = url('/')."/app/travel/".$travel_id."/assistance";
+            $message =  "Se guardaron los cambios de la medición de temperatura del alumno";
+        }else{
+            $sucess  = false;
+            $returnUrl = url('/')."/app/travel/".$travel_id."/assistance";
+            $message =  "Ocurrio un error al cambiar la medición de temperatura del alumno";
+        }
+        return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    
+    public function delete($travelstudent_id){
+        $travelstudent = Travelstudent::findOrFail($travelstudent_id);
+        $travelstudent->enabled=1;
+        $travel_id=$travelstudent->travel_id;
+        if($travelstudent->save()){
+            $sucess  = true;
+            $returnUrl = url('/')."/app/travel/".$travel_id."/assistance";
+            $message =  "Se Elimino correctamente la medición de temperatura del alumno";
+        }else{
+            $sucess  = false;
+            $returnUrl = url('/')."/app/travel/".$travel_id."/assistance";
+            $message =  "Ocurrio un error al Eliminar la medición de temperatura del alumno";
+        }
+        return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Travelstudent  $travelstudent
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Travelstudent $travelstudent)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Travelstudent  $travelstudent
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Travelstudent $travelstudent)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Travelstudent  $travelstudent
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Travelstudent $travelstudent)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Travelstudent  $travelstudent
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Travelstudent $travelstudent)
-    {
-        //
-    }
-
 }

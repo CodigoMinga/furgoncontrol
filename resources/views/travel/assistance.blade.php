@@ -109,12 +109,12 @@
                     </div>         
                     @if(isset($student->temperature))
                         @if($student->temperature>37.5)
-                            <a class="boton Rojo">
+                            <a class="boton Rojo" @if(!isset($travel->finish)) href="{{url('/app/travelstudent/'.$student->travelstudent_id.'/edit')}}" @endif>
                                 <i class="fa fa-thermometer-full"></i>
                                 <span>{{$student->temperature}}ºC</span>
                             </a>
                         @else
-                            <a class="boton Verde">
+                            <a class="boton Verde" @if(!isset($travel->finish)) href="{{url('/app/travelstudent/'.$student->travelstudent_id.'/edit')}}" @endif>
                                 <i class="fa fa-thermometer-half"></i>
                                 <span>{{$student->temperature}}ºC</span>
                             </a>

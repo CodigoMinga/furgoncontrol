@@ -42,11 +42,11 @@ class TravelController extends Controller
     public function details($travel_id){
         $user_id = Auth::user()->id;
         $students = Db::select('
-                    select students.*,travelstudents.temperature,schools.name as school_name from students
+                    select students.*,travelstudents.id as travelstudent_id, travelstudents.temperature,schools.name as school_name from students
                     left join schools
                     on schools.id = students.school_id
                     left join travelstudents
-                    on travelstudents.student_id = students.id and travelstudents.travel_id = '.$travel_id.' where students.user_id = '.$user_id
+                    on travelstudents.student_id = students.id and travelstudents.enabled = 0 and travelstudents.travel_id = '.$travel_id.' where students.user_id = '.$user_id
                 );
         $travel = Travel::findOrFail($travel_id);
         $edit=false;
@@ -57,11 +57,11 @@ class TravelController extends Controller
     public function assistance($travel_id){
         $user_id = Auth::user()->id;
         $students = Db::select('
-                    select students.*,travelstudents.temperature,schools.name as school_name from students
+                    select students.*,travelstudents.id as travelstudent_id,travelstudents.temperature,schools.name as school_name from students
                     left join schools
                     on schools.id = students.school_id
                     left join travelstudents
-                    on travelstudents.student_id = students.id and travelstudents.travel_id = '.$travel_id.' where students.user_id = '.$user_id
+                    on travelstudents.student_id = students.id and travelstudents.enabled = 0 and travelstudents.travel_id = '.$travel_id.' where students.user_id = '.$user_id
                 );
 
         $travel = Travel::findOrFail($travel_id);
@@ -84,7 +84,8 @@ class TravelController extends Controller
     }
 
     public function setAssistance($travel_id,$student_id){
-        return view('travel.addassistance',compact('travel_id','student_id'));
+        $student = Student::findOrFail($student_id);
+        return view('travel.addassistance',compact('travel_id','student'));
     }
 
     public function setAssistanceProcess($travel_id,$student_id,Request $request){
