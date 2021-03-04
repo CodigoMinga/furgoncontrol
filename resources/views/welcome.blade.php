@@ -170,7 +170,11 @@
 
                             </ul>
                             <div class="package-bottom-area">
-                                <h3>$ 10.395</h3>
+                                <h3>$10.395</h3>
+
+                            </div>
+                            <div class="textstandar">
+                                <strong><p style="size: 27px; color:#F7CE26"> Mensual</p></strong>
                             </div>
                             <div class="pkg-btn"><a href="tel:+56998281526" class="btn btn-primary">Solicítalo Ahora</a></div>
                         </div>

@@ -63,7 +63,10 @@ Route::group(['middleware' => ['auth']], function() {
 
 
     Route::get('/app/travel/add/', 'TravelController@add');
+    Route::get('/app/travel/list/', 'TravelController@list2');
     Route::get('/app/travel/add/{type}/process', 'TravelController@addProcess');
+    Route::get('/app/travel/{travel_id}/details', 'TravelController@details');
+    Route::get('/app/travel/{travel_id}/delete', 'TravelController@delete');
 
     Route::get('/app/travel/{travel_id}', 'TravelController@details');
     Route::get('/app/travel/{travel_id}/assistance', 'TravelController@assistance');
@@ -71,6 +74,11 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/app/travel/{travel_id}/assistance/{student_id}/mark', 'TravelController@setAssistance');
     Route::post('/app/travel/{travel_id}/assistance/{student_id}/mark/process', 'TravelController@setAssistanceProcess');
+
+    Route::get('/app/travelstudent/{travelstudent_id}/edit', 'TravelstudentController@edit');
+    Route::get('/app/travelstudent/{travelstudent_id}/delete', 'TravelstudentController@delete');
+    Route::post('/app/travelstudent/edit/process', 'TravelstudentController@editProcess');
+
     Route::get('/app/travel/{travel_id}/list', 'TravelController@list');
 
     Route::get('/app/logout', 'MainController@logout');
