@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     public function index(){
-
-        $travels = Travel::where('user_id','=',Auth::user()->id)->get();
+        $fecha=Carbon::now();
+        $travels = Travel::where('user_id','=',Auth::user()->id)->where('enabled',0)->whereDate('start','=',$fecha->toDateString())->get();
 
         //busca si es que ya existe una licensia activa, trae la ultima
         $old_license = License::where('user_id','=',Auth::user()->id)
