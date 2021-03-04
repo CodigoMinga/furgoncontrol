@@ -30,7 +30,7 @@
             background-color: #F7CE26!important;
         }
         section{
-            padding: 5rem 0; 
+            padding: 5rem 0;
         }
         .portfolio-item{
             padding-top:15%;
@@ -79,7 +79,7 @@
                             <br>
                             <div class="home-btn">
                                 <a class="btn btn-primary" href="{{url('/app/register')}}">Registrarse <span><i class="fa fa-check"></i></span></a>
-                                <a class="btn btn-primary" href="{{url('/app/login')}}">Iniciar Sesión <span><i class="fa fa-user"></i></span></a>                                
+                                <a class="btn btn-primary" href="{{url('/app/login')}}">Iniciar Sesión <span><i class="fa fa-user"></i></span></a>
                             </div>
                         </div>
                     </div>
@@ -160,16 +160,21 @@
                 <div class="main-package text-center center-block">
                     <div class="col-xs-12 center-block ">
                         <div class="package-item standard">
-                            <h5>Prueba Gratis</h5>
+                            <h5>Plan único</h5>
                             <ul>
-                                <li style="color: black">10 Días</li>
-                                <li style="color: black">Registro digital de estudiantes </li>
-                                <li style="color: black">Optimiza tu tiempo</li>
-                                <li style="color: black">Genera reportes</li>
+                                <li style="color: black">10 Días de prueba gratis</li>
+                                <li style="color: black">Registro digital de pasajeros </li>
                                 <li style="color: black">Registra temperatura</li>
+                                <li style="color: black">Optimiza tu tiempo</li>
+                                <li style="color: black">Genera reporte de pasajeros</li>
+
                             </ul>
                             <div class="package-bottom-area">
-                                <h3>$ 0</h3>
+                                <h3>$10.395</h3>
+
+                            </div>
+                            <div class="textstandar">
+                                <strong><p style="size: 27px; color:#F7CE26"> Mensual</p></strong>
                             </div>
                             <div class="pkg-btn"><a href="tel:+56998281526" class="btn btn-primary">Solicítalo Ahora</a></div>
                         </div>

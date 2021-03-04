@@ -46,7 +46,7 @@ class MainController extends Controller
             $login_log->type = "LOGIN-OK";
             $login_log->user_id = Auth::user()->id;
             $login_log->save();
-            
+
             Session::flash('noti-check', "Sesión Iniciada");
             return redirect('app/home');
         }
@@ -89,7 +89,7 @@ class MainController extends Controller
                     $license = new License();
                     $license->pay_date = Carbon::now();
                     $license->from = Carbon::now();
-                    $license->to = Carbon::now()->addDays(30);
+                    $license->to = Carbon::now()->addDays(10);
                     $license->user_id = $user->id;
                     $license->pay_id = null;
                     $license->save();
@@ -184,7 +184,7 @@ class MainController extends Controller
 
     public function passwordChangeProcess($user_id, Request $request){
 
-        $user = User::findOrFail($user_id);        
+        $user = User::findOrFail($user_id);
         $oldpassword = $request->oldpassword;
 
         if(Hash::check($oldpassword,$user->password)){

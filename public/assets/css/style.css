@@ -797,6 +797,11 @@ input:-ms-input-placeholder {
 .package-item.standard ul li{
     color:black;
     font-weight:bold;
+
+}
+.textstandar{
+   color: #F7CE26;
+   font-size: 27px;
 }
 .package-item.standard .package-bottom-area h3{
     color:#F7CE26;

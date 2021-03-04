@@ -50,6 +50,19 @@ class TravelController extends Controller
         $user_id = Auth::user()->id;
         $students = Db::select('
                     select students.*,travelstudents.temperature,schools.name as school_name from students
+                    left join schools
+                    on schools.id = students.school_id
+                    left join travelstudents
+                    on travelstudents.student_id = students.id and travelstudents.travel_id = '.$travel_id.' where students.user_id = '.$user_id
+                );
+
+        $travel = Travel::findOrFail($travel_id);
+        return view('travel.assistance',compact('students','travel'));
+    }
+    public function list($travel_id){
+        $user_id = Auth::user()->id;
+        $students = Db::select('
+                    select students.*,travelstudents.temperature,schools.name as school_name from students
                     left join schools 
                     on schools.id = students.school_id 
                     left join travelstudents
@@ -57,7 +70,7 @@ class TravelController extends Controller
                 );
 
         $travel = Travel::findOrFail($travel_id);
-        return view('travel.assistance',compact('students','travel'));
+        return view('travel.travellist',compact('students','travel'));
     }
 
     public function setAssistance($travel_id,$student_id){
@@ -100,7 +113,13 @@ class TravelController extends Controller
     }
 
     public function reportselect(){
-        $schools = Auth::user()->schools;
+
+        if(Auth::user()->is_codigo_minga){
+            $schools = School::all();
+        }else{
+            $schools = Auth::user()->schools;
+        }
+
         return view('travel.reportselect',compact('schools'));
     }
 
@@ -117,18 +136,37 @@ class TravelController extends Controller
         $viernes = date('Y-m-d', strtotime($desde.' +4 day'));
         $hasta = $viernes;
 
-        $query ="select s.name,s.last_name,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$lunes' limit 1) as lunes1,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$lunes' limit 1) as lunes2,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$martes' limit 1) martes1,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$martes' limit 1) martes2,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$miercoles' limit 1) miercoles1,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$miercoles' limit 1) miercoles2,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$jueves' limit 1) jueves1,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$jueves' limit 1) jueves2,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$viernes' limit 1) viernes1,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$viernes' limit 1) viernes2
-        from students s where s.user_id = $usuario->id and s.school_id = $school_id order by s.last_name";
+        if($usuario->is_codigo_minga){
+
+
+            $query ="select s.name,s.last_name,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$lunes' limit 1) as lunes1,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$lunes' limit 1) as lunes2,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$martes' limit 1) martes1,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$martes' limit 1) martes2,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$miercoles' limit 1) miercoles1,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$miercoles' limit 1) miercoles2,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$jueves' limit 1) jueves1,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$jueves' limit 1) jueves2,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$viernes' limit 1) viernes1,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$viernes' limit 1) viernes2
+            from students s where s.school_id = $school_id order by s.last_name";
+        }else{
+            $query ="select s.name,s.last_name,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$lunes' limit 1) as lunes1,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$lunes' limit 1) as lunes2,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$martes' limit 1) martes1,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$martes' limit 1) martes2,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$miercoles' limit 1) miercoles1,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$miercoles' limit 1) miercoles2,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$jueves' limit 1) jueves1,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$jueves' limit 1) jueves2,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$viernes' limit 1) viernes1,
+            (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$viernes' limit 1) viernes2
+            from students s where s.user_id = $usuario->id and s.school_id = $school_id order by s.last_name";
+
+        }
+
 
         $datos = DB::select($query);
         $pdf = PDF::loadView('travel.report', compact('document_title','desde','hasta','school','usuario','datos'))->setOptions(['isRemoteEnabled' => true,'name'=>$document_title]);
