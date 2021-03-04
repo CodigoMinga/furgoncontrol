@@ -19,6 +19,14 @@ class TravelController extends Controller
         return view('travel.add',compact('schools'));
     }
 
+
+    public function list(){
+        $schools = Auth::user()->schools;
+        $fecha_actual = Carbon::now();
+        $travels = Travel::where('user_id',Auth::user()->id)->get();
+        return view('travel.list',compact('travels'));
+    }
+
     public function addProcess($type){
         $fecha_actual = Carbon::now();
         $travel = new Travel();

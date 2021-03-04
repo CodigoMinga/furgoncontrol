@@ -63,6 +63,7 @@ Route::group(['middleware' => ['auth']], function() {
 
 
     Route::get('/app/travel/add/', 'TravelController@add');
+    Route::get('/app/travel/list/', 'TravelController@list');
     Route::get('/app/travel/add/{type}/process', 'TravelController@addProcess');
 
     Route::get('/app/travel/{travel_id}', 'TravelController@details');
