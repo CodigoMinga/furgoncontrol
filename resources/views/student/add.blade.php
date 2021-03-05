@@ -46,7 +46,7 @@
 
                 <div class="my-formgroup">
                     <label for="exampleInputEmail1">Email del Apoderado</label>
-                    <input required type="email"  name="parent_email"    value="{{$student->parent_email}}" {{!$edit ? 'disabled' : ''}}>
+                    <input type="email"  name="parent_email"    value="{{$student->parent_email}}" {{!$edit ? 'disabled' : ''}}>
                 </div>
 
                 <div class="my-formgroup">
@@ -61,7 +61,7 @@
                 
                 <div class="my-formgroup">
                     <label for="exampleInputEmail1">Segundo Teléfono</label>
-                    <input required type="text"  name="second_parent_phone"    value="{{$student->second_parent_phone}}" {{!$edit ? 'disabled' : ''}}>
+                    <input type="text"  name="second_parent_phone"    value="{{$student->second_parent_phone}}" {{!$edit ? 'disabled' : ''}}>
                 </div>
 
                 <div class="my-formgroup">
