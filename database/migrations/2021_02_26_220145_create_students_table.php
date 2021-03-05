@@ -25,7 +25,7 @@ class CreateStudentsTable extends Migration
             $table->string('parent_last_name')->nullable();
             $table->string('parent_rut')->nullable();
             $table->string('parent_phone')->nullable();
-
+            
             $table->boolean('enabled')->default(1);
 
             $table->bigInteger('user_id')->unsigned();
