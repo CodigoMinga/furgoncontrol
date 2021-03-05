@@ -75,7 +75,9 @@
                 <span>Alumnos</span>
             </a>
         </div>
+
         <div class="lista">
+
             @foreach ($students as $student)
             <div class="estudiante">
 
@@ -89,7 +91,9 @@
                 </a>
             </div>
             @endforeach
+
         </div>
+  
         <a href="{{url('/app/student/add')}}" class="mybutton verde">
             <i class="fa fa-user-plus"></i>
             <span>Registrar Nuevo Alumno</span>
