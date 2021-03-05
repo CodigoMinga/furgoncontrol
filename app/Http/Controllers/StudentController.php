@@ -57,9 +57,12 @@ class StudentController extends Controller
         return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
     }
 
-    public function list(){
+    public function list(Request $request){
         $user_id = Auth::user()->id;
         $students = Student::where('user_id','=',$user_id)->get();
         return view('student.listv2',compact('students'));
+
+
+
     }
 }

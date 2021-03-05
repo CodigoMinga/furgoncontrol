@@ -36,8 +36,8 @@
         }
 
         #grad2 {
-            background: rgb(255,255,255);
-            background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,158,0,1) 100%);
+            background:#F7CE26;
+            background: linear-gradient #F7CE26 100%);
             max-height: 80%;
         }
     </style>
