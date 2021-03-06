@@ -37,12 +37,16 @@
         <div align="center" style="padding: 1rem">
             <a class="titulo">
                 <span>Listado de </span>
-                <span>Alumnos</span>
+                <span>Mediciones</span>
             </a>
+        </div>
+        <div class="buscardor">
+            <i class="fa fa-search"></i>
+            <input  name="buscarpor" type="search" placeholder="Buscar" id="buscar">
         </div>
         <div class="lista">
             @foreach($students as $student)                
-                <div class="item-lista">
+                <div class="item-lista" buscar="{{$student->name}} {{$student->last_name}} {{$student->school_name}} {{!isset($student->temperature) ? 'Sin datos' : $student->temperature}}">
                     <div class="informacion">
                         <h5>{{$student->name}} {{$student->last_name}}</h5>
                         <p>{{$student->school_name}}</p>
@@ -50,18 +54,18 @@
                     </div>         
                     @if(isset($student->temperature))
                         @if($student->temperature>37.5)
-                            <a class="boton rojo" @if(!isset($travel->finish)) href="{{url('/app/travelstudent/'.$student->travelstudent_id.'/edit')}}" @endif>
+                            <a class="boton rojo" href="{{url('/app/travelstudent/'.$student->travelstudent_id.'/edit')}}">
                                 <i class="fa fa-thermometer-full"></i>
                                 <span>{{$student->temperature}}ºC</span>
                             </a>
                         @else
-                            <a class="boton verde" @if(!isset($travel->finish)) href="{{url('/app/travelstudent/'.$student->travelstudent_id.'/edit')}}" @endif>
+                            <a class="boton verde" href="{{url('/app/travelstudent/'.$student->travelstudent_id.'/edit')}}">
                                 <i class="fa fa-thermometer-half"></i>
                                 <span>{{$student->temperature}}ºC</span>
                             </a>
                         @endif 
                     @else       
-                        <a class="boton gris" @if(!isset($travel->finish)) href="{{url('/app/travel/'.$travel->id.'/assistance/'.$student->id.'/mark')}}" @endif>
+                        <a class="boton gris" href="{{url('/app/travel/'.$travel->id.'/assistance/'.$student->id.'/mark')}}">
                             <i class="fa fa-thermometer-empty"></i>
                             <span>Sin datos</span>
                         </a>
@@ -128,4 +132,18 @@
           </div>
         </div>
     </div>
+    
+    <script>
+        var burcar = document.getElementById('buscar');
+        var items = document.querySelectorAll(".item-lista");
+        burcar.onkeyup = function() {
+            items.forEach(item => {
+                if(item.getAttribute('buscar').toUpperCase().includes(this.value.toUpperCase())){
+                    item.style.display='flex';
+                }else{
+                    item.style.display="none";
+                }
+            });
+        }
+    </script>
 @stop

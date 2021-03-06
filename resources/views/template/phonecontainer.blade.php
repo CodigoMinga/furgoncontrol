@@ -19,6 +19,7 @@
     <script src="{{ url('/') }}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <script src="{{ url('/') }}/js/rut.js"></script>
+    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
@@ -69,7 +70,7 @@
         position: relative;
         flex-direction: column;
         align-items:center;
-        justify-content:center;
+        justify-content:start;
         margin:2rem;
         width: 50%;
         min-width: 150px;
@@ -139,7 +140,7 @@
     }
 
     .mybutton-column i{
-        font-size: 5rem;
+        font-size: 5rem!important;
     }
 
     .mybutton i{
@@ -356,6 +357,9 @@
         flex-grow: 1;
         margin-bottom:2rem;
         overflow-y: scroll;
+        border-width: 3px 3px 3px 3px;
+        border-style:solid;
+        border-color:#F7CE26;
     }
 
     .contenedor-lista .item-lista{
@@ -363,17 +367,12 @@
         flex-direction: row;
         justify-content:stretch;
         align-items: center;
-        border: 3px solid #F7CE26;
-        border-width: 0 3px 3px 3px;
+        border-width: 0px 0px 3px 0px;
         border-style:solid;
         border-color:#F7CE26;
         color:white;
         font-family: 'Montserrat', sans-serif;
         padding: 0.5rem;
-    }
-
-    .contenedor-lista .item-lista:first-of-type{
-        border-width: 3px 3px 3px 3px;
     }
 
     .contenedor-lista .item-lista .informacion{
@@ -405,9 +404,11 @@
         white-space: nowrap;
     }
 
-    .buscador{
+    .buscardor{
         position: relative;
+        padding-bottom: 1.5rem;
     }
+
     .buscardor input{
         background: rgba(0,0,0,0);
         font-family: 'Montserrat', sans-serif;

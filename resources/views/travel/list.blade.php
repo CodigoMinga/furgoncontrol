@@ -17,9 +17,13 @@
                 <span>Viajes</span>
             </a>
         </div>
+        <div class="buscardor">
+            <i class="fa fa-search"></i>
+            <input  name="buscarpor" type="search" placeholder="Buscar" id="buscar">
+        </div>
         <div class="lista">
             @foreach ($travels as $travel)
-            <div class="item-lista">
+            <div class="item-lista" buscar="{{$travel->start}} {{$travel->type==0 ? 'Viaje de ida' : 'Viaje de regreso'}} {{COUNT($travel->travelstudent)}}">
                 <div class="informacion">
                     <h5>{{$travel->start}}</h5>
                     <p>{{$travel->type==0 ? 'Viaje de ida' : 'Viaje de regreso'}}</p>
@@ -33,4 +37,17 @@
             @endforeach
         </div>
     </div>
+    <script>
+        var burcar = document.getElementById('buscar');
+        var items = document.querySelectorAll(".item-lista");
+        burcar.onkeyup = function() {
+            items.forEach(item => {
+                if(item.getAttribute('buscar').toUpperCase().includes(this.value.toUpperCase())){
+                    item.style.display='flex';
+                }else{
+                    item.style.display="none";
+                }
+            });
+        }
+    </script>
 @stop

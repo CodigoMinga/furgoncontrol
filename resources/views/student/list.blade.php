@@ -17,18 +17,13 @@
                 <span>Alumnos</span>
             </a>
         </div>
-        <div>
-            <form>
-                <div class="buscardor">
-                    <i class="fa fa-search"></i>
-                    <input  name="buscarpor" type="search" placeholder="Buscar">
-                </div>
-            </form>
+        <div class="buscardor">
+            <i class="fa fa-search"></i>
+            <input  name="buscarpor" type="search" placeholder="Buscar" id="buscar">
         </div>
         <div class="lista">
             @foreach ($students as $student)
-            <div class="item-lista">
-
+            <div class="item-lista" buscar="{{$student->name}} {{$student->last_name}} {{$student->parent_name}} {{$student->parent_last_name}}">
                 <div class="informacion">
                     <h5>{{$student->name}} {{$student->last_name}}</h5>
                     <p>Apodarado: {{$student->parent_name}} {{$student->parent_last_name}}</p>
@@ -45,4 +40,17 @@
             <span>Registrar Nuevo Alumno</span>
         </a>
     </div>
+    <script>
+        var burcar = document.getElementById('buscar');
+        var items = document.querySelectorAll(".item-lista");
+        burcar.onkeyup = function() {
+            items.forEach(item => {
+                if(item.getAttribute('buscar').toUpperCase().includes(this.value.toUpperCase())){
+                    item.style.display='flex';
+                }else{
+                    item.style.display="none";
+                }
+            });
+        }
+    </script>
 @stop
