@@ -23,9 +23,10 @@
         </div>
         <div class="lista">
             @foreach ($students as $student)
-            <div class="item-lista" buscar="{{$student->name}} {{$student->last_name}} {{$student->parent_name}} {{$student->parent_last_name}}">
+            <div class="item-lista" buscar="{{$student->name}} {{$student->last_name}} {{$student->parent_name}} {{$student->parent_last_name}} {{$student->rut}}">
                 <div class="informacion">
                     <h5>{{$student->name}} {{$student->last_name}}</h5>
+                    <p>RUT: {{$student->rut}}</p>
                     <p>Apodarado: {{$student->parent_name}} {{$student->parent_last_name}}</p>
                 </div>
                 <a class="boton blanco" href="{{url('/app/student/'.$student->id.'/details')}}">
