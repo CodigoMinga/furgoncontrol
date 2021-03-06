@@ -91,11 +91,11 @@
                 ¿Esta seguro de eliminar esta medición?
             </div>
             <div class="modal-footer" style="display:flex; justify-content:space-between">
-                <button type="button" class="mybutton sm gris" data-dismiss="modal" style="width:45%">  
+                <button type="button" class="mybutton sm gris" data-dismiss="modal">  
                     <i class="fa fa-times"></i>
                     <span>Cancelar</span>
                 </button>
-                <a href="{{url('/app/travelstudent/'.$travelstudent->id.'/delete')}}" class="mybutton sm rojo" style="width:45%">
+                <a href="{{url('/app/travelstudent/'.$travelstudent->id.'/delete')}}" class="mybutton sm rojo">
                     <i class="fa fa-trash"></i>
                     <span>Eliminar</span>
                 </a>

@@ -52,14 +52,8 @@ class Student extends Model
         return $this->hasMany('App\Travelstudent');
     }
 
-
     public function school()
     {
         return $this->belongsTo('App\School');
-    }
-    public function scopeBuscarpor($query, $tipo, $buscar) {
-    	if ( ($tipo) && ($buscar) ) {
-    		return $query->where($tipo,'like',"%$buscar%");
-    	}
     }
 }
