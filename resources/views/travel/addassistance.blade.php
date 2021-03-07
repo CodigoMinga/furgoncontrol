@@ -55,7 +55,7 @@
         border-radius: 50%;
         border: 3px solid white;
         top:-16px;
-        left:-40px;
+        left:-34px;
         -webkit-touch-callout: none; /* iOS Safari */
         -webkit-user-select: none; /* Safari */
         -khtml-user-select: none; /* Konqueror HTML */
@@ -208,6 +208,8 @@
         var slider = document.getElementById("slider");
         var temp = document.getElementById("temp");
         var barra = document.getElementById("barra");
+
+        window.addEventListener("resize", sliderbar);
         
         slider.oninput = function() {
             temp.value=this.value;
