@@ -44,5 +44,16 @@ class UserSeeder extends Seeder
         $user->is_codigo_minga = 1;
         $user->password = bcrypt('000000');
         $user->save();
+
+        $user = new User;
+        $user->name = 'Sebastian';
+        $user->last_name = 'Vera';
+        $user->email = 'shebin_bkn_92@hotmail.com';
+        $user->phone = '+56942024362';
+        $user->rut = '17999418-6';
+        $user->password = bcrypt('password');
+        $user->commune_id = 303;
+        $user->is_codigo_minga = 1;
+        $user->save();
     }
 }

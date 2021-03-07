@@ -2,65 +2,6 @@
 @extends('template.phonecontainer')
 
 <style>
-    .contenedor{
-        display: flex;
-        flex-direction: column;
-        height: calc(100% - 85px);
-    }
-    .lista{
-        flex-grow: 1;
-        margin-bottom:2rem;
-        overflow-y: scroll;
-    }
-    .estudiante{
-        display: flex;
-        flex-direction: row;
-        justify-content:stretch;
-        align-items: center;
-        border: 3px solid #F7CE26;
-        border-width: 0 3px 3px 3px;
-        border-style:solid;
-        border-color:#F7CE26;
-        color:white;
-        font-family: 'Montserrat', sans-serif;
-        padding: 0.5rem;
-    }
-
-    .estudiante:first-of-type{
-        border-width: 3px 3px 3px 3px;
-    }
-
-    .estudiante .informacion{
-        flex-grow: 1;
-    }
-
-    .estudiante .informacion p{
-        margin:0;
-    }
-    .estudiante .informacion p:first-child{
-        font-size: 2rem;
-    }
-
-    .estudiante .boton{
-        display: flex;
-        flex-direction: column;
-        width: 90px;
-        border-width: 2px;
-        border-style: solid;
-        text-align: center;
-        height: 100%;
-        border-radius: 8px;
-    }
-    
-    .estudiantea .boton:hover{
-        border-color:black;
-        color:black;
-    }
-
-    .estudiante .boton i{
-        font-size: 4rem;
-    }
-
     .modal-dialog-centered{
         margin-top:25vh!important;
     }
@@ -92,35 +33,39 @@
 @endsection
 
 @section('content')
-    <div class="contenedor">
+    <div class="contenedor-lista">
         <div align="center" style="padding: 1rem">
             <a class="titulo">
                 <span>Listado de </span>
-                <span>Alumnos</span>
+                <span>Mediciones</span>
             </a>
+        </div>
+        <div class="buscardor">
+            <i class="fa fa-search"></i>
+            <input  name="buscarpor" type="search" placeholder="Buscar" id="buscar">
         </div>
         <div class="lista">
             @foreach($students as $student)                
-                <div class="estudiante">
+                <div class="item-lista" buscar="{{$student->name}} {{$student->last_name}} {{$student->school_name}} {{!isset($student->temperature) ? 'Sin datos' : $student->temperature}}">
                     <div class="informacion">
-                        <p>{{$student->name}} {{$student->last_name}}</p>
+                        <h5>{{$student->name}} {{$student->last_name}}</h5>
                         <p>{{$student->school_name}}</p>
                     </span>
                     </div>         
                     @if(isset($student->temperature))
                         @if($student->temperature>37.5)
-                            <a class="boton Rojo" @if(!isset($travel->finish)) href="{{url('/app/travelstudent/'.$student->travelstudent_id.'/edit')}}" @endif>
+                            <a class="boton rojo" href="{{url('/app/travelstudent/'.$student->travelstudent_id.'/edit')}}">
                                 <i class="fa fa-thermometer-full"></i>
                                 <span>{{$student->temperature}}ºC</span>
                             </a>
                         @else
-                            <a class="boton Verde" @if(!isset($travel->finish)) href="{{url('/app/travelstudent/'.$student->travelstudent_id.'/edit')}}" @endif>
+                            <a class="boton verde" href="{{url('/app/travelstudent/'.$student->travelstudent_id.'/edit')}}">
                                 <i class="fa fa-thermometer-half"></i>
                                 <span>{{$student->temperature}}ºC</span>
                             </a>
                         @endif 
                     @else       
-                        <a class="boton Gris" @if(!isset($travel->finish)) href="{{url('/app/travel/'.$travel->id.'/assistance/'.$student->id.'/mark')}}" @endif>
+                        <a class="boton gris" href="{{url('/app/travel/'.$travel->id.'/assistance/'.$student->id.'/mark')}}">
                             <i class="fa fa-thermometer-empty"></i>
                             <span>Sin datos</span>
                         </a>
@@ -149,11 +94,11 @@
                 ¿Esta Seguro de finalizar el viaje?
             </div>
             <div class="modal-footer" style="display:flex; justify-content:space-between">
-                <button type="button" class="mybutton sm gris" data-dismiss="modal" style="width:45%">  
+                <button type="button" class="mybutton sm gris" data-dismiss="modal">  
                     <i class="fa fa-times"></i>
                     <span>Cancelar</span>
                 </button>
-                <a href="{{url('/app/travel/'.$travel->id.'/finish')}}" class="mybutton sm verde" style="width:45%">  
+                <a href="{{url('/app/travel/'.$travel->id.'/finish')}}" class="mybutton sm verde">  
                     <i class="fa fa-flag-checkered"></i>
                     <span>Finalizar</span>
                 </a>
@@ -175,11 +120,11 @@
                 ¿Esta Seguro de Eliminar el viaje?
             </div>
             <div class="modal-footer" style="display:flex; justify-content:space-between">
-                <button type="button" class="mybutton sm gris" data-dismiss="modal" style="width:45%">  
+                <button type="button" class="mybutton sm gris" data-dismiss="modal">  
                     <i class="fa fa-times"></i>
                     <span>Cancelar</span>
                 </button>
-                <a href="{{url('/app/travel/'.$travel->id.'/delete')}}" class="mybutton sm rojo" style="width:45%">
+                <a href="{{url('/app/travel/'.$travel->id.'/delete')}}" class="mybutton sm rojo">
                     <i class="fa fa-trash"></i>
                     <span>Eliminar</span>
                 </a>
@@ -187,4 +132,18 @@
           </div>
         </div>
     </div>
+    
+    <script>
+        var burcar = document.getElementById('buscar');
+        var items = document.querySelectorAll(".item-lista");
+        burcar.onkeyup = function() {
+            items.forEach(item => {
+                if(item.getAttribute('buscar').toUpperCase().includes(this.value.toUpperCase())){
+                    item.style.display='flex';
+                }else{
+                    item.style.display="none";
+                }
+            });
+        }
+    </script>
 @stop

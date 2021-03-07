@@ -26,12 +26,12 @@
 <div class="flex-grid">
     <a href="{{url('/app/travel/add/0/process')}}" class="mybutton mybutton-column primario">
         <i class="fa fa-bus"></i>
-        <b class="flecha fa fa-caret-up" style="color:rgb(27, 230, 27)"></b>
+        <b class="flecha fa fa-caret-up verde"></b>
         <span>Viaje de Ida</span>
     </a>    
     <a href="{{url('/app/travel/add/1/process')}}" class="mybutton mybutton-column primario">
         <i class="fa fa-bus"></i>
-        <b class="flecha fa fa-caret-down" style="color:red"></b>
+        <b class="flecha fa fa-caret-down rojo"></b>
         <span>Viaje de Regreso</span>
     </a>
 </div>

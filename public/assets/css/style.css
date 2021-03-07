@@ -38,16 +38,16 @@ PRE LOADER
 
 .loaded {
     width:100vw;
-    height: 56.25vw;
+    height: 50vh;
     position: relative;
-    top: calc(100vh - 56.25vw);
+    top: calc(100vh - 75vh);
     background-image: url(../images/gifbus.gif);
     background-repeat: no-repeat;
     background-position:center;
-    -moz-background-size: cover;
-    background-size: cover;
-    margin: -20px 0 0 -20px;
+    -moz-background-size: contain;
+    background-size: contain;
 }
+
 img {
     -moz-user-select: none;
     -webkit-user-select: none;

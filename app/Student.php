@@ -52,7 +52,6 @@ class Student extends Model
         return $this->hasMany('App\Travelstudent');
     }
 
-
     public function school()
     {
         return $this->belongsTo('App\School');
