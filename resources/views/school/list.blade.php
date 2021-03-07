@@ -7,7 +7,7 @@
     </a>
 @stop
 <style>
-
+    
 </style>
 @section('content')
     <div class="contenedor-lista">
