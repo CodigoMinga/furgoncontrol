@@ -57,9 +57,23 @@ class StudentController extends Controller
         return view('template.genericphoneprocess',compact('message','sucess','returnUrl'));
     }
 
-    public function list(){
+    public function list(Request $request){
         $user_id = Auth::user()->id;
-        $students = Student::where('user_id','=',$user_id)->get();
-        return view('student.listv2',compact('students'));
+        //dd($request->buscarpor==null);
+       
+        if($request->buscarpor==null){
+            
+            $students = Student::where('user_id','=',$user_id)->get();
+            return view('student.list',compact('students'));
+        }else{
+            $buscar = $request->get('buscarpor');
+
+            
+    
+            $students = Student::where('name',"like",  "%".$buscar."%")->orwhere('last_name',"like",  "%".$buscar."%")->where('user_id','=',$user_id)->get();
+            
+            return view('student.list', compact('students'));
+        }
+      
     }
 }

@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="facebook-domain-verification" content="63x1iew8m0mlpxsoss02q60toxsfkv" />
     <title>FurgonControlado.cl</title>
     <link rel="shortcut icon" href="{{ url('/') }}/images/favicon.png">
     <meta property="og:image" content="{{ url('/') }}/images/favicon.png">
@@ -59,6 +60,7 @@
                         <li><a class="nav-item nav-link" href="#nosotros">¿Comó Funciona?</a></li>
                         <li><a class="nav-item nav-link" href="#precios">Precios</a></li>
                         <li><a class="nav-item nav-link" href="#footer">Contacto</a></li>
+                        <li><a class="nav-item nav-link" href="http://public.codigominga.cl/documentos/Manual%20Furgon%20Controlado%2020210404.pdf"> Descarga el manual aquí<a></li>
                     </ul>
                 </div>
             </div>

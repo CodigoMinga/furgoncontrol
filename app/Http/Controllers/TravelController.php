@@ -144,17 +144,20 @@ class TravelController extends Controller
         $viernes = date('Y-m-d', strtotime($desde.' +4 day'));
         $hasta = $viernes;
 
+        $consulta = "select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where ts.student_id = s.id and ts.enabled=0 and t.enabled=0";
+
+
         $query ="select s.name,s.last_name,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$lunes' limit 1) as lunes1,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$lunes' limit 1) as lunes2,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$martes' limit 1) martes1,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$martes' limit 1) martes2,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$miercoles' limit 1) miercoles1,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$miercoles' limit 1) miercoles2,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$jueves' limit 1) jueves1,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$jueves' limit 1) jueves2,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=0  and ts.student_id = s.id and date(t.start) = '$viernes' limit 1) viernes1,
-        (select ts.temperature from travels t left join travelstudents ts on t.id = ts.travel_id where t.type=1  and ts.student_id = s.id and date(t.start) = '$viernes' limit 1) viernes2
+        ($consulta and t.type=0 and date(t.start) = '$lunes' limit 1) as lunes1,
+        ($consulta and t.type=1 and date(t.start) = '$lunes' limit 1) as lunes2,
+        ($consulta and t.type=0 and date(t.start) = '$martes' limit 1) as martes1,
+        ($consulta and t.type=1 and date(t.start) = '$martes' limit 1) as martes2,
+        ($consulta and t.type=0 and date(t.start) = '$miercoles' limit 1) as miercoles1,
+        ($consulta and t.type=1 and date(t.start) = '$miercoles' limit 1) as miercoles2,
+        ($consulta and t.type=0 and date(t.start) = '$jueves' limit 1) as jueves1,
+        ($consulta and t.type=1 and date(t.start) = '$jueves' limit 1) as jueves2,
+        ($consulta and t.type=0 and date(t.start) = '$viernes' limit 1) as viernes1,
+        ($consulta and t.type=1 and date(t.start) = '$viernes' limit 1) as viernes2
         from students s where s.school_id = $school_id";
         if(!$usuario->is_codigo_minga){
             $query = $query." and s.user_id = $usuario->id";
