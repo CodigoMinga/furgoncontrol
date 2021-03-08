@@ -37,6 +37,17 @@
             padding-top:15%;
         }
     </style>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5552J7KFH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-Z5552J7KFH');
+    </script>
 </head>
 <body data-spy="scroll" data-target="#main-navbar">
     <div class='preloader'>
