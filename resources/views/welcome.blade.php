@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="facebook-domain-verification" content="63x1iew8m0mlpxsoss02q60toxsfkv" />
     <title>FurgonControlado.cl</title>
     <link rel="shortcut icon" href="{{ url('/') }}/images/favicon.png">
     <meta property="og:image" content="{{ url('/') }}/images/favicon.png">
