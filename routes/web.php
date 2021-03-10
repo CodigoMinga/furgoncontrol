@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 
 
-Route::get('/app/login','MainController@login');
+Route::get('/app/login','MainController@login')->name('login');
 Route::post('/app/checklogin','MainController@checkLogin');
 Route::get('/app/register', 'MainController@register');
 Route::post('/app/register/process', 'MainController@registerProcess');
@@ -32,7 +32,7 @@ Route::get('/app/resetpassword/{user_id}/token/{token}', 'MainController@passwor
 Route::post('/app/resetpassword/{user_id}/token/{token}/process', 'MainController@passwordRessetTokenProcess');
 
 Route::group(['middleware' => ['auth']], function() {
-   
+
 
     Route::get('/app/home', 'HomeController@index');
     //Cambio de clave
@@ -83,7 +83,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/app/logout', 'MainController@logout');
 
-    
+
     Route::get('/app/users/information' ,'UserController@information');
     Route::get('/app/users/edit'        ,'UserController@edit');
     Route::post('/app/users/edit/process','UserController@editProcess');
